@@ -1,0 +1,160 @@
+name: offer-creation
+version: 1.0.0
+description: Pipeline de criação de Grand Slam Offer do zero
+orchestrator: "@alex-hormozi"
+estimated_duration: "1-2 semanas"
+playbook_ref: playbooks/playbook-grand-slam-offer.md
+
+phases:
+  - id: phase-0
+    name: Business Discovery
+    agent: "@alex-hormozi"
+    command: "*business-discovery"
+    outputs:
+      - business-context.md
+    gate:
+      required: true
+      criteria: "produto + mercado + dados financeiros + problema principal definidos"
+      blocking: true
+      on_fail: "STOP — nenhuma fase seguinte pode ser executada sem contexto"
+
+  - id: phase-1
+    name: Market Validation
+    agent: "@alex-hormozi"
+    command: "*market-selector"
+    task: tasks/strategic/market-selector.md
+    depends_on: phase-0
+    outputs:
+      - market-analysis.md
+    gate:
+      required: true
+      criteria: "score >= 12 nos 4 indicadores | se < 12 → pivotar mercado"
+      blocking: true
+      on_fail: "PIVOT — mudar mercado antes de construir oferta"
+
+  - id: phase-2
+    name: Value Equation Audit
+    agent: "@alex-hormozi"
+    command: "*value-equation-audit"
+    task: tasks/diagnostic/value-equation-audit.md
+    depends_on: phase-1
+    optional: true
+    condition: "apenas se oferta anterior existe"
+    outputs:
+      - value-equation-score.md
+    gate:
+      required: true
+      criteria: "variável mais fraca identificada + plano de melhoria"
+
+  - id: phase-3
+    name: Grand Slam Offer Construction
+    agent: "@alex-hormozi"
+    command: "*grand-slam-offer-builder"
+    task: tasks/generative/grand-slam-offer-builder.md
+    depends_on: phase-2
+    outputs:
+      - grand-slam-offer.md
+    gate:
+      required: true
+      criteria: "5 componentes GSO presentes + oferta em categoria de um + ratio valor/preço >= 10x"
+      blocking: true
+      on_fail: "REBUILD — revisar dream outcome ou stack de valor"
+
+  - id: phase-4
+    name: Pricing
+    agent: "@alex-hormozi"
+    command: "*pricing-strategy"
+    task: tasks/strategic/pricing-strategy.md
+    depends_on: phase-3
+    outputs:
+      - pricing-decision.md
+    gate:
+      required: true
+      criteria: "preço no quartil superior + justificativa baseada em valor + ratio >= 10x"
+
+  - id: phase-5
+    name: Guarantee Design
+    agent: "@alex-hormozi"
+    command: "*guarantee-designer"
+    task: tasks/generative/guarantee-designer.md
+    depends_on: phase-4
+    outputs:
+      - guarantee.md
+    gate:
+      required: true
+      criteria: "garantia elimina maior objeção + risco calculado + texto com prazo + condição + consequência"
+
+  - id: phase-6
+    name: Offer Gate
+    agent: "@alex-hormozi"
+    checklist: checklists/offer-gate.md
+    depends_on: phase-5
+    gate:
+      required: true
+      criteria: "100% checklist aprovado — qualquer item ❌ = HOLD"
+      blocking: true
+      on_fail: "HOLD — corrigir todos os itens antes de lançar"
+
+  - id: phase-7
+    name: Warm Outreach Validation
+    agent: "@alex-hormozi"
+    command: "*lead-machine"
+    task: tasks/generative/lead-machine.md
+    depends_on: phase-6
+    outputs:
+      - validation-results.md
+    gate:
+      required: true
+      criteria: "minimo 3 vendas confirmadas + conversão >= 20% em warm outreach"
+      on_fail: "ITERATE — revisar oferta ou garantia baseado em feedback de prospects"
+
+thresholds:
+  offer_ready:
+    value_equation_score: ">= 15"
+    sales_conversion: ">= 20%"
+    cac_ltv_ratio: ">= 1:3"
+    client_explanation: "avatar consegue explicar a oferta em 1 frase"
+    refund_rate: "< 10%"
+
+  iterate:
+    value_equation_score: "5-14 após phase-3"
+    sales_conversion: "5%-19% em warm outreach"
+
+  kill:
+    value_equation_score: "< 5 após 2 iterações de phase-3"
+    sales_conversion: "< 5% após 50 conversas de warm outreach"
+    action: "rebuild completo — *offer-designer do zero"
+
+anti_patterns_monitored:
+  - id: ap-1
+    name: "Pular Business Discovery"
+    block: true
+    action: "STOP — executar *business-discovery antes de qualquer fase"
+
+  - id: ap-2
+    name: "Construir oferta sem mercado validado"
+    block: true
+    action: "PIVOT — executar *market-selector primeiro"
+
+  - id: ap-3
+    name: "Escalar paid ads antes de validação warm"
+    block: true
+    action: "HOLD — mínimo 3 vendas em warm antes de paid"
+
+  - id: ap-4
+    name: "Churn > 5% durante lançamento"
+    block: true
+    action: "STOP — executar *retention-4rs antes de continuar"
+
+  - id: ap-5
+    name: "Precificar pela concorrência"
+    warn: true
+    action: "WARN — usar valor entregue como âncora, não mercado"
+
+quality_gates:
+  business_context: "obrigatório — gate absoluto antes de qualquer recomendação"
+  market_score: ">= 12 nos 4 indicadores"
+  gso_components: "5/5 componentes presentes"
+  value_price_ratio: ">= 10x"
+  offer_gate_checklist: "100% aprovado"
+  warm_validation: ">= 3 vendas + conversão >= 20%"

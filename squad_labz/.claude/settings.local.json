@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm info *)",
+      "Bash(npm whoami *)",
+      "Bash(npm login *)",
+      "Bash(npm config *)",
+      "Bash(npm publish *)",
+      "Bash(node bin/create-vexel.js)",
+      "Bash(npm install *)",
+      "Bash(grep --line-buffered -E \"added|error|warn|npm|$\")",
+      "Bash(winget search *)",
+      "Bash(xargs -I {} bash -c 'echo \"=== {} ===\" && head -5 {}')"
+    ]
+  }
+}

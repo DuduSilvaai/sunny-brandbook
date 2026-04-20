@@ -1,0 +1,203 @@
+# Russell Brunson Mind Clone Squad
+# Synkra AIOS — Squad Definition v1.0.0
+
+squad:
+  name: russell-brunson
+  version: 1.0.0
+  description: >
+    Clone da mente de Russell Brunson — encapsula todo o conhecimento operacional
+    dos livros DotCom Secrets, Expert Secrets, Traffic Secrets, Network Marketing Secrets,
+    Linchpin, Challenge Secrets e Copywriting Secrets. Especializado em construção de
+    funnels, posicionamento de experts, geração de tráfego e criação de movimentos de massa.
+  domain: funnels, marketing, copywriting, traffic, expert-positioning
+  language: portuguese
+  aios_min_version: 3.0.0
+
+agents:
+  tier_0:
+    - id: rb-commander
+      file: agents/rb-commander.md
+      persona: Russell Brunson
+      role: Comandante — Orquestra todos os agentes, aprova funnels e Value Ladders
+
+  tier_1:
+    - id: dotcom
+      file: agents/dotcom.md
+      persona: Arquiteto de Funnels
+      role: DotCom Secrets — Secret Formula, Value Ladder, 7 Funnel Types, Hook-Story-Offer
+
+    - id: expert
+      file: agents/expert.md
+      persona: Especialista em Posicionamento
+      role: Expert Secrets — Mass Movement, Big Domino, Epiphany Bridge, Perfect Webinar
+
+    - id: traffic
+      file: agents/traffic.md
+      persona: Estrategista de Tráfego
+      role: Traffic Secrets — Dream Customer, Dream 100, Content Machine, Fill Your Funnel
+
+  tier_2:
+    - id: perfect-webinar
+      file: agents/perfect-webinar.md
+      role: Script completo de webinar — 17 passos do Perfect Webinar Script
+
+    - id: epiphany-bridge
+      file: agents/epiphany-bridge.md
+      role: Construção de histórias — Origin Story, Hero's Journey, Belief Bridges
+
+    - id: offer-stack
+      file: agents/offer-stack.md
+      role: Value Ladder + Stack Slides + OTO sequence
+
+    - id: dream-100
+      file: agents/dream-100.md
+      role: Execução do processo Dream 100 — pesquisa, lista, integração, colaboração
+
+    - id: challenge-funnel
+      file: agents/challenge-funnel.md
+      role: Challenge Secrets — estrutura completa de desafio (5-30 dias)
+
+    - id: network-mkt
+      file: agents/network-mkt.md
+      role: Network Marketing Secrets — 3 Lost Funnels adaptados
+
+knowledge_base:
+  frameworks:
+    - file: data/frameworks-dotcom-secrets.md
+      count: 20
+      book: DotCom Secrets
+
+    - file: data/frameworks-expert-secrets.md
+      count: 18
+      book: Expert Secrets
+
+    - file: data/frameworks-traffic-secrets.md
+      count: 15
+      book: Traffic Secrets
+
+    - file: data/frameworks-network-marketing.md
+      count: 5
+      book: Network Marketing Secrets
+
+    - file: data/frameworks-linchpin.md
+      count: 6
+      book: Linchpin
+
+    - file: data/frameworks-challenge-secrets.md
+      count: 8
+      book: Challenge Secrets
+
+  scripts:
+    - file: data/scripts-perfect-webinar.md
+      description: Perfect Webinar Script — 17 steps completos com copy
+      book: Expert Secrets
+
+    - file: data/scripts-epiphany-bridge.md
+      description: Templates de histórias — Origin Story, Epiphany Bridge, Hero's Journey
+      book: Expert Secrets
+
+  reference:
+    - file: data/thresholds.md
+      description: Benchmarks de conversão por tipo de funil e etapa
+
+    - file: data/vocabulary.md
+      description: Glossário Brunson/ClickFunnels — termos canônicos
+
+total_frameworks: 72
+
+tasks:
+  strategic:
+    - funnel-selector
+    - value-ladder-designer
+    - dream-customer-avatar
+    - market-positioning
+
+  generative:
+    - perfect-webinar-builder
+    - epiphany-bridge-story
+    - offer-stack-builder
+    - hook-story-offer-generator
+    - headline-generator
+    - email-sequence-builder
+
+  diagnostic:
+    - funnel-audit
+    - belief-audit
+    - dream-100-research
+
+  optimization:
+    - funnel-hacking
+    - offer-optimizer
+    - conversion-diagnosis
+
+playbooks:
+  - name: playbook-launch-funnel
+    file: playbooks/playbook-launch-funnel.md
+    description: Lançamento de novo funil do zero — avatar → oferta → funnel → tráfego
+
+  - name: playbook-webinar-funnel
+    file: playbooks/playbook-webinar-funnel.md
+    description: Setup completo de webinar funnel — script → página → email → ads
+
+  - name: playbook-challenge-funnel
+    file: playbooks/playbook-challenge-funnel.md
+    description: Challenge funnel 5-30 dias — estrutura → conteúdo → comunidade → oferta
+
+workflows:
+  - name: new-funnel-launch
+    file: workflows/new-funnel-launch.yaml
+
+  - name: webinar-setup
+    file: workflows/webinar-setup.yaml
+
+checklists:
+  - name: pre-launch-gate
+    file: checklists/pre-launch-gate.md
+
+  - name: offer-gate
+    file: checklists/offer-gate.md
+
+  - name: copy-gate
+    file: checklists/copy-gate.md
+
+operational_rules:
+  mandatory_phase_0: business-discovery
+  min_business_context_clarity: 0.80
+  funnel_validation_required: true
+  offer_stack_approval: rb-commander-only
+  value_ladder_approval: rb-commander-only
+
+thresholds:
+  squeeze_page_optin:
+    kill: "< 25%"
+    ok: "25-40%"
+    scale: "> 40%"
+  sales_letter_cold:
+    kill: "< 1%"
+    ok: "1-3%"
+    scale: "> 3%"
+  webinar_show_up:
+    kill: "< 20%"
+    ok: "20-35%"
+    scale: "> 35%"
+  webinar_close:
+    kill: "< 5%"
+    ok: "5-10%"
+    scale: "> 10%"
+  oto_uptake:
+    kill: "< 10%"
+    ok: "10-25%"
+    scale: "> 25%"
+  challenge_completion:
+    kill: "< 20%"
+    ok: "20-40%"
+    scale: "> 40%"
+  challenge_to_offer_conv:
+    kill: "< 5%"
+    ok: "5-15%"
+    scale: "> 15%"
+
+activation:
+  primary: "@rb-commander"
+  slash_command: "/russell-brunson:rb-commander"
+  prefix: "*"

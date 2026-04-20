@@ -1,0 +1,129 @@
+name: traffic-masters
+version: 2.0.0
+description: Traffic Masters Squad - 11 agentes especializados em paid traffic. Camada funcional (MIDAS/DASH/NOVA/TRACK) + 7 platform specialists. 47 frameworks de Jeremy Haynes, Brian Moncada, Hormozi, Brandon Carter, Jordan Stupar.
+slashPrefix: tm
+author: AIOS Traffic Team
+created: 2026-04-15
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+  framework: paid-traffic-first
+  philosophy: CLI First > Observability > UI
+
+components:
+  agents:
+    orchestrator:
+      - midas.md
+
+    tier-1-functional:
+      - dash.md
+      - nova.md
+      - track.md
+
+    tier-2-platform:
+      - molly-pittman.md
+      - depesh-mandalia.md
+      - kasim-aslam.md
+      - tom-breeze.md
+      - nicholas-kusmich.md
+      - ralph-burns.md
+      - pedro-sobral.md
+
+  skills:
+    strategic:
+      - campaign-structure
+      - funnel-selection
+      - scale-readiness-check
+      - unit-economics
+    diagnostic:
+      - metric-diagnosis
+      - tracking-audit
+      - funnel-analysis
+      - attribution-analysis
+    generative:
+      - hook-generator
+      - brief-creator
+      - copy-generator
+      - image-generator
+      - angle-generator
+      - creative-fatigue-detector
+    optimization:
+      - kill-scale-rules
+      - budget-allocation
+      - audience-expansion
+    automation:
+      - campaign-monitor
+
+  workflows:
+    - new-campaign-launch.yaml
+    - campaign-optimization.yaml
+    - scale-campaign.yaml
+
+  playbooks:
+    - playbook-new-campaign-launch.md
+    - playbook-optimization.md
+    - playbook-scale.md
+
+  knowledge_base:
+    - data/frameworks-jeremy-haynes.md
+    - data/frameworks-brian-moncada.md
+    - data/frameworks-alex-hormozi.md
+    - data/frameworks-brandon-carter.md
+    - data/frameworks-jordan-stupar.md
+    - data/thresholds.md
+    - data/vocabulary.md
+
+  checklists:
+    - pre-launch-gate.md
+    - scale-gate.md
+    - tracking-gate.md
+
+operationalRules:
+  cli_first: true
+  story_driven: true
+  quality_gates:
+    - business-context-required
+    - tracking-gate-mandatory
+    - pre-launch-gate-mandatory
+    - scale-gate-mandatory
+  thresholds:
+    roas_kill: 0.5
+    roas_warning: 1.0
+    roas_scale: 2.5
+    cpa_kill_multiplier: 2.0
+    ctr_kill: 0.005
+    ctr_scale: 0.012
+    frequency_kill: 4.0
+    frequency_scale: 2.0
+    emq_minimum: 7
+
+activation:
+  methods:
+    - "@midas"
+    - "/traffic-masters:agents:midas"
+
+  command_prefix: "*"
+  common_commands:
+    - "*help"
+    - "*business-discovery"
+    - "*playbook"
+    - "*launch"
+    - "*optimize"
+    - "*scale"
+    - "*dispatch"
+
+frameworks_summary:
+  jeremy_haynes: 28  # DSL Revolution, CBO/ABO, Kill/Scale rules
+  brian_moncada: 10  # Andromeda Method, Metric Thresholds
+  alex_hormozi: 5    # Unit Economics, LTV/CAC, Hydra
+  brandon_carter: 3  # Constants vs Variables
+  jordan_stupar: 1   # Creative Strategy
+  total: 47
+
+success_metrics:
+  campaign_roas: "Achieve ROAS > 2.5 within 14 days"
+  cpa_target: "CPA <= target on 80%+ of campaigns"
+  tracking_emq: "EMQ >= 7 on 100% of pixels"
+  hook_diversity: "10+ hook variations per campaign"
+  kill_speed: "Kill underperformers within 24h of threshold breach"

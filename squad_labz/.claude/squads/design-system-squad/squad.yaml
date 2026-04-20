@@ -1,0 +1,82 @@
+name: design-system-squad
+version: 1.0.0
+description: Design System Expert Squad - 12 specialized agents for enterprise design system building
+slashPrefix: ds
+author: AIOS Design Team
+created: 2026-04-09
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+  framework: design-first
+  philosophy: CLI First > Observability > UI
+
+components:
+  agents:
+    orchestrator:
+      - design-architect.md
+
+    tier-0:
+      - alla-kholmatova.md
+      - brad-frost.md
+
+    tier-1:
+      - dan-mall.md
+      - dave-malouf.md
+      - heydon-pickering.md
+
+    tier-2:
+      - jina-anne.md
+      - nathan-curtis.md
+      - sarah-drasner.md
+      - una-kravets.md
+
+    tier-3:
+      - nano-banana-generator.md
+
+    integrations:
+      - ux-design-expert
+
+  skills:
+    - frontend-design
+    - web-design-guidelines
+    - figma
+
+  workflows:
+    - design-system-brownfield.yaml
+    - design-system-greenfield.yaml
+    - design-system-build-quality.yaml
+
+  tasks:
+    - setup-design-system.md
+    - build-component.md
+    - consolidate-patterns.md
+    - extract-tokens.md
+    - audit-design-system.md
+    - validate-accessibility.md
+
+operationalRules:
+  cli_first: true
+  story_driven: true
+  quality_gates:
+    - business-context-required
+    - accessibility-mandatory
+    - qa-required
+
+activation:
+  methods:
+    - "@design-architect"
+    - "/ds:agents:design-architect"
+
+  command_prefix: "*"
+  common_commands:
+    - "*help"
+    - "*business-discovery"
+    - "*playbook"
+    - "*build-ds"
+    - "*validate"
+
+success_metrics:
+  pattern_consolidation: "Reduce redundant patterns by 70%+"
+  token_adoption: "Achieve 95%+ token usage in codebase"
+  accessibility_compliance: "WCAG 2.2 AAA compliance on 100% components"

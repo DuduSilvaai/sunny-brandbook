@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "computedHash": "a6a79c92a109339759d7b465f2d45fe11ce955e307a3e2c03fbcf4f9b624b77a"
+    },
+    "seedance-prompt-en": {
+      "source": "dexhunter/seedance2-skill",
+      "sourceType": "github",
+      "computedHash": "39854268cf8fcbdc48932b1c340951f20fdd1f5e0363cfe3df4f16126ce3d717"
+    }
+  }
+}

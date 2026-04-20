@@ -1,0 +1,152 @@
+name: new-campaign-launch
+description: Workflow completo para lançamento de nova campanha do zero
+version: 1.0.0
+owner: midas
+duration_estimate_days: 9-16
+
+phases:
+  - id: phase-0
+    name: Business Discovery
+    owner: midas
+    duration_days: 1
+    tasks:
+      - agent: midas
+        command: "*business-discovery"
+        template: business-context-template.md
+        required: true
+    gate:
+      type: completude
+      threshold: 0.8
+      output: business-context.md
+
+  - id: phase-1
+    name: Unit Economics & Funnel
+    owner: dash
+    duration_days: 1
+    tasks:
+      - agent: dash
+        command: "*unit-economics"
+        task_file: tasks/strategic/unit-economics.md
+        required: true
+      - agent: midas
+        command: "*funnel-selection"
+        task_file: tasks/strategic/funnel-selection.md
+        required: true
+    gate:
+      type: financial
+      conditions:
+        - "LTV/CAC >= 3"
+        - "payback_days <= 90"
+
+  - id: phase-2
+    name: Campaign Structure
+    owner: midas
+    duration_days: 1
+    tasks:
+      - agent: midas
+        command: "*campaign-structure"
+        task_file: tasks/strategic/campaign-structure.md
+      - agent: dash
+        command: "*budget-allocation"
+        task_file: tasks/optimization/budget-allocation.md
+        scenario: within-campaign
+    gate:
+      type: constraint
+      conditions:
+        - "daily_floor_per_adset >= 50"
+        - "hydra_max_per_channel <= 0.6"
+
+  - id: phase-3
+    name: Creative Development
+    owner: nova
+    duration_days: 3-5
+    tasks:
+      - agent: nova
+        command: "*angles"
+        task_file: tasks/generative/angle-generator.md
+      - agent: nova
+        command: "*hooks"
+        task_file: tasks/generative/hook-generator.md
+        min_output: 10
+      - agent: nova
+        command: "*copy"
+        task_file: tasks/generative/copy-generator.md
+      - agent: nova
+        command: "*brief"
+        task_file: tasks/generative/brief-creator.md
+      - agent: nova
+        command: "*image"
+        task_file: tasks/generative/image-generator.md
+    gate:
+      type: output
+      conditions:
+        - "creatives_ready >= 3"
+        - "ugc_included == true"
+
+  - id: phase-4
+    name: Tracking Setup
+    owner: track
+    duration_days: 1-2
+    tasks:
+      - agent: track
+        command: "*audit"
+        task_file: tasks/diagnostic/tracking-audit.md
+      - agent: track
+        command: "*capi"
+      - agent: track
+        command: "*emq"
+    gate:
+      type: quality
+      file: checklists/tracking-gate.md
+      conditions:
+        - "emq >= 7"
+        - "capi_operational == true"
+        - "dedup_rate < 0.05"
+
+  - id: phase-5
+    name: Pre-Launch Gate
+    owner: midas
+    duration_days: 0.5
+    tasks:
+      - agent: midas
+        command: "*pre-launch-gate"
+        file: checklists/pre-launch-gate.md
+    gate:
+      type: checklist
+      threshold: 1.0
+
+  - id: phase-6
+    name: Launch & Learning Phase
+    owner: midas
+    duration_days: 7-14
+    tasks:
+      - agent: midas
+        command: "*launch"
+      - agent: track
+        command: "*monitor"
+        task_file: tasks/automation/campaign-monitor.md
+        mode: observer
+        duration_days: 3
+      - agent: dash
+        command: "*kill-scale"
+        task_file: tasks/optimization/kill-scale-rules.md
+        starts_after_days: 3
+    gate:
+      type: learning_phase_exit
+      conditions:
+        - "conversions_7d >= 50"
+        - "roas >= break_even_roas"
+
+handoffs:
+  - trigger: "learning_phase_failed"
+    to: phase-3
+    action: "refresh_creatives"
+  - trigger: "roas > 2.5 stable"
+    to: playbook-optimization
+  - trigger: "roas > 4.0 stable"
+    to: playbook-scale
+
+success_criteria:
+  - "all_gates_passed"
+  - "roas >= break_even"
+  - "tracking_emq >= 7"

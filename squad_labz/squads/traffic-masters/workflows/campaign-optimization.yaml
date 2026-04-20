@@ -1,0 +1,137 @@
+name: campaign-optimization
+description: Workflow contínuo para otimização de campanhas em operação
+version: 1.0.0
+owner: dash
+duration: continuous
+
+triggers:
+  - "roas_drop > 0.2 in 7d"
+  - "cpa_rise > 0.3 in 7d"
+  - "frequency > 3.5 multiple_adsets"
+  - "hook_rate_drop > 0.3 in 7d"
+  - "post_critical_event"
+
+phases:
+  - id: phase-1
+    name: Health Check
+    owner: dash
+    duration_days: 0.5
+    tasks:
+      - agent: track
+        command: "*audit"
+        task_file: tasks/diagnostic/tracking-audit.md
+        required: true
+        reason: "GIGO protection - validar dados antes de decidir"
+      - agent: dash
+        command: "*diagnose"
+        task_file: tasks/diagnostic/metric-diagnosis.md
+      - agent: dash
+        command: "*attribution"
+        task_file: tasks/diagnostic/attribution-analysis.md
+    gate:
+      type: data_quality
+      conditions:
+        - "tracking_healthy == true"
+        - "emq >= 7"
+
+  - id: phase-2
+    name: Creative Fatigue Detection
+    owner: nova
+    duration_days: 0.5
+    tasks:
+      - agent: nova
+        command: "*fatigue"
+        task_file: tasks/generative/creative-fatigue-detector.md
+      - agent: nova
+        command: "*refresh"
+        when: "fatigue_count >= 3"
+    gate:
+      type: pipeline
+      conditions:
+        - "fresh_hooks_weekly >= 3"
+
+  - id: phase-3
+    name: Kill & Scale Execution
+    owner: dash
+    cadence: continuous
+    tasks:
+      - agent: dash
+        command: "*kill-scale"
+        task_file: tasks/optimization/kill-scale-rules.md
+        cadence_minutes: 60
+    rules:
+      kill:
+        - id: K1
+          condition: "roas < 0.5"
+          action: pause_adset
+          window: immediate
+        - id: K2
+          condition: "cpa > 2 * target"
+          action: pause_adset
+          window_impressions: 1000
+        - id: K3
+          condition: "ctr < 0.005"
+          action: pause_ad
+          window_impressions: 500
+        - id: K4
+          condition: "hook_rate < 0.15"
+          action: pause_and_refresh
+          window_impressions: 1000
+          dispatch: "@nova *hooks"
+        - id: K5
+          condition: "frequency > 4"
+          action: pause_and_expand
+          dispatch: "@dash *expand"
+      scale:
+        - id: S1
+          condition: "roas > 2.5 stable 3d AND conversions_7d >= 30"
+          action: "budget * 1.20"
+          cadence: daily
+        - id: S2
+          condition: "roas > 4.0 stable 5d AND conversions_7d >= 50"
+          action: "budget * 1.50"
+          requires_approval: midas
+        - id: S3
+          condition: "roas > 3.0 AND frequency < 2"
+          action: duplicate_lal
+          dispatch: "@ralph-burns"
+
+  - id: phase-4
+    name: Budget Reallocation
+    owner: dash
+    cadence: daily
+    tasks:
+      - agent: dash
+        command: "*budget"
+        task_file: tasks/optimization/budget-allocation.md
+    validations:
+      - "daily_floor_per_adset >= 50"
+      - "hydra_max_per_channel <= 0.6"
+      - "spending_limit == 2 * daily_budget"
+      - "vertical_scale <= 0.2 without_midas"
+
+  - id: phase-5
+    name: Ongoing Monitoring
+    owner: midas
+    cadence: 1h/6h/24h
+    tasks:
+      - agent: midas
+        command: "*monitor"
+        task_file: tasks/automation/campaign-monitor.md
+        cadences:
+          - 1h: [kill_rules, tracking_alerts]
+          - 6h: [budget_pacing, emq_health]
+          - 24h: [scale_rules, fatigue_check]
+
+handoffs:
+  - trigger: "multiple_s1_sustained"
+    to: playbook-scale
+  - trigger: "emq < 5 for 48h"
+    to: tracking-recovery
+  - trigger: "fatigue >= 3 creatives"
+    to: creative-refresh-sprint
+
+success_criteria:
+  - "roas_stable_or_growing"
+  - "fatigue_rate < 0.20"
+  - "tracking_emq >= 7"

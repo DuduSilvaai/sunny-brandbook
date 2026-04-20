@@ -1,0 +1,147 @@
+name: webinar-setup
+version: 1.0.0
+description: Pipeline completa para estruturar e lançar um webinar funnel
+orchestrator: "@russell-brunson"
+estimated_duration: "3-5 semanas"
+
+phases:
+  - id: phase-0
+    name: Business Discovery & Funil Validation
+    agent: "@russell-brunson"
+    commands:
+      - "*business-discovery"
+      - "*funnel-selector"
+    task: tasks/strategic/funnel-selector.md
+    depends_on: []
+    outputs:
+      - business-context.md
+    gate:
+      required: true
+      criteria: "ticket entre R$500-R$2.000 confirmado + webinar validado como tipo correto"
+
+  - id: phase-1
+    name: Big Domino & Belief Map
+    agent: "@russell-brunson"
+    command: "*belief-audit"
+    task: tasks/diagnostic/belief-audit.md
+    depends_on: phase-0
+    outputs:
+      - big-domino.md
+      - belief-map.md
+    gate:
+      required: true
+      criteria: "Big Domino formulado + 3 crenças falsas mapeadas com sequencia de quebra definida"
+
+  - id: phase-2
+    name: Perfect Webinar Script — 17 Steps
+    agent: "@russell-brunson"
+    commands:
+      - "*epiphany-bridge-story"
+      - "*perfect-webinar-builder"
+    task_refs:
+      - tasks/generative/epiphany-bridge-story.md
+      - tasks/generative/perfect-webinar-builder.md
+    depends_on: phase-1
+    outputs:
+      - webinar-script.md
+    gate:
+      required: true
+      criteria: "17 steps preenchidos + duracao estimada 75-90 min + CTA unico no Step 17"
+
+  - id: phase-3
+    name: Stack Slide — Offer Architecture
+    agent: "@russell-brunson"
+    command: "*offer-stack"
+    task: tasks/generative/offer-stack-builder.md
+    depends_on: phase-1
+    outputs:
+      - offer-stack.md
+    gate:
+      required: true
+      checklist: checklists/offer-gate.md
+
+  - id: phase-4
+    name: Belief Coverage Verification
+    agent: "@russell-brunson"
+    command: "*belief-audit"
+    task: tasks/diagnostic/belief-audit.md
+    depends_on:
+      - phase-2
+      - phase-3
+    outputs:
+      - belief-coverage-report.md
+    gate:
+      required: true
+      criteria: "3/3 crenças cobertas no script + objecoes cobertas por bonus do Stack"
+
+  - id: phase-5
+    name: Email Sequence
+    agent: "@russell-brunson"
+    command: "*email-sequence"
+    depends_on: phase-2
+    outputs:
+      - email-sequence.md
+    gate:
+      required: true
+      criteria: "minimo 6 emails criados + confirmacao de registro testada + SPF/DKIM configurados"
+
+  - id: phase-6
+    name: Traffic Strategy
+    agent: "@russell-brunson"
+    commands:
+      - "*dream-100"
+      - "*traffic-temp"
+    task_refs:
+      - tasks/strategic/dream-customer-avatar.md
+    depends_on: phase-0
+    outputs:
+      - traffic-plan.md
+    gate:
+      required: true
+      criteria: "2+ canais configurados + pagina de registro testada + meta 200 registros planejada"
+
+  - id: phase-7
+    name: Pre-Launch Gate
+    agent: "@russell-brunson"
+    checklist: checklists/pre-launch-gate.md
+    depends_on:
+      - phase-4
+      - phase-5
+      - phase-6
+    gate:
+      required: true
+      criteria: "100% checklist aprovado + dry run do webinar realizado"
+
+  - id: phase-8
+    name: Launch & Monitor
+    agent: "@russell-brunson"
+    command: "*monitor-webinar"
+    task: tasks/diagnostic/funnel-audit.md
+    depends_on: phase-7
+    outputs:
+      - launch-report.md
+    gate:
+      required: false
+      criteria: "metricas dentro dos thresholds apos primeiro webinar ao vivo"
+
+thresholds:
+  registration:
+    opt_in_cold: ">= 25%"
+    opt_in_warm: ">= 40%"
+  show_up:
+    cold: ">= 20%"
+    warm: ">= 35%"
+  close:
+    live_cold: ">= 5%"
+    live_warm: ">= 10%"
+    replay_cold: ">= 2%"
+    replay_warm: ">= 5%"
+  kill:
+    show_up: "< 10% apos 100 registros"
+    close: "< 2% apos 3 webinars ao vivo"
+
+tags:
+  - webinar
+  - perfect-webinar
+  - high-ticket
+  - cold-traffic

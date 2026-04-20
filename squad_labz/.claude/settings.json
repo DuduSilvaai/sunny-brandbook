@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Read(//c/Users/edugu/Downloads/aios-core/.claude/commands/design-system-squad//**)",
+      "Read(//c/Users/edugu/Downloads/aios-core/squads/design-system-squad/agents//**)",
+      "Read(//c/Users/edugu/Downloads/aios-core/.claude/commands//**)",
+      "Read(//c/Users/edugu/Downloads/aios-core/squads/**)",
+      "Bash(mv C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/traffic-masters-chief.md C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/traffic-masters-chief.md.deprecated)",
+      "Bash(mkdir -p C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/commands/traffic-masters)",
+      "Bash(cp -r C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/squads/traffic-masters C:/Users/edugu/Downloads/aios-core/squads/)",
+      "Bash(cp C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/midas.md C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/dash.md C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/nova.md C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents/track.md C:/Users/edugu/Downloads/aios-core/.claude/agents/)",
+      "Bash(cp -r C:/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/commands/traffic-masters C:/Users/edugu/Downloads/aios-core/.claude/commands/)",
+      "Bash(mv C:/Users/edugu/Downloads/aios-core/.claude/agents/traffic-masters-chief.md C:/Users/edugu/Downloads/aios-core/.claude/agents/traffic-masters-chief.md.deprecated)",
+      "Bash(cp 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss/squads/traffic-masters/data/frameworks-jeremy-haynes.md' 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core/squads/traffic-masters/data/frameworks-jeremy-haynes.md')",
+      "Bash(cp 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss/squads/traffic-masters/data/frameworks-brian-moncada.md' 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core/squads/traffic-masters/data/frameworks-brian-moncada.md')",
+      "Bash(cp 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss/squads/traffic-masters/data/frameworks-alex-hormozi.md' 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core/squads/traffic-masters/data/frameworks-alex-hormozi.md')",
+      "Bash(cp 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss/squads/traffic-masters/data/frameworks-brandon-carter.md' 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core/squads/traffic-masters/data/frameworks-brandon-carter.md')",
+      "Bash(cp 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss/squads/traffic-masters/data/frameworks-jordan-stupar.md' 'C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core/squads/traffic-masters/data/frameworks-jordan-stupar.md')",
+      "Bash(grep -n \"^\\\\*\\\\*\\\\|^##\\\\|^###\\\\|^| \\\\`\\\\*\" \"C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss\\\\squads\\\\alex-hormozi\\\\agents\\\\alex-hormozi.md\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claire\\\\worktrees\\\\reverent-gauss\\\\squads/alex-hormozi/workflows\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\edugu\\\\Downloads\\\\aios-core\\\\.claude\\\\worktrees\\\\reverent-gauss\\\\.claude/commands/alex-hormozi\")",
+      "Bash(git -C /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss status --short)",
+      "Bash(git -C /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss log --oneline -5)",
+      "Bash(xargs echo *)",
+      "Bash(mkdir -p /c/Users/edugu/aios-agents-hub/.claude)",
+      "Bash(cp -r /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/agents /c/Users/edugu/aios-agents-hub/.claude/agents)",
+      "Bash(cp -r /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/commands /c/Users/edugu/aios-agents-hub/.claude/commands)",
+      "Bash(cp -r /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/skills /c/Users/edugu/aios-agents-hub/.claude/skills)",
+      "Bash(cp -r /c/Users/edugu/Downloads/aios-core/.claude/worktrees/reverent-gauss/.claude/hooks /c/Users/edugu/aios-agents-hub/.claude/hooks)"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+name: russell-brunson
+version: 1.0.0
+description: Russell Brunson Squad — 10 agentes especializados em funnels, copywriting e marketing digital. Arquitetura em 3 tiers baseada nos livros DotCom Secrets, Expert Secrets, Traffic Secrets, Challenge Secrets, Network Marketing Secrets e Linchpin.
+slashPrefix: rb
+author: AIOS Team
+created: 2026-04-18
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+  framework: funnel-first
+  philosophy: Hook-Story-Offer > Value Ladder > Traffic
+
+components:
+  agents:
+    orchestrator:
+      - rb-commander.md
+
+    tier-1-domain:
+      - dotcom.md
+      - expert.md
+      - traffic.md
+
+    tier-2-specialist:
+      - perfect-webinar.md
+      - epiphany-bridge.md
+      - offer-stack.md
+      - dream-100.md
+      - challenge-funnel.md
+      - network-mkt.md
+
+  skills:
+    strategic:
+      - funnel-selector
+      - value-ladder-designer
+      - dream-customer-avatar
+      - market-positioning
+    generative:
+      - perfect-webinar-builder
+      - epiphany-bridge-story
+      - offer-stack-builder
+      - hook-story-offer-generator
+      - headline-generator
+      - email-sequence-builder
+    diagnostic:
+      - funnel-audit
+      - belief-audit
+      - dream-100-research
+    optimization:
+      - funnel-hacking
+      - offer-optimizer
+      - conversion-diagnosis
+
+  workflows:
+    - new-funnel-launch.yaml
+    - webinar-setup.yaml
+
+thresholds:
+  squeeze_page_optin:
+    kill: "< 25%"
+    ok: "25-40%"
+    scale: "> 40%"
+  webinar_close_rate:
+    kill: "< 5%"
+    ok: "5-10%"
+    scale: "> 10%"
+  challenge_conversion:
+    kill: "< 5%"
+    ok: "5-15%"
+    scale: "> 15%"
+
+knowledge_base:
+  location: squads/russell-brunson/data/
+  chunks:
+    - chunk-01-dotcom-secrets.md
+    - chunk-02-expert-secrets.md
+    - chunk-03-traffic-secrets.md
+    - chunk-04-perfect-webinar-script.md
+    - chunk-05-epiphany-bridge-scripts.md
+    - chunk-06-challenge-secrets.md
+    - chunk-07-network-marketing.md
+    - chunk-08-linchpin.md
+    - chunk-09-thresholds.md
+    - chunk-10-vocabulary.md
+
+dna_source:
+  location: squads/mmos-squad/minds/russell_brunson/
+  artifacts: artifacts/
+  system_prompts: system_prompts/

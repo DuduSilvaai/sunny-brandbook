@@ -1,0 +1,157 @@
+manifest:
+  mind: russell_brunson
+  version: "1.0"
+  created: "2026-04-18"
+  total_chunks: 10
+  total_lines: 5196
+  description: >
+    Knowledge Base completa do mind clone de Russell Brunson — fundador do ClickFunnels,
+    autor de DotCom Secrets, Expert Secrets, Traffic Secrets, Network Marketing Secrets e Linchpin.
+    10 chunks cobrindo funis, storytelling, tráfego, webinars, challenges, network marketing,
+    afiliados, thresholds operacionais e vocabulário.
+
+chunks:
+  - id: "chunk-01"
+    file: "chunk-01-dotcom-secrets.md"
+    book: "DotCom Secrets"
+    topic: "Funnel architecture + Value Ladder + Sales funnels"
+    frameworks: 20
+    lines: 1006
+    status: "complete"
+    description: >
+      20 frameworks-core de funis: Value Ladder, Attractive Character, Perfect Funnel,
+      Funnel Stacking, Hook-Story-Offer, e as 7 phases de funnels.
+
+  - id: "chunk-02"
+    file: "chunk-02-expert-secrets.md"
+    book: "Expert Secrets"
+    topic: "Expert positioning + Epiphany Bridge + Movement building"
+    frameworks: 18
+    lines: 864
+    status: "complete"
+    description: >
+      18 frameworks de autoridade: criação de Movement, One Thing, Attractive Character 2.0,
+      Epiphany Bridge e Big Domino. Base para posicionar um expert.
+
+  - id: "chunk-03"
+    file: "chunk-03-traffic-secrets.md"
+    book: "Traffic Secrets"
+    topic: "Dream 100 + Traffic Channels + Follow-up Funnels"
+    frameworks: 15
+    lines: 729
+    status: "complete"
+    description: >
+      15 frameworks de tráfego: Dream 100, Working In vs Working Of Dream 100,
+      Hook Story Offer para ads, Follow-up Funnels (SOS, Seinfeld).
+
+  - id: "chunk-04"
+    file: "chunk-04-perfect-webinar-script.md"
+    book: "Expert Secrets (Script Core)"
+    topic: "Perfect Webinar Script — 90 min structure + Stack Close"
+    frameworks: 8
+    lines: 415
+    status: "complete"
+    description: >
+      Script completo do Perfect Webinar de 90 minutos: Intro, Origin Story,
+      3 Secrets (vehicle/internal/external), Stack, Close, Q&A. Inclui timings e transitions.
+
+  - id: "chunk-05"
+    file: "chunk-05-epiphany-bridge-scripts.md"
+    book: "Expert Secrets (Story frameworks)"
+    topic: "Epiphany Bridge Scripts — 7 templates"
+    frameworks: 7
+    lines: 450
+    status: "complete"
+    description: >
+      7 templates de Epiphany Bridge Story (origin, vehicle, internal belief, external belief,
+      ad curto, email SOS Day 1), estrutura 6-beat (Backstory/Wall/Epiphany/Result/Bridge/CTA),
+      com exemplos preenchidos e thresholds de performance.
+
+  - id: "chunk-06"
+    file: "chunk-06-challenge-secrets.md"
+    book: "Challenge Secrets (Pedro Adão + RB)"
+    topic: "Challenge Funnels — 5-day + 30-day + Hack Close"
+    frameworks: 8
+    lines: 497
+    status: "complete"
+    description: >
+      8 frameworks de Challenge: arquitetura de funil, outline 5-day, outline 30-day,
+      Daily Live Formula, Hack Close transition, Community Mechanics,
+      Pricing Psychology e Post-Challenge Continuity.
+
+  - id: "chunk-07"
+    file: "chunk-07-network-marketing.md"
+    book: "Network Marketing Secrets"
+    topic: "3 Lost Funnels + Bridge Page + Warm Market Scripts"
+    frameworks: 5
+    lines: 384
+    status: "complete"
+    description: >
+      5 frameworks de MLM digital: Home Party Funnel, Hotel Meeting Funnel,
+      Three-Way Call Funnel, Bridge Page, Viral Loop Mechanics, Two-List Technique.
+      Scripts de mercado quente + compliance ética.
+
+  - id: "chunk-08"
+    file: "chunk-08-linchpin.md"
+    book: "Linchpin (RB + Dana Derrick)"
+    topic: "Super Affiliate Model + 2-Tier Commission + JV programs"
+    frameworks: 6
+    lines: 461
+    status: "complete"
+    description: >
+      6 frameworks do Linchpin: modelo multi-camada, Two-Tier Commission Structure,
+      Dream 100 for Affiliates, List Building as Affiliate, Attractive Character
+      para afiliados, Certified Partner / JV Program mechanics (Two-Comma Club case).
+
+  - id: "chunk-09"
+    file: "chunk-09-thresholds.md"
+    book: "Operational Metadata"
+    topic: "Thresholds consolidados — kill/OK/scale para todas as métricas"
+    frameworks: 0
+    lines: 162
+    status: "complete"
+    description: >
+      Tabela consolidada de thresholds operacionais cross-chunk.
+      Métricas de funil, webinar, challenge, ads, email, affiliate — todos os kill/OK/scale bands.
+
+  - id: "chunk-10"
+    file: "chunk-10-vocabulary.md"
+    book: "Lexicon"
+    topic: "Vocabulário e jargão Russell Brunson"
+    frameworks: 0
+    lines: 228
+    status: "complete"
+    description: >
+      Glossário do vocabulário Russell: termos-chave, acrônimos, jargões internos
+      (Two-Comma Club, Funnel Hacking, Stack, Hook-Story-Offer, Attractive Character, etc).
+
+quality_gates:
+  all_chunks_have_examples: true
+  all_chunks_have_thresholds: true
+  all_chunks_have_antipatterns: true
+  all_chunks_have_algorithms: true
+  minimum_lines_per_chunk_met: true
+
+coverage:
+  books_covered:
+    - "DotCom Secrets (2015)"
+    - "Expert Secrets (2017)"
+    - "Network Marketing Secrets (2018)"
+    - "Traffic Secrets (2020)"
+    - "Linchpin (with Dana Derrick)"
+    - "Challenge Secrets (with Pedro Adão)"
+  topics_covered:
+    - Funnels (all types)
+    - Storytelling (Epiphany Bridge + variations)
+    - Traffic acquisition (Dream 100)
+    - Webinar scripts (Perfect Webinar)
+    - Challenges (5-day, 30-day)
+    - Network marketing
+    - Affiliate / Linchpin model
+    - Operational thresholds
+    - Vocabulary / lexicon
+
+next_steps:
+  - "Vector embedding of all chunks for semantic retrieval"
+  - "Sync with mind clone runtime context"
+  - "Monthly review: update thresholds based on 2026 market data"

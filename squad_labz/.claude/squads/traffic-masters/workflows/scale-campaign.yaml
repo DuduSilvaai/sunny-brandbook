@@ -1,0 +1,165 @@
+name: scale-campaign
+description: Workflow para escalar campanhas vencedoras 2x-5x-10x
+version: 1.0.0
+owner: midas
+duration_estimate_days: 14-30
+
+phases:
+  - id: phase-1
+    name: Scale Readiness Check
+    owner: dash
+    duration_days: 0.5
+    tasks:
+      - agent: dash
+        command: "*scale-check"
+        task_file: tasks/strategic/scale-readiness-check.md
+        required: true
+      - agent: track
+        command: "*audit"
+        task_file: tasks/diagnostic/tracking-audit.md
+      - agent: dash
+        command: "*unit-economics"
+        task_file: tasks/strategic/unit-economics.md
+    gate:
+      type: readiness
+      all_must_pass: true
+      conditions:
+        - "roas > 2.5 for 7_days"
+        - "conversions_7d >= 30"
+        - "frequency < 2.5"
+        - "emq >= 7 AND capi_operational"
+        - "cac_current < cac_max AND payback < target"
+    on_fail:
+      action: fallback
+      to: playbook-optimization
+
+  - id: phase-2
+    name: Scale Strategy Selection
+    owner: midas
+    duration_days: 0.5
+    tasks:
+      - agent: midas
+        command: "*scale-strategy"
+      - agent: dash
+        command: "*audience-expansion"
+        task_file: tasks/optimization/audience-expansion.md
+        when: "strategy == horizontal OR combo"
+    strategy_decision:
+      vertical:
+        when: "frequency < 2.5 AND audience_runway > 0.3"
+        method: "+20%/day OR +50% with midas"
+      horizontal:
+        when: "frequency > 3.0 OR diversification_goal"
+        method: "andromeda - LAL ladder -> Interest -> Broad"
+      combo:
+        recommended_for: "scale > 2x"
+        ratio: "50% vertical / 50% horizontal"
+    gate:
+      type: constraint
+      conditions:
+        - "hydra_max_per_channel <= 0.6"
+
+  - id: phase-3
+    name: Creative Pipeline Reinforcement
+    owner: nova
+    duration_days: 2-3
+    precedes_scale: true
+    tasks:
+      - agent: nova
+        command: "*hooks"
+        task_file: tasks/generative/hook-generator.md
+        min_output: 10
+      - agent: nova
+        command: "*angles"
+        task_file: tasks/generative/angle-generator.md
+        min_output: 3
+      - agent: nova
+        command: "*brief"
+        task_file: tasks/generative/brief-creator.md
+        include_ugc: true
+      - agent: nova
+        command: "*pipeline"
+        roadmap_weeks: 4
+    gate:
+      type: output
+      conditions:
+        - "new_creatives_ready >= 5"
+        - "ugc_variants >= 3"
+        - "pipeline_4w_defined == true"
+    reason: "Brandon Carter #3 - scale sem pipeline = fadiga acelerada"
+
+  - id: phase-4
+    name: Controlled Scale Execution
+    owner: dash
+    duration_days: 7-14
+    tasks:
+      - agent: dash
+        command: "*budget"
+        task_file: tasks/optimization/budget-allocation.md
+        scenario: vertical-scale
+      - agent: dash
+        command: "*kill-scale"
+        task_file: tasks/optimization/kill-scale-rules.md
+      - agent: midas
+        command: "*approve"
+        when: "scale_pct > 0.50"
+    schedule:
+      days_1_3:
+        action: "+20%/day on winners (S1 cap)"
+        monitor: [roas, cpa, frequency, cpm]
+      days_4_7:
+        action: "+20%/day if stable"
+        monitor: [cpm_rising, frequency_gt_3]
+      days_8_14:
+        action: "open horizontal audiences - LAL ladder"
+        sequence: [LAL2, LAL3, LAL5]
+      week_2_plus:
+        action: "S2 +50% if roas > 4.0 for 5d"
+        requires_approval: midas
+    daily_validations:
+      - "daily_floor_per_adset >= 50"
+      - "hydra_max_per_channel <= 0.6"
+      - "spending_limit == 2 * daily_budget"
+      - "attribution_drift < 0.10"
+    gate:
+      type: continuous
+      monitor: campaign-monitor
+      kill_switch: midas
+
+  - id: phase-5
+    name: Platform Depth (optional)
+    owner: midas
+    duration_days: variable
+    triggered_when: "platform_saturation_reached"
+    dispatch_map:
+      meta_saturated:
+        - "@ralph-burns (Creative Lab + DPI²)"
+        - "@depesh-mandalia (Meta ecommerce BPM)"
+      add_google:
+        - "@kasim-aslam (Golden Ratio)"
+      add_youtube:
+        - "@tom-breeze (ADUCATE)"
+      brazil_market:
+        - "@pedro-sobral (Metodologia ABC)"
+      lead_gen:
+        - "@nicholas-kusmich (4-Step Framework)"
+      customer_journey:
+        - "@molly-pittman (Traffic Engine)"
+
+anti_patterns:
+  - "scale_without_creative_pipeline"
+  - "scale_gt_20pct_without_midas"
+  - "ignore_rising_frequency"
+  - "change_multiple_variables (violates Constants vs Variables)"
+  - "scale_during_learning_phase"
+  - "scale_without_true_roas"
+  - "violate_daily_floor"
+  - "over_60pct_single_channel (Hydra)"
+
+success_criteria:
+  - "budget_2_to_5x_sustained_30d"
+  - "roas_within_20pct_of_initial"
+  - "frequency_avg <= 3.0"
+  - "fatigue_rate < 0.25"
+  - "tracking_emq >= 7"
+  - "cac_real <= cac_max"

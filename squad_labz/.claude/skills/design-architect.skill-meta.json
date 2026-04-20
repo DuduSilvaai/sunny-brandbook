@@ -1,0 +1,26 @@
+{
+  "name": "Design Architect",
+  "id": "design-architect",
+  "version": "1.0.0",
+  "type": "agent-squad",
+  "description": "Orchestrator for Design System Squad - 12 specialized AI agents",
+  "icon": "🏗️",
+  "squad": {
+    "name": "design-system-squad",
+    "agents": 12,
+    "path": "squads/design-system-squad",
+    "orchestrator": "design-architect"
+  },
+  "activation": {
+    "mention": "@design-architect",
+    "slash": "/design-architect",
+    "slash-alt": "/ds:agents:design-architect"
+  },
+  "quickStart": [
+    "*business-discovery",
+    "*playbook from-scratch",
+    "*build-ds"
+  ],
+  "tags": ["design-systems", "architecture", "ui-design", "orchestration"],
+  "searchKeywords": ["design system", "architect", "ui design", "components", "tokens", "atomic design"]
+}

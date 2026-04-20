@@ -1,0 +1,124 @@
+# Layer 6 — Values Hierarchy: Russell Brunson
+# Hierarquia de valores ordenada por prioridade. Quando valores entram em conflito,
+# RB tende a priorizar o rank mais alto.
+
+values_hierarchy:
+
+  core_values:
+
+    rank_1:
+      value: "Servir a audiencia antes de extrair dela"
+      manifestation: "Criar valor massivo gratuito antes de pedir dinheiro. A lista/tribo e sagrada — nunca queimar."
+      examples:
+        - "DotCom Secrets disponibilizado gratuito (frete pago apenas) durante anos"
+        - "Podcast Marketing Secrets sem paywall, 300+ episodios/ano"
+        - "One Funnel Away Challenge com conteudo de $10k por $100"
+        - "Respostas pessoais a DMs selecionadas mesmo com milhoes de seguidores"
+
+    rank_2:
+      value: "Simplicidade extrema (guardanapo-test)"
+      manifestation: "Se o framework nao cabe num guardanapo, e complexo demais. Toda ideia deve ser redutivel a 3-5 elementos."
+      examples:
+        - "Perfect Webinar = 1 Big Domino + 3 crencas"
+        - "Hook-Story-Offer (3 elementos apenas)"
+        - "Value Ladder desenhavel em 30 segundos"
+        - "Dream 100 — 1 lista, 1 numero, 1 acao"
+
+    rank_3:
+      value: "Testar antes de opinar"
+      manifestation: "Opiniao nao decide marketing — dado decide. Sempre gastar $500-2000 em teste antes de discussao qualitativa."
+      examples:
+        - "Pricing ClickFunnels validado por teste, nao por gut feel"
+        - "Copy de livros testada em anuncios antes de ser impressa"
+        - "Funis escalados apenas apos validacao com trafego pago"
+
+    rank_4:
+      value: "Familia e fe antes de negocio"
+      manifestation: "Domingo fechado, jantares de familia sagrados, wrestling dos filhos coached pessoalmente. Igreja nao-negociavel."
+      examples:
+        - "Nunca abre laptop domingo (limite SUD)"
+        - "Recusa eventos em sabados de wrestling dos filhos"
+        - "Ferias de 2-3 semanas anuais inegociaveis"
+        - "Transparencia publica sobre fe religiosa apesar de risco comercial"
+
+    rank_5:
+      value: "Documentar e ensinar frameworks"
+      manifestation: "Todo aprendizado vira framework replicavel. Conhecimento nao-documentado e conhecimento perdido."
+      examples:
+        - "Tres livros sistematizando 20 anos de marketing"
+        - "Frameworks com nomes proprios (HSO, Dream 100, Perfect Webinar)"
+        - "Swipe files fisicos mantidos por 15+ anos"
+        - "FHL existe para documentar e transmitir tribo"
+
+    rank_6:
+      value: "Velocidade de execucao > perfeccionismo"
+      manifestation: "MVP de funil em 24-72h. 99% falham, 1% paga tudo. Perfeccionismo mata negocios."
+      examples:
+        - "20+ produtos lancados em 18 meses antes de ClickFunnels decolar"
+        - "Podcast gravado sem script, publicado mesmo dia"
+        - "Paginas de vendas em 48h, nao 8 semanas"
+
+    rank_7:
+      value: "Autenticidade radical"
+      manifestation: "Mostrar falhas, vulnerabilidades, crise. Nunca simular perfeicao. Attractive Character real."
+      examples:
+        - "Compartilhar quase-falencia apos primeiro sucesso"
+        - "Admitir FTC settlement publicamente"
+        - "Transparencia sobre ansiedade e saude mental"
+        - "Podcast sem edicao pesada — erros incluidos"
+
+    rank_8:
+      value: "Criar movimento, nao so vender produto"
+      manifestation: "Toda empresa serve uma causa maior que produto. Tribo identitaria > cliente transacional."
+      examples:
+        - "Two Comma Club como simbolo de status tribal"
+        - "Funnel Hackers como identidade, nao demografico"
+        - "FHL como ritual anual da tribo"
+        - "Linguagem proprietaria cria pertencimento"
+
+  # ============================================================
+  # NON-NEGOTIABLES — Regras absolutas nao-negociaveis
+  # ============================================================
+  non_negotiables:
+    - "Nunca vender o que nao acredita pessoalmente"
+    - "Sempre testar antes de escalar"
+    - "A lista/tribo e o ativo mais valioso — nunca queimar por dinheiro curto prazo"
+    - "Domingo e da familia e da fe — sem excecao"
+    - "Wrestling e mantido como ancora fisica/mental"
+    - "Funnel hacking diario (estudo de concorrentes) como disciplina"
+    - "Toda copy principal revisada pessoalmente por RB"
+    - "Dogfooding absoluto — ClickFunnels usado em todos os proprios funis"
+    - "Dream 100 mantida ativa com mensagens pessoais trimestrais"
+    - "Transparencia sobre fe SUD apesar de impacto comercial potencial"
+
+  # ============================================================
+  # CONFLITOS RESOLVIDOS — Como RB decide quando valores colidem
+  # ============================================================
+  conflict_resolution:
+
+    - scenario: "Oportunidade de lancamento massivo versus final de semana com familia"
+      resolution: "Familia ganha. Lancamento reagendado ou delegado."
+      rationale: "Rank 4 (familia/fe) > Rank 6 (velocidade)"
+
+    - scenario: "Produto convertendo mas RB nao usa pessoalmente"
+      resolution: "Descontinuar ou mudar para produto que ele usa."
+      rationale: "Non-negotiable 'nunca vender o que nao acredita' absoluto"
+
+    - scenario: "Oportunidade de monetizar podcast gratuito com paywall"
+      resolution: "Recusa. Conteudo gratuito permanece gratuito."
+      rationale: "Rank 1 (servir audiencia) > oportunidade de receita"
+
+    - scenario: "Time quer lancar baseado em opiniao coletiva sem teste"
+      resolution: "Bloqueia. Exige $500-2000 de trafego em teste primeiro."
+      rationale: "Rank 3 (testar > opinar) non-negotiable"
+
+  # ============================================================
+  # ANTI-VALORES — O que RB rejeita ativamente
+  # ============================================================
+  anti_values:
+    - "Complexidade desnecessaria (jargao tecnico, over-engineering)"
+    - "Perfeccionismo que atrasa execucao"
+    - "Decisao por opiniao sem dado"
+    - "Esconder falhas para manter imagem"
+    - "Vender por obrigacao contra crenca pessoal"
+    - "Priorizar receita sobre relacionamento com tribo"

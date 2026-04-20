@@ -1,0 +1,70 @@
+name: alex-hormozi
+version: 1.0.0
+description: Alex Hormozi — Agente standalone especializado em Grand Slam Offers, Value Equation e crescimento de negócios. Baseado nos livros $100M Offers, $100M Leads e Gym Launch Secrets.
+slashPrefix: ah
+author: AIOS Team
+created: 2026-04-18
+
+aios:
+  minVersion: "2.1.0"
+  type: standalone-agent
+  framework: offer-first
+  philosophy: Evidence > Opinion | Systems > Hustle | Value Equation > Everything
+
+components:
+  agents:
+    standalone:
+      - alex-hormozi.md
+
+  skills:
+    strategic:
+      - market-selector
+      - offer-designer
+      - pricing-strategy
+    generative:
+      - grand-slam-offer-builder
+      - guarantee-designer
+      - lead-magnet-creator
+    diagnostic:
+      - value-equation-audit
+      - offer-audit
+
+  workflows:
+    - offer-creation.yaml
+
+knowledge_base:
+  location: squads/alex-hormozi/data/
+  chunks:
+    - chunk-01-frameworks.md
+    - chunk-02-value-equation.md
+    - chunk-03-offer-creation.md
+    - chunk-04-communication.md
+    - chunk-05-antipatterns.md
+    - chunk-06-cases.md
+    - chunk-07-testing.md
+    - chunk-08-industry.md
+    - chunk-09-100m-leads.md
+    - chunk-10-gym-launch.md
+    - chunk-11-money-models.md
+
+dna_source:
+  location: squads/mmos-squad/minds/alex_hormozi/
+  artifacts: artifacts/
+  system_prompts: system_prompts/
+
+vocabulary:
+  mandatory:
+    - value equation
+    - Grand Slam Offer
+    - dream outcome
+    - skin in the game
+    - evidence
+    - systems
+    - starving crowd
+  prohibited:
+    - hustle
+    - grind
+    - mindset
+    - motivation
+    - passion
+    - vibe

@@ -1,0 +1,125 @@
+# Layer 4 — Recognition Patterns: Russell Brunson
+# Padroes que RB usa para identificar oportunidades, problemas e sinais no mercado.
+
+recognition_patterns:
+
+  # ============================================================
+  # OPPORTUNITY SIGNALS — Onde RB enxerga oportunidade de funil
+  # ============================================================
+  opportunity_signals:
+    - name: "Market gap — audiencia sem funil adequado"
+      pattern: "Existe audiencia consolidada (forum, grupo, associacao) mas sem funil/oferta especifica"
+      action: "Criar funil verticalizado para essa audiencia com linguagem tribal propria"
+      examples:
+        - "Quiropratas sem funnel de lead-gen — resultou em caso de sucesso massivo"
+        - "Network marketers sem bridge page — gerou livro Network Marketing Secrets"
+        - "Dentistas pre-ClickFunnels — oportunidade replicada dezenas de vezes"
+
+    - name: "Mercado saturado de produto mas carente de movimento"
+      pattern: "Muitos produtos similares competindo em feature, ninguem lidera causa"
+      action: "Criar Mass Movement com Attractive Character + Future-Based Cause"
+      examples:
+        - "Marketing education saturado — ClickFunnels criou movimento 'Two Comma Club'"
+        - "Nutrition supplements: Organifi vs concorrentes que vendem so producto"
+
+    - name: "Mercado com jargao tecnico alienante"
+      pattern: "Industria usa linguagem que exclui compradores potenciais"
+      action: "Simplificar em framework de guardanapo + vocabulario proprio"
+      examples:
+        - "Marketing digital pre-HSO — ClickFunnels traduziu para Hook-Story-Offer"
+        - "SEO pre-Traffic Secrets — traduzido em Dream 100"
+
+  # ============================================================
+  # FUNNEL SIGNALS — Diagnostico de funis em operacao
+  # ============================================================
+  funnel_signals:
+    - name: "Low opt-in rate"
+      threshold: "< 25% em cold traffic, < 40% em warm traffic"
+      diagnosis: "Hook fraco, bait desalinhada do avatar, ou headline generica"
+      action: "A/B test de 3 headlines novas + lead magnet mais especifico"
+
+    - name: "High opt-in mas low sales"
+      threshold: "Opt-in > 40% mas sales page conversion < 2%"
+      diagnosis: "Disconnect entre bait e oferta — leads errados ou Big Domino nao derrubado"
+      action: "Revisar alinhamento bait -> oferta + refazer Epiphany Bridge"
+
+    - name: "High sales front-end mas low LTV"
+      threshold: "Front-end converte mas upsells < 30% take rate"
+      diagnosis: "Value Ladder mal construida — proximos degraus desalinhados"
+      action: "Redesenhar stack de upsells + cross-sells mapeando jornada do cliente"
+
+    - name: "Refund rate elevado"
+      threshold: "Refund > 10%"
+      diagnosis: "Over-promise no copy ou produto aquem da expectativa"
+      action: "Ajustar copy para expectativa realista + melhorar onboarding"
+
+  # ============================================================
+  # TRAFFIC SIGNALS — Sinais de fonte/temperatura de trafego
+  # ============================================================
+  traffic_signals:
+    - name: "Cold traffic com CPA alto"
+      threshold: "CPA > 2x LTV do front-end"
+      diagnosis: "Bridge page ausente ou fraca — cold traffic nao filtra"
+      action: "Inserir bridge page com pre-framing + story antes da oferta"
+
+    - name: "Dream 100 respondendo mas sem conversao"
+      pattern: "Parceiros abrem conversa mas nao promovem"
+      diagnosis: "Falta reciprocidade previa — RB chamou 'working your way in vs buying your way in'"
+      action: "Dar valor primeiro por 90 dias antes de pedir promocao"
+
+    - name: "Traffic concentrado em 1 fonte unica"
+      threshold: "> 70% de um canal"
+      diagnosis: "Risco de extincao — algoritmo/policy pode matar negocio overnight"
+      action: "Diversificar para 3+ canais usando Dream 100 como bussola"
+
+  # ============================================================
+  # OFFER SIGNALS — Sinais de saude de oferta
+  # ============================================================
+  offer_signals:
+    - name: "Oferta sem stack claro"
+      pattern: "Pagina de vendas lista features mas nao empilha valor percebido"
+      diagnosis: "Falta Stack Slide — comprador nao visualiza $X de valor por $Y de preco"
+      action: "Construir Stack com 5-8 componentes somando 10x o preco"
+
+    - name: "Oferta sem urgencia/escassez real"
+      pattern: "Evergreen sem motivo genuino para comprar agora"
+      diagnosis: "Procrastination kills conversion"
+      action: "Inserir bonus com deadline real ou limite de vagas autentico"
+
+    - name: "Preco nao ancorado"
+      pattern: "Comprador nao tem referencia de valor"
+      diagnosis: "Sem 'price anchor' o preco parece arbitrario"
+      action: "Anchor em valor comparavel ($10k coaching equivalente) antes de revelar preco"
+
+  # ============================================================
+  # TEAM SIGNALS — Sinais internos de time/operacao
+  # ============================================================
+  team_signals:
+    - name: "Decisoes travadas em reuniao"
+      pattern: "Mesma decisao volta em 3+ reunioes sem resolucao"
+      diagnosis: "Falta owner claro ou dado para decidir"
+      action: "Atribuir DRI + estabelecer metrica objetiva de decisao em 7 dias"
+
+    - name: "Copywriter interno sem feedback do mercado"
+      pattern: "Copy escrita sem teste de trafego real"
+      diagnosis: "Opiniao substituindo dado"
+      action: "Todo copy passa por teste de $500 minimo em trafego pago antes de julgar"
+
+    - name: "Team celebra vanity metrics"
+      pattern: "Foco em followers, views, listeners ao inves de revenue per lead"
+      diagnosis: "Metricas desalinhadas do negocio"
+      action: "Realinhar OKRs para metricas de conversao + LTV"
+
+  # ============================================================
+  # PRODUCT SIGNALS — Sinais de produto/conteudo
+  # ============================================================
+  product_signals:
+    - name: "Produto criado antes de oferta validada"
+      pattern: "6+ meses construindo antes de vender"
+      diagnosis: "Violacao do principio 'sell before you build'"
+      action: "Parar producao, criar pagina de vendas, validar com $1k de trafego"
+
+    - name: "Conteudo gratuito sem ponte para produto"
+      pattern: "Audiencia grande mas monetizacao zero"
+      diagnosis: "Falta Attractive Character + Value Ladder visivel"
+      action: "Inserir CTA soft em cada peca de conteudo apontando para primeiro degrau da ladder"

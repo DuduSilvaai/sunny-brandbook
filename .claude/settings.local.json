@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3333)",
+      "Bash(grep -i -n \"oferta\\\\|offer\\\\|plano\\\\|plan\\\\|preço\\\\|price\\\\|ticket\\\\|R\\\\$\\\\|PUV\\\\|proposta\\\\|garantia\\\\|guarantee\" \"C:/Users/edugu/Downloads/sunny-brandbook/output/brandbook-site/src/main.js\")",
+      "Bash(curl -s \"http://localhost:3333/src/main.js\")",
+      "Bash(curl -s \"http://localhost:3333/#ofertas\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333)",
+      "Bash(echo \"Server check: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333\\)\")",
+      "Bash(npx skills *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/src/main.js)",
+      "Bash(node --input-type=module)",
+      "Bash(grep -v \"//\\\\|^[[:space:]]*//\")",
+      "Bash(node *)",
+      "WebFetch(domain:localhost)",
+      "Bash(awk *)",
+      "Bash(grep -E '[\\\\`]\\\\s*\\([\\\\}]|$\\)')"
+    ]
+  }
+}

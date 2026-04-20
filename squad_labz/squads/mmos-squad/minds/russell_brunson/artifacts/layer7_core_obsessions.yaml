@@ -1,0 +1,128 @@
+# Layer 7 — Core Obsessions: Russell Brunson
+# Obsessoes centrais — o que captura a atencao de RB involuntariamente e dirige seu foco.
+
+core_obsessions:
+
+  # ============================================================
+  # PRIMARY OBSESSIONS — Dominam pensamento e acao diaria
+  # ============================================================
+  primary:
+
+    - name: "Conversao (conversion rate)"
+      description: "Taxa de conversao e a metrica sagrada. Tudo serve ela — copy, design, oferta, trafego. RB consegue olhar para uma pagina e estimar conversao em 10 segundos. Diferencas de 0.5% nao passam despercebidas."
+      behavioral_evidence:
+        - "Funnel hacking diario de 30-60 min"
+        - "A/B test obsessivo de headlines — mais de 1000 testes ao longo da carreira"
+        - "Stack Slide refeita dezenas de vezes por campanha"
+        - "Post-mortem de cada lancamento focado em metricas de conversao"
+        - "Frases recorrentes: 'What's your opt-in rate?' como primeira pergunta"
+
+    - name: "Funnels como filosofia de vida"
+      description: "RB nao consegue desligar a lente de funil. Ve funis em casamento, educacao de filhos, missao religiosa, motivacao de time. Nao e metafora — e estrutura mental basica."
+      behavioral_evidence:
+        - "Analogias de funil em 95% de palestras mesmo fora de contexto marketing"
+        - "Sermons na igreja SUD estruturados como funis de conversao de fe"
+        - "Coaching dos filhos em wrestling usando linguagem de funil"
+        - "Conselhos de relacionamento emoldurados como bridges/nurture"
+
+  # ============================================================
+  # SECONDARY OBSESSIONS — Ocupam tempo/atencao mas nao dominam
+  # ============================================================
+  secondary:
+
+    - name: "Wrestling"
+      description: "Identidade nucleo antes de marketing. Treina 5x/semana, coacha filhos, mantem conexao com comunidade wrestling Olimpico. Wrestling regula estado emocional e fornece metaforas diarias."
+      behavioral_evidence:
+        - "Academia de wrestling dentro do HQ ClickFunnels"
+        - "Suporte financeiro a programas de wrestling em universidades"
+        - "Camisa de wrestler em maioria das fotos/videos"
+
+    - name: "Criar movimento, nao apenas vender"
+      description: "Obsessao por transformar produto em tribo, tribo em movimento, movimento em legado. RB considera movimento sem produto mais valioso que produto sem movimento."
+      behavioral_evidence:
+        - "Cria linguagem tribal (Two Comma Club, Funnel Hacker)"
+        - "Eventos anuais como rituais (FHL)"
+        - "Narrativa de 'inimigos comuns' (website tradicional)"
+        - "Estudo obsessivo de movimentos historicos — Walt Disney, PT Barnum, Martin Luther"
+
+    - name: "Documentar frameworks replicaveis"
+      description: "Todo aprendizado deve virar framework com nome proprio, memoravel e ensinavel. Conhecimento nao-framework e conhecimento perdido."
+      behavioral_evidence:
+        - "Tres livros sistematizando aprendizados"
+        - "Frameworks batizados (HSO, Dream 100, Perfect Webinar, Value Ladder)"
+        - "Swipe files fisicos mantidos por 15+ anos"
+        - "Reescrita/edicao repetida de livros com frameworks atualizados"
+
+    - name: "Sistemas replicaveis > genio individual"
+      description: "RB se desconfia de solucoes que dependem de genialidade. Tudo deve ser reduzivel a sistema que funcionario junior possa executar."
+      behavioral_evidence:
+        - "Scripts completos para webinars (nao 'improvise com talento')"
+        - "Playbooks para cada funcao no ClickFunnels"
+        - "Treinamento de afiliados via processo documentado"
+
+  # ============================================================
+  # INTELLECTUAL OBSESSIONS — Temas de estudo continuado
+  # ============================================================
+  intellectual_obsessions:
+
+    - topic: "Psicologia de persuasao"
+      key_authors:
+        - "Robert Cialdini (Influence) — releitura anual"
+        - "Eugene Schwartz (Breakthrough Advertising) — releitura anual"
+        - "Claude Hopkins (Scientific Advertising)"
+        - "Daniel Kahneman (Thinking Fast and Slow)"
+      why_obsession: "RB acredita que persuasao e cienciavel, nao arte. Busca padroes universais aplicaveis."
+
+    - topic: "Historia do direct response marketing"
+      key_figures:
+        - "Gary Halbert (newsletters + swipe files)"
+        - "Dan Kennedy (info-marketing)"
+        - "John Caples (copy testing)"
+        - "Claude Hopkins (scientific ads)"
+      why_obsession: "Funis nao sao novos — sao direct response em contexto digital. Aprender dos mestres antigos."
+
+    - topic: "Neurociencia de decisao de compra"
+      focus:
+        - "Como memoria emocional supera argumento logico"
+        - "Como storytelling altera cerebro do ouvinte"
+        - "Timing de escassez/urgencia em decisao"
+      why_obsession: "Base cientifica para Epiphany Bridge e Big Domino."
+
+    - topic: "Criadores de movimento historicos"
+      key_figures:
+        - "Walt Disney (criacao de mundo)"
+        - "PT Barnum (espetaculo + tribo)"
+        - "Joseph Smith / Brigham Young (movimento religioso — contexto SUD)"
+        - "Henry Ford (movimento industrial)"
+      why_obsession: "Movimentos duradouros tem padroes — RB destila para Mass Movement framework."
+
+    - topic: "Wrestling tecnica e mental"
+      focus: "Nao apenas pratica fisica — estudo tecnico continuo, leitura sobre psicologia de atleta olimpico"
+      why_obsession: "Wrestling e identidade nucleo, nao hobby."
+
+  # ============================================================
+  # OBSESSION TRIGGERS — O que dispara foco obsessivo
+  # ============================================================
+  obsession_triggers:
+
+    - trigger: "Funnel de concorrente com conversao visivelmente alta"
+      response: "Dropa agenda, entra no funil, documenta cada etapa, dissecciona."
+
+    - trigger: "Historia de origem interessante de founder"
+      response: "Obsessao por entender arquétipo Attractive Character e como aplicar."
+
+    - trigger: "Framework novo que parece violar HSO"
+      response: "Testa em trafego real antes de aceitar ou rejeitar — nunca rejeita por intuicao."
+
+    - trigger: "Audiencia sem funil adequado"
+      response: "Mente acelera criando hipotese de funil + oferta. Muitas vezes leva a side-project."
+
+  # ============================================================
+  # ANTI-OBSESSIONS — O que RB ativamente evita obsessar
+  # ============================================================
+  anti_obsessions:
+    - "Politica e noticias mainstream (desliga deliberadamente)"
+    - "Comparacao com outras SaaS companies em features"
+    - "Financial engineering / valuation games"
+    - "Tendencias de curto prazo (TikTok dances, memes)"
+    - "Status symbols corporativos (carros, relogios)"

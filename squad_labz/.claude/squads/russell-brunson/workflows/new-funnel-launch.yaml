@@ -1,0 +1,118 @@
+name: new-funnel-launch
+version: 1.0.0
+description: Pipeline completa de lançamento de funil do zero
+orchestrator: "@russell-brunson"
+estimated_duration: "2-4 semanas"
+
+phases:
+  - id: phase-0
+    name: Business Discovery
+    agent: "@russell-brunson"
+    command: "*business-discovery"
+    task: tasks/strategic/dream-customer-avatar.md
+    outputs:
+      - business-context.md
+    gate:
+      required: true
+      criteria: "produto + ticket + avatar + meta definidos"
+
+  - id: phase-1
+    name: Funnel Design
+    agent: "@russell-brunson"
+    command: "*funnel-selector"
+    task: tasks/strategic/funnel-selector.md
+    depends_on: phase-0
+    outputs:
+      - funnel-blueprint.md
+    gate:
+      required: true
+      criteria: "tipo de funil selecionado + Value Ladder projetada"
+
+  - id: phase-2
+    name: Offer Stack
+    agent: "@russell-brunson"
+    command: "*offer-stack"
+    task: tasks/generative/offer-stack-builder.md
+    depends_on: phase-1
+    outputs:
+      - offer-stack.md
+    gate:
+      required: true
+      criteria: "valor percebido >= 10x preco"
+
+  - id: phase-3
+    name: Story & Copy
+    agent: "@russell-brunson"
+    commands:
+      - "*origin-story"
+      - "*headline"
+      - "*hook-story-offer"
+    task_refs:
+      - tasks/generative/epiphany-bridge-story.md
+    depends_on: phase-2
+    outputs:
+      - origin-story.md
+      - copy-package.md
+    gate:
+      required: true
+      checklist: checklists/copy-gate.md
+
+  - id: phase-4
+    name: Traffic Strategy
+    agent: "@russell-brunson"
+    commands:
+      - "*dream-100"
+      - "*traffic-temp"
+    task_refs:
+      - tasks/strategic/dream-customer-avatar.md
+    depends_on: phase-2
+    outputs:
+      - traffic-plan.md
+    gate:
+      required: false
+      criteria: "3+ canais definidos com budget e segmentacao"
+
+  - id: phase-5
+    name: Pre-Launch Gate
+    agent: "@russell-brunson"
+    checklist: checklists/pre-launch-gate.md
+    depends_on:
+      - phase-3
+      - phase-4
+    gate:
+      required: true
+      criteria: "100% checklist aprovado"
+
+  - id: phase-6
+    name: Launch & Monitor
+    agent: "@russell-brunson"
+    command: "*monitor-funnel"
+    task: tasks/diagnostic/funnel-audit.md
+    depends_on: phase-5
+    outputs:
+      - launch-report.md
+    gate:
+      required: false
+      criteria: "metricas dentro dos thresholds apos 200 visitas"
+
+thresholds:
+  launch_go:
+    opt_in_cold: ">= 25%"
+    opt_in_warm: ">= 40%"
+    conversion_cold: ">= 1%"
+    conversion_warm: ">= 3%"
+    oto_uptake: ">= 10%"
+  scale:
+    opt_in: ">= 30%"
+    conversion: ">= 1.5%"
+    roi_30d: ">= 2x"
+  kill:
+    opt_in: "< 15% apos 200 visitas"
+    conversion: "< 0.5% apos 500 visitas"
+    oto_uptake: "< 5% apos 100 compradores"
+
+tags:
+  - funnel
+  - launch
+  - cold-traffic
+  - info-produto
