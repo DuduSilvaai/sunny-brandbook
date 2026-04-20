@@ -1,0 +1,9 @@
+{
+  "name": "sunny-brandbook-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd output/brandbook-site && npm install && npm run build",
+    "start": "cd output/brandbook-site && npm start"
+  }
+}

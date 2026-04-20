@@ -1,6 +1,0 @@
-[build]
-builder = "nixpacks"
-buildCommand = "cd output/brandbook-site && npm install && npm run build"
-
-[deploy]
-startCommand = "cd output/brandbook-site && npm run start"
