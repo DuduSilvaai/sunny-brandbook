@@ -1,9 +1,3 @@
----
-command: -readme
-type: slash-command
-description: AIOS Agents Directory
----
-
 # AIOS Agents Directory
 
 This directory contains agent definition files that define the personas, capabilities, and tool dependencies for all AIOS agents.

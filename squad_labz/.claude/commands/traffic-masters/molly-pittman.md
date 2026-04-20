@@ -1,9 +1,3 @@
----
-command: molly-pittman
-type: slash-command
-description: molly-pittman
----
-
 # molly-pittman
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

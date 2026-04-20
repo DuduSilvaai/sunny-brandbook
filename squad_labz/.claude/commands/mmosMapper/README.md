@@ -1,9 +1,3 @@
----
-command: readme
-type: slash-command
-description: MMOS Agents - Mind Mapping & Orchestration System
----
-
 # MMOS Agents - Mind Mapping & Orchestration System
 
 Este diretório contém agentes especializados do framework MMOS para mapeamento cognitivo e criação de clones de IA de alta fidelidade.

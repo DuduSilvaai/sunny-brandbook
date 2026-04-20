@@ -1,9 +1,3 @@
----
-command: nova
-type: slash-command
-description: nova
----
-
 # nova
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 1 (Functional).

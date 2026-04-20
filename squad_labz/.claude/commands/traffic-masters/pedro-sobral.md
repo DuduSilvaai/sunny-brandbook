@@ -1,9 +1,3 @@
----
-command: pedro-sobral
-type: slash-command
-description: pedro-sobral
----
-
 # pedro-sobral
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

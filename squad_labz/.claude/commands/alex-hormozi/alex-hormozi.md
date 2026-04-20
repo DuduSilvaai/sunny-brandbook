@@ -1,9 +1,3 @@
----
-command: alex-hormozi
-type: slash-command
-description: alex-hormozi
----
-
 # alex-hormozi
 
 ACTIVATION-NOTICE: Este arquivo é o command file do agente standalone **Alex Hormozi** — Grand Slam Offer Architect & Business Growth Expert. Agente único, sem sub-agentes.

@@ -1,9 +1,3 @@
----
-command: ralph-burns
-type: slash-command
-description: ralph-burns
----
-
 # ralph-burns
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

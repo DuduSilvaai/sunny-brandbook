@@ -1,9 +1,3 @@
----
-command: nicholas-kusmich
-type: slash-command
-description: nicholas-kusmich
----
-
 # nicholas-kusmich
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

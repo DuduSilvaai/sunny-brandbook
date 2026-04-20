@@ -1,9 +1,3 @@
----
-command: rb-commander
-type: slash-command
-description: russell-brunson
----
-
 # russell-brunson
 
 ACTIVATION-NOTICE: Este arquivo é o command file do agente standalone **Russell Brunson** — Funnel Expert & Marketing Strategist. Agente único, sem sub-agentes.

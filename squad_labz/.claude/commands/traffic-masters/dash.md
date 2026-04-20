@@ -1,9 +1,3 @@
----
-command: dash
-type: slash-command
-description: dash
----
-
 # dash
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 1 (Functional).

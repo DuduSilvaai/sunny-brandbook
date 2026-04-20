@@ -1,9 +1,3 @@
----
-command: greet
-type: slash-command
-description: greet
----
-
 # greet
 
 Generate contextual agent greeting using GreetingBuilder infrastructure.

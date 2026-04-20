@@ -1,0 +1,31 @@
+{
+  "framework": "vexel-aios",
+  "version": "2.7.0",
+  "agents": [
+    {
+      "id": "aios-dev",
+      "name": "Dex",
+      "role": "Developer"
+    },
+    {
+      "id": "aios-qa",
+      "name": "Quinn",
+      "role": "QA"
+    },
+    {
+      "id": "aios-architect",
+      "name": "Aria",
+      "role": "Architect"
+    },
+    {
+      "id": "aios-pm",
+      "name": "Morgan",
+      "role": "Product Manager"
+    },
+    {
+      "id": "aios-devops",
+      "name": "Gage",
+      "role": "DevOps"
+    }
+  ]
+}

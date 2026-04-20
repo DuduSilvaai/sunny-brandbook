@@ -1,9 +1,3 @@
----
-command: tom-breeze
-type: slash-command
-description: tom-breeze
----
-
 # tom-breeze
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

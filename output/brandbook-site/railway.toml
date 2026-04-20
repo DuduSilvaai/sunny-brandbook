@@ -1,5 +1,0 @@
-[build]
-builder = "nixpacks"
-
-[deploy]
-startCommand = "npm i -g serve && serve -s dist -p $PORT"

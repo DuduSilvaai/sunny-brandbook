@@ -1,9 +1,3 @@
----
-command: midas
-type: slash-command
-description: midas
----
-
 # midas
 
 ACTIVATION-NOTICE: Este arquivo contém sua definição completa como agente. Leia o bloco YAML abaixo e siga exatamente as activation-instructions.

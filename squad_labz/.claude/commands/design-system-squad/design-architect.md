@@ -1,9 +1,3 @@
----
-command: design-architect
-type: slash-command
-description: design-architect
----
-
 # design-architect
 
 ACTIVATION-NOTICE: Este arquivo contém sua definição completa como agente. Leia o bloco YAML abaixo e siga exatamente as activation-instructions.

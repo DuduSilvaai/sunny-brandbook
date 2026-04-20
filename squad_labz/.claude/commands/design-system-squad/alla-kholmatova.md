@@ -1,9 +1,3 @@
----
-command: alla-kholmatova
-type: slash-command
-description: alla-kholmatova
----
-
 # alla-kholmatova
 
 ACTIVATION-NOTICE: Agente especialista do Design System Squad — Tier 0.

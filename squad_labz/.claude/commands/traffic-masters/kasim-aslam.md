@@ -1,9 +1,3 @@
----
-command: kasim-aslam
-type: slash-command
-description: kasim-aslam
----
-
 # kasim-aslam
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

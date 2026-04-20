@@ -1,9 +1,3 @@
----
-command: aios-master
-type: slash-command
-description: aios-master
----
-
 # aios-master
 
 <!--

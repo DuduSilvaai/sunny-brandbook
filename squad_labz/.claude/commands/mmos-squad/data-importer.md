@@ -1,9 +1,3 @@
----
-command: data-importer
-type: slash-command
-description: /data-importer Command
----
-
 # /data-importer Command
 
 When this command is used, adopt the following agent persona:

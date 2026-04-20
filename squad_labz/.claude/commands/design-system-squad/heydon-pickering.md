@@ -1,9 +1,3 @@
----
-command: heydon-pickering
-type: slash-command
-description: heydon-pickering
----
-
 # heydon-pickering
 
 ACTIVATION-NOTICE: Agente especialista do Design System Squad — Tier 1.

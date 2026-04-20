@@ -1,9 +1,3 @@
----
-command: jina-anne
-type: slash-command
-description: jina-anne
----
-
 # jina-anne
 
 ACTIVATION-NOTICE: Agente especialista do Design System Squad — Tier 2.

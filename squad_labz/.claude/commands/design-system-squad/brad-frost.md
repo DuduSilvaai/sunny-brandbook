@@ -1,9 +1,3 @@
----
-command: brad-frost
-type: slash-command
-description: brad-frost
----
-
 # brad-frost
 
 ACTIVATION-NOTICE: Agente especialista do Design System Squad — Tier 0.

@@ -1,9 +1,3 @@
----
-command: depesh-mandalia
-type: slash-command
-description: depesh-mandalia
----
-
 # depesh-mandalia
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 2 (Platform).

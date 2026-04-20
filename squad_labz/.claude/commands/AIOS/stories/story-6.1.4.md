@@ -1,9 +1,3 @@
----
-command: story-6.1.4
-type: slash-command
-description: Story 6.1.4: Unified Greeting System Integration (v4 - Expanded)
----
-
 # Story 6.1.4: Unified Greeting System Integration (v4 - Expanded)
 
 **Story ID:** 6.1.4  

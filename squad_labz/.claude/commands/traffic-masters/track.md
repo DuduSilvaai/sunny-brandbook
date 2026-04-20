@@ -1,9 +1,3 @@
----
-command: track
-type: slash-command
-description: track
----
-
 # track
 
 ACTIVATION-NOTICE: Agente especialista do Traffic Masters Squad — Tier 1 (Functional).

@@ -10,7 +10,8 @@
       "Bash(npm install *)",
       "Bash(grep --line-buffered -E \"added|error|warn|npm|$\")",
       "Bash(winget search *)",
-      "Bash(xargs -I {} bash -c 'echo \"=== {} ===\" && head -5 {}')"
+      "Bash(xargs -I {} bash -c 'echo \"=== {} ===\" && head -5 {}')",
+      "Bash(xargs grep *)"
     ]
   }
 }
