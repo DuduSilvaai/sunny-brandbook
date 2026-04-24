@@ -391,8 +391,8 @@ const pages = {
             <img src="/logos/logo-horizontal-branco.svg" class="hero-logo-svg logo-dark" alt="Sunny" style="height:48px;width:auto;" />
             <img src="/logos/logo-horizontal-preto.svg" class="hero-logo-svg logo-light" alt="Sunny" style="height:48px;width:auto;" />
           </div>
-          <h1 class="hero-title" style="font-size:72px; line-height:1; margin-bottom:var(--space-4);">Nenhum lead <br><span style="background:var(--gradient-solar);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">morre ao sol.</span></h1>
-          <p class="hero-tagline" style="font-size:20px; color:var(--light); font-weight:400; max-width:480px;">A inteligência artificial comercial que converte todas as oportunidades de contato em reuniões qualificadas, alavancando integradores solares.</p>
+          <h1 class="hero-title" style="font-size:clamp(36px,5.5vw,64px); line-height:1.05; margin-bottom:var(--space-4);">70% dos seus leads vão para quem responder primeiro.<br><span style="background:var(--gradient-solar);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Você sempre responde primeiro.</span></h1>
+          <p class="hero-tagline" style="font-size:20px; color:var(--light); font-weight:400; max-width:480px;">IA comercial que responde, qualifica e agenda — em menos de 15 minutos. Nenhum lead morre. Ou você não paga.</p>
           
           <div style="display:flex; gap:var(--space-4); margin-top:var(--space-6);">
             <a href="#showcase" class="cta-button" onclick="navigate('showcase')">Explorar Brandbook</a>
