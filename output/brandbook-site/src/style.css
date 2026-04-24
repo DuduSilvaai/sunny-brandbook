@@ -716,6 +716,14 @@ a:hover { color: var(--solar-hover); }
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(255,107,0,0.15) 0%, transparent 100%);
   opacity: 0.6; pointer-events: none;
+  z-index: 0;
+}
+/* Ensure images inside glass-panels sit above the overlay */
+.glass-panel > div,
+.glass-panel > img,
+.glass-panel > a {
+  position: relative;
+  z-index: 1;
 }
 .media-placeholder {
   background: var(--surface-hover);
@@ -1033,6 +1041,7 @@ a:hover { color: var(--solar-hover); }
     backdrop-filter: blur(20px);
     transform: translateY(-100%); opacity: 0;
     transition: all 0.3s ease; z-index: 899;
+    overflow-y: auto;
   }
   .topnav-links.open { transform: translateY(0); opacity: 1; }
   .mobile-toggle { display: flex; }
@@ -1046,14 +1055,60 @@ a:hover { color: var(--solar-hover); }
   .nav-dropdown.open { display: block; }
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
-  .hero-title { font-size: 40px; }
-  .manifesto-title { font-size: 40px; }
+  /* Hero mobile: much smaller title, stacked layout */
+  .hero-title { font-size: 36px !important; line-height: 1.05 !important; }
+  .hero-tagline { font-size: 16px !important; }
+  .hero-container { padding-top: 80px !important; padding-bottom: 40px !important; min-height: auto !important; }
+  .hero-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+  .hero-text-block { text-align: center !important; }
+  .hero-text-block .hero-logo-wrapper { margin: 0 auto var(--space-4) !important; }
+  .hero-text-block h1 { font-size: 36px !important; }
+  .hero-text-block p { margin: 0 auto !important; font-size: 15px !important; }
+  .hero-text-block div[style*="display:flex"][style*="gap"] {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  /* CTA buttons smaller on mobile */
+  .cta-button { padding: 14px 28px !important; font-size: 14px !important; }
+  .hero-visual-block .glass-panel { height: 300px !important; }
+  .hero-scroll { margin-top: 40px !important; }
+  .manifesto-title { font-size: 36px; }
   .section { padding: var(--space-12) var(--space-4); }
+  .section-title { font-size: 26px !important; }
+  .page-hero .section-title { font-size: clamp(28px, 6vw, 42px) !important; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .mockup-grid { grid-template-columns: 1fr; }
   .toast-container { bottom: 16px; right: 16px; left: 16px; }
   .scroll-top { bottom: 16px; left: 16px; }
   .particle-canvas { display: none; }
+  /* Glass panels: images should not shrink, they should stack */
+  .glass-panel img { width: 100%; height: auto !important; min-height: 180px; object-fit: cover; }
+  /* Brand cards grid on mobile */
+  .brand-card-title { font-size: 18px !important; }
+  /* Page hero adjustments */
+  .page-hero { padding: 80px var(--space-4) 60px !important; min-height: auto !important; }
+  .page-hero .section-subtitle { font-size: 15px !important; }
+  .page-hero .hero-stat-row { gap: var(--space-4) !important; }
+  .page-hero .hero-stat-value { font-size: 28px !important; }
+  /* Manifesto */
+  .manifesto-block { padding: var(--space-16) var(--space-4) !important; }
+  .manifesto-text { font-size: 16px !important; }
+  /* Big number smaller */
+  .big-number { font-size: 48px !important; }
+  .section-number { font-size: 80px !important; }
+  /* Journey cards stack */
+  .journey-cards { grid-template-columns: 1fr !important; }
+  /* Brand quote */
+  .brand-quote { padding: var(--space-4) var(--space-4) !important; }
+  .brand-quote p { font-size: 17px !important; }
+  /* Token table responsive */
+  .token-table { font-size: 12px; }
+  .token-table th, .token-table td { padding: var(--space-2) var(--space-3); }
+  /* Voice slider */
+  .voice-slider { flex-wrap: wrap; }
 }
 
 /* ============================================================

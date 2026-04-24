@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); }
+  .pairs { display: flex; gap: 32px; }
+  .col { flex: 1; }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+  .font-demo { margin-bottom: 18px; }
+  .font-name { font-family: var(--sunny-font-mono); font-size: 11px; color: var(--sunny-solar-flare); margin-bottom: 6px; }
+  .font-chars { color: var(--sunny-foreground); line-height: 1.4; }
+  .font-spec { font-family: var(--sunny-font-mono); font-size: 10px; color: var(--sunny-muted); margin-top: 4px; }
+  .divider { width: 1px; background: rgba(63,63,70,0.4); }
+</style>
+</head><body>
+<div class="pairs">
+  <div class="col">
+    <div class="label">Brand</div>
+    <div class="font-demo">
+      <div class="font-name">Space Grotesk</div>
+      <div class="font-chars" style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.02em;">
+        ABCDEFG<br>abcdefg<br>0123456789
+      </div>
+      <div class="font-spec">Bold 700 · Headlines · Logo Wordmark · Tracking -2%</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="col">
+    <div class="label">UI</div>
+    <div class="font-demo">
+      <div class="font-name">Inter</div>
+      <div class="font-chars" style="font-family:'Inter',sans-serif;font-size:22px;font-weight:400;color:var(--sunny-light);">
+        ABCDEFG<br>abcdefg<br>0123456789
+      </div>
+      <div class="font-spec">400/500/600/700 · Body · Dashboard · UI Labels</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="col">
+    <div class="label">Mono</div>
+    <div class="font-demo">
+      <div class="font-name">JetBrains Mono</div>
+      <div class="font-chars" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:400;color:var(--sunny-muted);">
+        ABCDEFG<br>abcdefg<br>0123456789
+      </div>
+      <div class="font-spec">400/500 · Data · Timestamps · IDs · Metrics</div>
+    </div>
+  </div>
+</div>
+</body></html>

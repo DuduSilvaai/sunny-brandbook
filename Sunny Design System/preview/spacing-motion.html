@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 12px; }
+  .motion-card { flex: 1; background: var(--sunny-surface); border: var(--sunny-border-subtle); border-radius: 10px; padding: 14px; }
+  .m-label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .token-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .tok-name { font-family: var(--sunny-font-mono); font-size: 11px; color: var(--sunny-solar-flare); width: 130px; flex-shrink: 0; }
+  .tok-val { font-size: 11px; color: var(--sunny-foreground); }
+  .tok-desc { font-size: 11px; color: var(--sunny-muted); }
+  .bar { height: 4px; border-radius: 2px; background: var(--sunny-gradient-solar); }
+</style>
+</head><body>
+<div class="row">
+  <div class="motion-card">
+    <div class="m-label">Duration</div>
+    <div class="token-row"><div class="tok-name">--duration-micro</div><div class="tok-val">150ms</div><div class="tok-desc">hover, focus, toggle</div></div>
+    <div class="bar" style="width:15%;margin-bottom:8px;"></div>
+    <div class="token-row"><div class="tok-name">--duration-standard</div><div class="tok-val">250ms</div><div class="tok-desc">opens, closes</div></div>
+    <div class="bar" style="width:25%;margin-bottom:8px;"></div>
+    <div class="token-row"><div class="tok-name">--duration-emphasis</div><div class="tok-val">400ms</div><div class="tok-desc">modals, page transitions</div></div>
+    <div class="bar" style="width:40%;margin-bottom:8px;"></div>
+    <div class="token-row"><div class="tok-name">--duration-dramatic</div><div class="tok-val">600ms</div><div class="tok-desc">hero animations, reveals</div></div>
+    <div class="bar" style="width:60%;"></div>
+  </div>
+  <div class="motion-card">
+    <div class="m-label">Easing</div>
+    <div class="token-row"><div class="tok-name">--ease-out</div><div class="tok-val">ease-out</div><div class="tok-desc">micro interactions</div></div>
+    <div class="token-row"><div class="tok-name">--ease-standard</div><div class="tok-val">ease-in-out</div><div class="tok-desc">standard transitions</div></div>
+    <div class="token-row"><div class="tok-name">--ease-emphasis</div><div class="tok-val" style="font-size:10px;">cubic-bezier(0.16,1,0.3,1)</div><div class="tok-desc">emphasis</div></div>
+    <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(63,63,70,0.3);">
+      <div class="m-label" style="margin-bottom:8px;">Principles</div>
+      <div style="font-size:12px;color:var(--sunny-muted);line-height:1.6;">
+        • Elements enter <strong style="color:var(--sunny-light);">bottom-to-top</strong> (sun rising)<br>
+        • CTAs pulse with <strong style="color:var(--sunny-solar-flare);">Solar Glow</strong> on idle<br>
+        • Loading: <strong style="color:var(--sunny-light);">skeleton gradients</strong> Surface→Hover
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny OS — Torre de Comando</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      background: #09090B;
+      color: #FAFAFA;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #3F3F46; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #71717A; }
+
+    /* Typing animation */
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-4px); }
+    }
+    .typing-dot {
+      width: 7px; height: 7px;
+      background: #71717A;
+      border-radius: 50%;
+      animation: typingBounce 1.2s infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Sidebar.jsx"></script>
+  <script type="text/babel" src="Dashboard.jsx"></script>
+  <script type="text/babel" src="Pipeline.jsx"></script>
+  <script type="text/babel" src="AgentView.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [screen, setScreen] = React.useState('dashboard');
+
+      const screens = {
+        dashboard: <Dashboard />,
+        pipeline:  <Pipeline />,
+        agent:     <AgentView />,
+        leads:     <LeadsPlaceholder />,
+        insights:  <InsightsPlaceholder />,
+      };
+
+      return (
+        <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+          <Sidebar active={screen} onNav={setScreen} />
+          <main style={{
+            marginLeft: 220,
+            flex: 1,
+            overflowY: screen === 'agent' ? 'hidden' : 'auto',
+            overflowX: 'hidden',
+            height: '100vh',
+            background: '#09090B',
+          }}>
+            {screens[screen]}
+          </main>
+        </div>
+      );
+    }
+
+    function LeadsPlaceholder() {
+      const leads = [
+        { name: 'Marco Ribeiro',   company: 'Solar Norte SP',     value: 'R$ 42K',  kwp: '7,8 kWp',  status: 'live',      time: '3 min' },
+        { name: 'Carla Mendes',    company: 'Residencial BH',     value: 'R$ 29K',  kwp: '5,4 kWp',  status: 'scheduled', time: '18 min' },
+        { name: 'Ricardo Faria',   company: 'Comércio Goiânia',   value: 'R$ 88K',  kwp: '16 kWp',   status: 'live',      time: '45 min' },
+        { name: 'Fernanda Souza',  company: 'Escola Fortaleza',   value: 'R$ 54K',  kwp: '9,6 kWp',  status: 'cold',      time: '2h' },
+        { name: 'Bruno Almeida',   company: 'Galpão Logístico RS',value: 'R$ 310K', kwp: '56 kWp',   status: 'scheduled', time: '4h' },
+        { name: 'Isabela Costa',   company: 'Condomínio Curitiba',value: 'R$ 125K', kwp: '22 kWp',   status: 'live',      time: '5h' },
+        { name: 'Thiago Nogueira', company: 'Fazenda Cerrado GO', value: 'R$ 480K', kwp: '86 kWp',   status: 'cold',      time: '1d' },
+        { name: 'Amanda Torres',   company: 'Hospital PE',        value: 'R$ 720K', kwp: '130 kWp',  status: 'scheduled', time: '1d' },
+      ];
+
+      const statusMap = {
+        live:      { label: '— Quente',    bg: 'rgba(245,165,36,0.12)', color: '#F5A524', border: 'rgba(245,165,36,0.25)' },
+        scheduled: { label: '+ Agendado',  bg: 'rgba(34,197,94,0.12)',  color: '#22C55E', border: 'rgba(34,197,94,0.25)' },
+        cold:      { label: '· Esfriando', bg: 'rgba(56,189,248,0.12)', color: '#38BDF8', border: 'rgba(56,189,248,0.25)' },
+      };
+
+      return (
+        <div style={{ padding: '28px 32px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
+            <div>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, fontWeight: 700, color: '#FAFAFA', letterSpacing: '-0.02em' }}>Leads</div>
+              <div style={{ fontSize: 13, color: '#71717A', marginTop: 4 }}>247 leads ativos · 38 reuniões este mês</div>
+            </div>
+            <button style={{ background: 'linear-gradient(135deg,#F5A524,#E8740C)', color: '#09090B', border: 'none', borderRadius: 8, padding: '9px 18px', fontWeight: 700, fontSize: 13, fontFamily: "'Inter',sans-serif", cursor: 'pointer' }}>+ Novo Lead</button>
+          </div>
+
+          {/* Table */}
+          <div style={{ background: '#18181B', border: '1px solid rgba(63,63,70,0.5)', borderRadius: 12, overflow: 'hidden' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr 1fr 1fr', padding: '12px 20px', borderBottom: '1px solid rgba(63,63,70,0.4)', gap: 16 }}>
+              {['Lead', 'Empresa', 'Valor', 'Sistema', 'Status', 'Resposta'].map(h => (
+                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: '#71717A', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{h}</div>
+              ))}
+            </div>
+            {leads.map((l, i) => {
+              const s = statusMap[l.status];
+              return (
+                <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr 1fr 1fr', padding: '14px 20px', borderBottom: i < leads.length-1 ? '1px solid rgba(63,63,70,0.2)' : 'none', gap: 16, alignItems: 'center', cursor: 'pointer', transition: 'background 150ms' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <div style={{ width: 30, height: 30, borderRadius: '50%', background: 'linear-gradient(135deg,#F5A524,#E8740C)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 11, color: '#09090B', flexShrink: 0 }}>
+                      {l.name.split(' ').map(n=>n[0]).join('').slice(0,2)}
+                    </div>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: '#FAFAFA' }}>{l.name}</span>
+                  </div>
+                  <div style={{ fontSize: 13, color: '#A1A1AA' }}>{l.company}</div>
+                  <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 14, color: '#F5A524' }}>{l.value}</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: '#71717A', background: 'rgba(63,63,70,0.3)', borderRadius: 4, padding: '2px 7px', display: 'inline-block' }}>{l.kwp}</div>
+                  <div><span style={{ fontSize: 11, fontWeight: 600, background: s.bg, color: s.color, border: `1px solid ${s.border}`, borderRadius: 9999, padding: '3px 9px' }}>{s.label}</span></div>
+                  <div style={{ fontSize: 12, color: '#71717A' }}>{l.time}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    function InsightsPlaceholder() {
+      const weeks = ['Sem 1','Sem 2','Sem 3','Sem 4','Sem 5','Sem 6','Sem 7','Sem 8'];
+      const values = [28, 42, 35, 58, 51, 73, 62, 89];
+      const maxVal = Math.max(...values);
+
+      return (
+        <div style={{ padding: '28px 32px' }}>
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, fontWeight: 700, color: '#FAFAFA', letterSpacing: '-0.02em' }}>Sunny Insights</div>
+            <div style={{ fontSize: 13, color: '#71717A', marginTop: 4 }}>Análise de performance comercial</div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
+            {/* Conversion chart */}
+            <div style={{ background: '#18181B', border: '1px solid rgba(63,63,70,0.5)', borderRadius: 12, padding: '20px 22px' }}>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, fontWeight: 700, color: '#FAFAFA', marginBottom: 20 }}>Reuniões Agendadas / Semana</div>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end', height: 120 }}>
+                {values.map((v, i) => (
+                  <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: '100%', height: `${(v/maxVal)*100}px`, background: i === weeks.length-1 ? 'linear-gradient(135deg,#F5A524,#E8740C)' : 'rgba(245,165,36,0.3)', borderRadius: '4px 4px 0 0', boxShadow: i === weeks.length-1 ? '0 0 12px rgba(245,165,36,0.3)' : 'none', transition: 'height 400ms ease' }} />
+                    <div style={{ fontSize: 10, color: '#71717A', fontFamily: "'Inter',sans-serif" }}>{weeks[i]}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Response time */}
+            <div style={{ background: '#18181B', border: '1px solid rgba(63,63,70,0.5)', borderRadius: 12, padding: '20px 22px' }}>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, fontWeight: 700, color: '#FAFAFA', marginBottom: 16 }}>Tempo Médio de Resposta</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {[
+                  { label: 'Com Sunny Agent', value: 8, max: 120, color: '#22C55E', unit: 'min' },
+                  { label: 'Setor solar médio', value: 96, max: 120, color: '#EF4444', unit: 'h' },
+                  { label: 'Meta interna', value: 15, max: 120, color: '#F5A524', unit: 'min' },
+                ].map((r, i) => (
+                  <div key={i}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                      <span style={{ fontSize: 13, color: '#A1A1AA' }}>{r.label}</span>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: r.color, fontFamily: "'JetBrains Mono',monospace" }}>{r.value}{r.unit}</span>
+                    </div>
+                    <div style={{ height: 6, background: 'rgba(63,63,70,0.4)', borderRadius: 3, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${(r.value/r.max)*100}%`, background: r.color, borderRadius: 3, opacity: 0.8 }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Top performers */}
+          <div style={{ background: '#18181B', border: '1px solid rgba(63,63,70,0.5)', borderRadius: 12, padding: '20px 22px' }}>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, fontWeight: 700, color: '#FAFAFA', marginBottom: 16 }}>Top Vendedores — Overdrive</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+              {[
+                { name: 'Carlos Andrade', meetings: 18, rate: '42%', rank: '01' },
+                { name: 'Marina Lima',    meetings: 14, rate: '38%', rank: '02' },
+                { name: 'Pedro Souza',    meetings: 11, rate: '31%', rank: '03' },
+                { name: 'Julia Rocha',    meetings: 9,  rate: '28%', rank: '04' },
+              ].map((p, i) => (
+                <div key={i} style={{ background: '#27272A', border: `1px solid ${i === 0 ? 'rgba(245,165,36,0.3)' : 'rgba(63,63,70,0.4)'}`, borderRadius: 10, padding: '14px 16px', boxShadow: i === 0 ? '0 0 16px rgba(245,165,36,0.1)' : 'none' }}>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, fontWeight: 700, color: i === 0 ? '#F5A524' : '#71717A', marginBottom: 8, letterSpacing: '-0.01em' }}>{p.rank}</div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: '#FAFAFA' }}>{p.name}</div>
+                  <div style={{ fontSize: 12, color: '#71717A', marginTop: 2 }}>{p.meetings} reuniões · {p.rate}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

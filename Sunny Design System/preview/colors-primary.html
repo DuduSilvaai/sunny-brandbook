@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { flex: 1; min-width: 120px; border-radius: 10px; overflow: hidden; }
+  .swatch-color { height: 72px; }
+  .swatch-info { padding: 8px 10px; background: var(--sunny-surface); border: var(--sunny-border-subtle); border-top: none; border-radius: 0 0 10px 10px; }
+  .swatch-name { font-size: 12px; font-weight: 600; color: var(--sunny-foreground); }
+  .swatch-hex  { font-size: 11px; font-family: var(--sunny-font-mono); color: var(--sunny-muted); margin-top: 2px; }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+</style>
+</head><body>
+<div class="label">Primary Colors</div>
+<div class="row">
+  <div class="swatch">
+    <div class="swatch-color" style="background:var(--sunny-gradient-solar);"></div>
+    <div class="swatch-info"><div class="swatch-name">Solar Flare</div><div class="swatch-hex">#F5A524 → #E8740C</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#F5A524;"></div>
+    <div class="swatch-info"><div class="swatch-name">Solar Flare</div><div class="swatch-hex">#F5A524</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#E8740C;"></div>
+    <div class="swatch-info"><div class="swatch-name">Dawn Amber</div><div class="swatch-hex">#E8740C</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#09090B; border: 1px solid #3F3F46;"></div>
+    <div class="swatch-info"><div class="swatch-name">Command Black</div><div class="swatch-hex">#09090B</div></div>
+  </div>
+</div>
+</body></html>

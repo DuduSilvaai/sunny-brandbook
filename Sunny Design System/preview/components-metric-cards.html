@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 14px; }
+  .card-metric { background: var(--sunny-surface); border: var(--sunny-border-subtle); border-radius: 12px; padding: 18px 20px; flex: 1; }
+  .metric-label { font-size: 12px; color: var(--sunny-muted); font-weight: 500; margin-bottom: 8px; }
+  .metric-value { font-family: var(--sunny-font-brand); font-size: 32px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .metric-delta { font-size: 12px; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .delta-up { color: var(--sunny-success); }
+  .delta-down { color: var(--sunny-error); }
+  .metric-sub { color: var(--sunny-muted); }
+  .glow-card { box-shadow: var(--sunny-shadow-glow); border-color: rgba(245,165,36,0.2); }
+</style>
+</head><body>
+<div class="row">
+  <div class="card-metric glow-card">
+    <div class="metric-label">Leads Vivos</div>
+    <div class="metric-value" style="color:var(--sunny-solar-flare);">247</div>
+    <div class="metric-delta delta-up">↑ 18% <span class="metric-sub">vs semana passada</span></div>
+  </div>
+  <div class="card-metric">
+    <div class="metric-label">Reuniões Agendadas</div>
+    <div class="metric-value" style="color:var(--sunny-foreground);">38</div>
+    <div class="metric-delta delta-up">↑ 24% <span class="metric-sub">este mês</span></div>
+  </div>
+  <div class="card-metric">
+    <div class="metric-label">Tempo Médio Resposta</div>
+    <div class="metric-value" style="color:var(--sunny-horizon-blue);">8<span style="font-size:18px;font-weight:400;">min</span></div>
+    <div class="metric-delta delta-up">↓ 91% <span class="metric-sub">vs sem IA</span></div>
+  </div>
+  <div class="card-metric">
+    <div class="metric-label">Taxa de Conversão</div>
+    <div class="metric-value" style="color:var(--sunny-success);">34<span style="font-size:18px;font-weight:400;">%</span></div>
+    <div class="metric-delta delta-down">⚠ Alerta crítico <span class="metric-sub">12 leads frios</span></div>
+  </div>
+</div>
+</body></html>

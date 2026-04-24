@@ -1,0 +1,310 @@
+/* ============================================================
+   SUNNY DESIGN SYSTEM — Design Tokens
+   Brand: Sunny (Solar Sales Intelligence SaaS)
+   Version: 1.0 · April 2026
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+
+  /* ── COLORS: PRIMARY ─────────────────────────────────── */
+  --sunny-solar-flare:      #F5A524;  /* Accent: CTAs, highlights, action */
+  --sunny-dawn-amber:       #E8740C;  /* Hover, warm gradients */
+  --sunny-command-black:    #09090B;  /* Primary background */
+
+  /* ── COLORS: SECONDARY ───────────────────────────────── */
+  --sunny-horizon-blue:     #38BDF8;  /* Info, data, links, cold contrast */
+  --sunny-premium-violet:   #8B5CF6;  /* Premium features, enterprise */
+
+  /* ── COLORS: NEUTRALS ────────────────────────────────── */
+  --sunny-deep-space:       #0A0A0F;  /* Deepest backgrounds */
+  --sunny-surface:          #18181B;  /* Cards, elevated surfaces */
+  --sunny-surface-hover:    #27272A;  /* Hover on surfaces */
+  --sunny-border:           #3F3F46;  /* Borders, dividers */
+  --sunny-muted:            #71717A;  /* Secondary text, labels */
+  --sunny-light:            #A1A1AA;  /* Tertiary text */
+  --sunny-foreground:       #FAFAFA;  /* Primary text on dark */
+
+  /* ── COLORS: SEMANTIC ────────────────────────────────── */
+  --sunny-success:          #22C55E;  /* Output Green: conversions, "Conversão" */
+  --sunny-error:            #EF4444;  /* Alert Red: errors, dead leads */
+  --sunny-warning:          #EAB308;  /* Flare Warning: cooling leads */
+  --sunny-info:             #38BDF8;  /* Horizon Info: tips, onboarding */
+
+  /* ── GRADIENTS ───────────────────────────────────────── */
+  --sunny-gradient-solar:   linear-gradient(135deg, #F5A524 0%, #E8740C 100%);
+  --sunny-gradient-dawn:    linear-gradient(135deg, #E8740C 0%, #DC2626 100%);
+  --sunny-gradient-horizon: linear-gradient(135deg, #38BDF8 0%, #8B5CF6 100%);
+  --sunny-gradient-surface: linear-gradient(180deg, #18181B 0%, #09090B 100%);
+  --sunny-gradient-glow:    radial-gradient(circle, rgba(245,165,36,0.15) 0%, transparent 70%);
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────── */
+  --sunny-font-brand:  'Space Grotesk', sans-serif;   /* Headlines, marketing, logo wordmark */
+  --sunny-font-ui:     'Inter', sans-serif;            /* Body text, UI, dashboard */
+  --sunny-font-mono:   'JetBrains Mono', monospace;   /* Code, data, timestamps, IDs */
+
+  /* Type Scale */
+  --sunny-text-display: 72px;
+  --sunny-text-h1:      48px;
+  --sunny-text-h2:      36px;
+  --sunny-text-h3:      28px;
+  --sunny-text-h4:      22px;
+  --sunny-text-h5:      18px;
+  --sunny-text-body-lg: 18px;
+  --sunny-text-body:    16px;
+  --sunny-text-body-sm: 14px;
+  --sunny-text-caption: 12px;
+  --sunny-text-mono:    14px;
+
+  /* Line Heights */
+  --sunny-leading-display: 1.0;
+  --sunny-leading-tight:   1.1;
+  --sunny-leading-snug:    1.2;
+  --sunny-leading-normal:  1.5;
+  --sunny-leading-relaxed: 1.6;
+
+  /* Letter Spacing */
+  --sunny-tracking-tight:   -0.03em;
+  --sunny-tracking-snug:    -0.02em;
+  --sunny-tracking-normal:  0em;
+  --sunny-tracking-wide:    0.02em;
+  --sunny-tracking-wider:   0.05em;
+  --sunny-tracking-widest:  0.1em;
+
+  /* ── SPACING (base 4px) ──────────────────────────────── */
+  --sunny-space-1:   4px;
+  --sunny-space-2:   8px;
+  --sunny-space-3:   12px;
+  --sunny-space-4:   16px;
+  --sunny-space-6:   24px;
+  --sunny-space-8:   32px;
+  --sunny-space-12:  48px;
+  --sunny-space-16:  64px;
+  --sunny-space-24:  96px;
+  --sunny-space-32:  128px;
+
+  /* ── BORDER RADIUS ───────────────────────────────────── */
+  --sunny-radius-xs:   4px;
+  --sunny-radius-sm:   8px;
+  --sunny-radius-md:   12px;
+  --sunny-radius-lg:   16px;
+  --sunny-radius-xl:   24px;
+  --sunny-radius-full: 9999px;
+
+  /* ── SHADOWS ─────────────────────────────────────────── */
+  --sunny-shadow-sm:   0 1px 2px rgba(0,0,0,0.3);
+  --sunny-shadow-md:   0 4px 6px -1px rgba(0,0,0,0.3);
+  --sunny-shadow-lg:   0 10px 15px -3px rgba(0,0,0,0.4);
+  --sunny-shadow-xl:   0 20px 25px -5px rgba(0,0,0,0.5);
+  --sunny-shadow-glow: 0 0 20px rgba(245,165,36,0.2);
+  --sunny-shadow-glow-lg: 0 0 40px rgba(245,165,36,0.3);
+
+  /* ── MOTION ──────────────────────────────────────────── */
+  --sunny-duration-micro:    150ms;
+  --sunny-duration-standard: 250ms;
+  --sunny-duration-emphasis: 400ms;
+  --sunny-duration-dramatic: 600ms;
+
+  --sunny-ease-out:      ease-out;
+  --sunny-ease-standard: ease-in-out;
+  --sunny-ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── BORDERS ─────────────────────────────────────────── */
+  --sunny-border-subtle:  1px solid rgba(63, 63, 70, 0.5);
+  --sunny-border-default: 1px solid #3F3F46;
+  --sunny-border-accent:  1px solid rgba(245, 165, 36, 0.3);
+
+  /* ── SEMANTIC ALIASES ────────────────────────────────── */
+  /* These map to semantic roles for use in components */
+  --color-bg:              var(--sunny-command-black);
+  --color-bg-elevated:     var(--sunny-surface);
+  --color-bg-hover:        var(--sunny-surface-hover);
+  --color-border:          var(--sunny-border);
+  --color-text-primary:    var(--sunny-foreground);
+  --color-text-secondary:  var(--sunny-light);
+  --color-text-muted:      var(--sunny-muted);
+  --color-accent:          var(--sunny-solar-flare);
+  --color-accent-dark:     var(--sunny-dawn-amber);
+
+  /* Semantic Typography Aliases */
+  --h1: var(--sunny-font-brand);
+  --h2: var(--sunny-font-brand);
+  --h3: var(--sunny-font-brand);
+  --h4: var(--sunny-font-ui);
+  --h5: var(--sunny-font-ui);
+  --p:  var(--sunny-font-ui);
+  --code: var(--sunny-font-mono);
+}
+
+/* ── BASE RESETS ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--sunny-command-black);
+  color: var(--sunny-foreground);
+  font-family: var(--sunny-font-ui);
+  font-size: var(--sunny-text-body);
+  line-height: var(--sunny-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── TYPOGRAPHY UTILITIES ────────────────────────────────── */
+.text-display {
+  font-family: var(--sunny-font-brand);
+  font-size: var(--sunny-text-display);
+  font-weight: 700;
+  line-height: var(--sunny-leading-display);
+  letter-spacing: var(--sunny-tracking-tight);
+}
+.text-h1 {
+  font-family: var(--sunny-font-brand);
+  font-size: var(--sunny-text-h1);
+  font-weight: 700;
+  line-height: var(--sunny-leading-tight);
+  letter-spacing: var(--sunny-tracking-snug);
+}
+.text-h2 {
+  font-family: var(--sunny-font-brand);
+  font-size: var(--sunny-text-h2);
+  font-weight: 700;
+  line-height: var(--sunny-leading-tight);
+  letter-spacing: var(--sunny-tracking-snug);
+}
+.text-h3 {
+  font-family: var(--sunny-font-brand);
+  font-size: var(--sunny-text-h3);
+  font-weight: 500;
+  line-height: var(--sunny-leading-snug);
+  letter-spacing: var(--sunny-tracking-snug);
+}
+.text-h4 {
+  font-family: var(--sunny-font-ui);
+  font-size: var(--sunny-text-h4);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.text-body-lg { font-size: var(--sunny-text-body-lg); line-height: var(--sunny-leading-relaxed); }
+.text-body    { font-size: var(--sunny-text-body);    line-height: var(--sunny-leading-normal); }
+.text-body-sm { font-size: var(--sunny-text-body-sm); line-height: var(--sunny-leading-normal); }
+.text-caption {
+  font-size: var(--sunny-text-caption);
+  letter-spacing: var(--sunny-tracking-wide);
+  font-weight: 500;
+}
+.text-mono {
+  font-family: var(--sunny-font-mono);
+  font-size: var(--sunny-text-mono);
+}
+
+/* Color utilities */
+.text-accent   { color: var(--sunny-solar-flare); }
+.text-muted    { color: var(--sunny-muted); }
+.text-light    { color: var(--sunny-light); }
+.text-success  { color: var(--sunny-success); }
+.text-error    { color: var(--sunny-error); }
+.text-warning  { color: var(--sunny-warning); }
+
+/* Gradient text */
+.text-solar-gradient {
+  background: var(--sunny-gradient-solar);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── CARD COMPONENT ──────────────────────────────────────── */
+.card {
+  background: var(--sunny-surface);
+  border: var(--sunny-border-subtle);
+  border-radius: var(--sunny-radius-md);
+  padding: var(--sunny-space-6);
+  box-shadow: var(--sunny-shadow-md);
+  transition: background var(--sunny-duration-micro) var(--sunny-ease-out),
+              border-color var(--sunny-duration-micro) var(--sunny-ease-out);
+}
+.card:hover {
+  background: var(--sunny-surface-hover);
+  border-color: rgba(245, 165, 36, 0.2);
+}
+
+/* ── BUTTON COMPONENTS ───────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sunny-space-2);
+  font-family: var(--sunny-font-ui);
+  font-weight: 600;
+  font-size: var(--sunny-text-body-sm);
+  border-radius: var(--sunny-radius-sm);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all var(--sunny-duration-micro) var(--sunny-ease-out);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.98); }
+
+.btn-primary {
+  background: var(--sunny-gradient-solar);
+  color: var(--sunny-command-black);
+}
+.btn-primary:hover { filter: brightness(1.1); }
+
+.btn-secondary {
+  background: var(--sunny-surface);
+  color: var(--sunny-foreground);
+  border: var(--sunny-border-default);
+}
+.btn-secondary:hover { background: var(--sunny-surface-hover); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--sunny-solar-flare);
+  border: var(--sunny-border-accent);
+}
+.btn-ghost:hover { background: rgba(245,165,36,0.08); }
+
+.btn-danger {
+  background: var(--sunny-error);
+  color: var(--sunny-foreground);
+}
+
+.btn-sm { padding: 6px 14px; font-size: 12px; }
+.btn-lg { padding: 14px 28px; font-size: 16px; }
+
+/* ── BADGE COMPONENTS ────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--sunny-radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-solar    { background: rgba(245,165,36,0.15); color: var(--sunny-solar-flare); border: 1px solid rgba(245,165,36,0.25); }
+.badge-success  { background: rgba(34,197,94,0.15);  color: var(--sunny-success);     border: 1px solid rgba(34,197,94,0.25); }
+.badge-error    { background: rgba(239,68,68,0.15);  color: var(--sunny-error);       border: 1px solid rgba(239,68,68,0.25); }
+.badge-warning  { background: rgba(234,179,8,0.15);  color: var(--sunny-warning);     border: 1px solid rgba(234,179,8,0.25); }
+.badge-info     { background: rgba(56,189,248,0.15); color: var(--sunny-horizon-blue);border: 1px solid rgba(56,189,248,0.25); }
+.badge-violet   { background: rgba(139,92,246,0.15); color: var(--sunny-premium-violet); border: 1px solid rgba(139,92,246,0.25); }
+
+/* ── INPUT COMPONENTS ────────────────────────────────────── */
+.input {
+  width: 100%;
+  background: var(--sunny-surface);
+  border: var(--sunny-border-default);
+  border-radius: var(--sunny-radius-sm);
+  color: var(--sunny-foreground);
+  font-family: var(--sunny-font-ui);
+  font-size: var(--sunny-text-body-sm);
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color var(--sunny-duration-micro) var(--sunny-ease-out);
+}
+.input::placeholder { color: var(--sunny-muted); }
+.input:focus { border-color: var(--sunny-solar-flare); box-shadow: 0 0 0 3px rgba(245,165,36,0.1); }

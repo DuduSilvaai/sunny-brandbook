@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 16px; }
+  .col { flex: 1; }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .field { margin-bottom: 12px; }
+  .field-label { font-size: 12px; font-weight: 500; color: var(--sunny-light); margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  .input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--sunny-muted); font-size: 14px; }
+  .input-with-icon { padding-left: 36px !important; }
+  select.input { appearance: none; cursor: pointer; }
+  .input-error { border-color: var(--sunny-error) !important; }
+  .input-error:focus { box-shadow: 0 0 0 3px rgba(239,68,68,0.1) !important; }
+  .error-msg { font-size: 11px; color: var(--sunny-error); margin-top: 4px; }
+  .input-success { border-color: var(--sunny-success) !important; }
+</style>
+</head><body>
+<div class="row">
+  <div class="col">
+    <div class="label">Form Inputs</div>
+    <div class="field">
+      <div class="field-label">Nome da empresa</div>
+      <input class="input" type="text" placeholder="Ex: Solar Norte Integração">
+    </div>
+    <div class="field">
+      <div class="field-label">WhatsApp</div>
+      <div class="input-wrap">
+        <span class="input-icon">☎</span>
+        <input class="input input-with-icon" type="text" placeholder="+55 (11) 99999-9999">
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Email <span style="color:var(--sunny-error)">*</span></div>
+      <input class="input input-error" type="email" value="email-invalido">
+      <div class="error-msg">Email inválido — verifique o formato</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Pipeline</div>
+      <select class="input">
+        <option>Qualificação</option>
+        <option>Proposta enviada</option>
+        <option>Negociação</option>
+        <option>Fechado</option>
+      </select>
+    </div>
+  </div>
+  <div class="col">
+    <div class="label">States</div>
+    <div class="field">
+      <div class="field-label">Padrão</div>
+      <input class="input" type="text" placeholder="Placeholder text">
+    </div>
+    <div class="field">
+      <div class="field-label">Foco (ativo)</div>
+      <input class="input" type="text" value="Lead qualificado" style="border-color:var(--sunny-solar-flare);box-shadow:0 0 0 3px rgba(245,165,36,0.1);">
+    </div>
+    <div class="field">
+      <div class="field-label">Sucesso</div>
+      <input class="input input-success" type="text" value="Reunião agendada ✓">
+    </div>
+    <div class="field">
+      <div class="field-label">Desativado</div>
+      <input class="input" type="text" value="Campo bloqueado" disabled style="opacity:0.4;cursor:not-allowed;">
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 8px; }
+  .swatch { flex: 1; border-radius: 8px; overflow: hidden; }
+  .swatch-color { height: 56px; }
+  .swatch-info { padding: 6px 8px; background: var(--sunny-surface); border: var(--sunny-border-subtle); border-top: none; border-radius: 0 0 8px 8px; }
+  .swatch-name { font-size: 11px; font-weight: 600; color: var(--sunny-foreground); }
+  .swatch-hex  { font-size: 10px; font-family: var(--sunny-font-mono); color: var(--sunny-muted); }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+</style>
+</head><body>
+<div class="label">Neutral Scale</div>
+<div class="row">
+  <div class="swatch"><div class="swatch-color" style="background:#0A0A0F; border:1px solid #3F3F46;"></div><div class="swatch-info"><div class="swatch-name">Deep Space</div><div class="swatch-hex">#0A0A0F</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#18181B;"></div><div class="swatch-info"><div class="swatch-name">Surface</div><div class="swatch-hex">#18181B</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#27272A;"></div><div class="swatch-info"><div class="swatch-name">Surf. Hover</div><div class="swatch-hex">#27272A</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#3F3F46;"></div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#3F3F46</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#71717A;"></div><div class="swatch-info"><div class="swatch-name">Muted</div><div class="swatch-hex">#71717A</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#A1A1AA;"></div><div class="swatch-info"><div class="swatch-name">Light</div><div class="swatch-hex">#A1A1AA</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FAFAFA;"></div><div class="swatch-info"><div class="swatch-name">Foreground</div><div class="swatch-hex">#FAFAFA</div></div></div>
+</div>
+</body></html>

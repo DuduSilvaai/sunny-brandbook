@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 12px; }
+  .logo-card { flex: 1; border-radius: 12px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: var(--sunny-border-subtle); min-height: 120px; }
+  .logo-card img { max-height: 80px; max-width: 120px; object-fit: contain; }
+  .logo-label { font-size: 11px; font-family: var(--sunny-font-mono); color: var(--sunny-muted); text-align: center; }
+</style>
+</head><body>
+<div class="row">
+  <div class="logo-card" style="background:var(--sunny-command-black);">
+    <img src="../assets/logo-vertical-colorido.svg" alt="Logo vertical colorido">
+    <div class="logo-label">vertical · colorido · dark bg</div>
+  </div>
+  <div class="logo-card" style="background:var(--sunny-gradient-solar);">
+    <img src="../assets/logo-vertical-branco.svg" alt="Logo vertical branco">
+    <div class="logo-label" style="color:rgba(9,9,11,0.6);">vertical · branco · solar bg</div>
+  </div>
+  <div class="logo-card" style="background:#FAFAFA;">
+    <img src="../assets/logo-vertical-preto.svg" alt="Logo vertical preto">
+    <div class="logo-label" style="color:#71717A;">vertical · preto · light bg</div>
+  </div>
+  <div class="logo-card" style="background:var(--sunny-surface);">
+    <img src="../assets/logo-vertical-colorido.svg" alt="Logo vertical colorido" style="max-height:40px;">
+    <div class="logo-label">minimum size · 40px</div>
+  </div>
+</div>
+</body></html>

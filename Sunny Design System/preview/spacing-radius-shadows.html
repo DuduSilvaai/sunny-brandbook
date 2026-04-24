@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 24px; align-items: flex-end; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { background: var(--sunny-surface); border: var(--sunny-border-default); display: flex; align-items: center; justify-content: center; width: 64px; height: 40px; font-size: 11px; font-family: var(--sunny-font-mono); color: var(--sunny-solar-flare); }
+  .name { font-size: 11px; font-family: var(--sunny-font-mono); color: var(--sunny-muted); }
+  .val  { font-size: 12px; font-weight: 600; color: var(--sunny-foreground); }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+  .divider { width: 1px; background: rgba(63,63,70,0.4); height: 80px; }
+  .shadow-row { display: flex; gap: 20px; margin-top: 0; align-items: flex-start; }
+  .shadow-item { }
+  .shadow-box { width: 80px; height: 48px; background: var(--sunny-surface); border-radius: 8px; margin-bottom: 8px; }
+  .sub-label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; margin-top: 18px; }
+</style>
+</head><body>
+<div class="label">Border Radius</div>
+<div class="row">
+  <div class="item"><div class="box" style="border-radius:4px;">4px</div><div class="name">--radius-xs</div></div>
+  <div class="item"><div class="box" style="border-radius:8px;">8px</div><div class="name">--radius-sm</div><div class="val">btns</div></div>
+  <div class="item"><div class="box" style="border-radius:12px;">12px</div><div class="name">--radius-md</div><div class="val">cards</div></div>
+  <div class="item"><div class="box" style="border-radius:16px;">16px</div><div class="name">--radius-lg</div><div class="val">modals</div></div>
+  <div class="item"><div class="box" style="border-radius:9999px;">∞</div><div class="name">--radius-full</div><div class="val">badges</div></div>
+  <div class="divider"></div>
+  <div class="shadow-item"><div class="sub-label" style="margin-top:0;">Shadows</div>
+    <div class="shadow-row">
+      <div><div class="shadow-box" style="box-shadow:0 1px 2px rgba(0,0,0,0.3);"></div><div class="name">shadow-sm</div></div>
+      <div><div class="shadow-box" style="box-shadow:0 4px 6px -1px rgba(0,0,0,0.3);"></div><div class="name">shadow-md</div></div>
+      <div><div class="shadow-box" style="box-shadow:0 10px 15px -3px rgba(0,0,0,0.4);"></div><div class="name">shadow-lg</div></div>
+      <div><div class="shadow-box" style="box-shadow:0 0 20px rgba(245,165,36,0.25);border:1px solid rgba(245,165,36,0.2);"></div><div class="name">shadow-glow</div></div>
+    </div>
+  </div>
+</div>
+</body></html>

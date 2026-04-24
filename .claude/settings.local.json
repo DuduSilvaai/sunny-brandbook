@@ -17,7 +17,8 @@
       "Bash(node *)",
       "WebFetch(domain:localhost)",
       "Bash(awk *)",
-      "Bash(grep -E '[\\\\`]\\\\s*\\([\\\\}]|$\\)')"
+      "Bash(grep -E '[\\\\`]\\\\s*\\([\\\\}]|$\\)')",
+      "Bash(curl *)"
     ]
   }
 }

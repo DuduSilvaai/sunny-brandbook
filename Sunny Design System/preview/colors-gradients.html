@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .row { display: flex; gap: 10px; }
+  .grad { flex: 1; border-radius: 10px; overflow: hidden; }
+  .grad-color { height: 72px; }
+  .grad-info { padding: 8px 10px; background: var(--sunny-surface); border: var(--sunny-border-subtle); border-top: none; border-radius: 0 0 10px 10px; }
+  .grad-name { font-size: 12px; font-weight: 600; color: var(--sunny-foreground); }
+  .grad-val  { font-size: 10px; font-family: var(--sunny-font-mono); color: var(--sunny-muted); margin-top: 2px; }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+</style>
+</head><body>
+<div class="label">Gradient System</div>
+<div class="row">
+  <div class="grad"><div class="grad-color" style="background:linear-gradient(135deg,#F5A524,#E8740C);"></div><div class="grad-info"><div class="grad-name">Solar Gradient</div><div class="grad-val">#F5A524 → #E8740C · 135°</div></div></div>
+  <div class="grad"><div class="grad-color" style="background:linear-gradient(135deg,#E8740C,#DC2626);"></div><div class="grad-info"><div class="grad-name">Dawn Gradient</div><div class="grad-val">#E8740C → #DC2626 · 135°</div></div></div>
+  <div class="grad"><div class="grad-color" style="background:linear-gradient(135deg,#38BDF8,#8B5CF6);"></div><div class="grad-info"><div class="grad-name">Horizon Gradient</div><div class="grad-val">#38BDF8 → #8B5CF6 · 135°</div></div></div>
+  <div class="grad"><div class="grad-color" style="background:linear-gradient(180deg,#18181B,#09090B); border:1px solid #3F3F46;"></div><div class="grad-info"><div class="grad-name">Surface Gradient</div><div class="grad-val">#18181B → #09090B · 180°</div></div></div>
+  <div class="grad"><div class="grad-color" style="background:#09090B; position:relative; overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(245,165,36,0.3),transparent 70%);"></div></div><div class="grad-info"><div class="grad-name">Solar Glow</div><div class="grad-val">radial · amber 15% opacity</div></div></div>
+</div>
+</body></html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunny — Slide Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="../deck-stage.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #000; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* ── TOKENS ── */
+    :root {
+      --black:    #09090B;
+      --surface:  #18181B;
+      --surface2: #27272A;
+      --border:   #3F3F46;
+      --muted:    #71717A;
+      --light:    #A1A1AA;
+      --fg:       #FAFAFA;
+      --amber:    #F5A524;
+      --amber2:   #E8740C;
+      --blue:     #38BDF8;
+      --violet:   #8B5CF6;
+      --green:    #22C55E;
+      --red:      #EF4444;
+      --grad:     linear-gradient(135deg, #F5A524, #E8740C);
+      --glow:     0 0 40px rgba(245,165,36,0.2);
+    }
+
+    /* ── SLIDE BASE ── */
+    deck-stage section {
+      width: 1920px;
+      height: 1080px;
+      background: var(--black);
+      color: var(--fg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── SHARED COMPONENTS ── */
+    .logo {
+      position: absolute;
+      top: 52px;
+      left: 72px;
+      height: 38px;
+    }
+    .logo-br {
+      position: absolute;
+      bottom: 52px;
+      right: 72px;
+      height: 30px;
+      opacity: 0.5;
+    }
+    .slide-num {
+      position: absolute;
+      bottom: 52px;
+      left: 72px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .tagline-mark {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .amber-line {
+      width: 64px;
+      height: 3px;
+      background: var(--grad);
+      border-radius: 2px;
+    }
+    .grad-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── SLIDE 1: TITLE ── */
+    .slide-title .bg-glow {
+      position: absolute;
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(245,165,36,0.07) 0%, transparent 65%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .slide-title .content {
+      position: absolute;
+      top: 50%; left: 72px;
+      transform: translateY(-50%);
+      max-width: 900px;
+    }
+    .slide-title h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 28px;
+    }
+    .slide-title .sub {
+      font-size: 28px;
+      color: var(--light);
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 700px;
+    }
+    .slide-title .meta {
+      margin-top: 52px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .slide-title .date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    /* Right decoration */
+    .slide-title .deco {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .slide-title .deco-logo {
+      height: 340px;
+      opacity: 0.06;
+      filter: brightness(10);
+    }
+    .slide-title .deco-arc {
+      position: absolute;
+      width: 600px; height: 600px;
+      border: 1px solid rgba(245,165,36,0.12);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .slide-title .deco-arc2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(245,165,36,0.08);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ── SLIDE 2: SECTION HEADER ── */
+    .slide-section {
+      background: var(--black) !important;
+    }
+    .slide-section .amber-band {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 8px;
+      background: var(--grad);
+    }
+    .slide-section .content {
+      position: absolute;
+      top: 50%; left: 120px;
+      transform: translateY(-50%);
+    }
+    .slide-section .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: var(--amber);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .slide-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--fg);
+      max-width: 1000px;
+    }
+    .slide-section .desc {
+      font-size: 24px;
+      color: var(--light);
+      margin-top: 32px;
+      max-width: 700px;
+      line-height: 1.5;
+    }
+
+    /* ── SLIDE 3: BIG QUOTE / STATEMENT ── */
+    .slide-quote .content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1400px;
+      text-align: center;
+    }
+    .slide-quote blockquote {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--fg);
+    }
+    .slide-quote .author {
+      margin-top: 48px;
+      font-size: 20px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.04em;
+    }
+    .slide-quote .quote-mark {
+      position: absolute;
+      top: -20px; left: -40px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 200px;
+      font-weight: 700;
+      color: rgba(245,165,36,0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* ── SLIDE 4: METRICS / DATA ── */
+    .slide-metrics .content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 100px 72px 80px;
+    }
+    .slide-metrics .header {
+      margin-bottom: 56px;
+    }
+    .slide-metrics h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-top: 12px;
+    }
+    .slide-metrics .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      flex: 1;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid rgba(63,63,70,0.5);
+      border-radius: 16px;
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .kpi-card.featured {
+      border-color: rgba(245,165,36,0.25);
+      box-shadow: var(--glow);
+    }
+    .kpi-label {
+      font-size: 18px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .kpi-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .kpi-delta {
+      font-size: 16px;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .kpi-sub { color: var(--muted); font-size: 15px; }
+
+    /* ── SLIDE 5: COMPARISON ── */
+    .slide-comparison .content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 96px 72px 80px;
+    }
+    .slide-comparison h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-top: 12px;
+      margin-bottom: 48px;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      flex: 1;
+    }
+    .compare-col {
+      background: var(--surface);
+      border: 1px solid rgba(63,63,70,0.5);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .compare-col.sunny {
+      border-color: rgba(245,165,36,0.3);
+      background: rgba(245,165,36,0.03);
+    }
+    .compare-col-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(63,63,70,0.4);
+    }
+    .compare-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 20px;
+      color: var(--light);
+      line-height: 1.4;
+    }
+    .compare-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .icon-yes { background: rgba(34,197,94,0.15); color: var(--green); }
+    .icon-no  { background: rgba(239,68,68,0.12); color: var(--red); }
+
+    /* ── SLIDE 6: CONTENT + VISUAL ── */
+    .slide-content .left {
+      position: absolute;
+      left: 72px; top: 0; bottom: 0;
+      width: 820px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 0;
+    }
+    .slide-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--fg);
+      margin: 16px 0 32px;
+    }
+    .slide-content p {
+      font-size: 22px;
+      color: var(--light);
+      line-height: 1.6;
+      max-width: 700px;
+    }
+    .bullet-list {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 20px;
+      color: var(--light);
+    }
+    .bullet-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .slide-content .right {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 900px;
+      background: var(--surface);
+      border-left: 1px solid rgba(63,63,70,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .slide-content .right-inner {
+      padding: 60px;
+      width: 100%;
+    }
+
+    /* ── SLIDE 7: CLOSING / CTA ── */
+    .slide-closing {
+      background: var(--black) !important;
+      overflow: hidden;
+    }
+    .slide-closing .bg-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+    }
+    .slide-closing .content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 1400px;
+    }
+    .slide-closing .big-logo {
+      height: 120px;
+      margin-bottom: 56px;
+    }
+    .slide-closing h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin-bottom: 32px;
+    }
+    .slide-closing .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--grad);
+      color: var(--black);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 18px 48px;
+      border-radius: 10px;
+      margin-top: 12px;
+      letter-spacing: -0.01em;
+    }
+    .slide-closing .contact {
+      margin-top: 52px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* Pipeline mini viz for slide 6 */
+    .mini-pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+    .mini-stage {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .mini-stage-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--light);
+      width: 130px;
+      flex-shrink: 0;
+    }
+    .mini-bar-wrap {
+      flex: 1;
+      height: 12px;
+      background: rgba(63,63,70,0.3);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .mini-bar {
+      height: 100%;
+      border-radius: 6px;
+    }
+    .mini-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      width: 80px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<deck-stage>
+
+  <!-- ─── SLIDE 01: TITLE ─── -->
+  <section data-screen-label="01 Title">
+    <div class="slide-title">
+      <div class="bg-glow"></div>
+
+      <!-- Right decoration -->
+      <div class="deco">
+        <div class="deco-arc"></div>
+        <div class="deco-arc2"></div>
+        <img src="../assets/logo-vertical-colorido.svg" class="deco-logo" alt="">
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="tagline-mark" style="margin-bottom:24px;">Solar Sales Intelligence</div>
+        <div class="amber-line" style="margin-bottom:40px;"></div>
+        <h1>Nenhum lead<br><span class="grad-text">morre ao sol.</span></h1>
+        <div class="sub">O único sistema de inteligência comercial solar com SDR Agent autônomo que responde em menos de 15 minutos.</div>
+        <div class="meta">
+          <div class="amber-line" style="width:24px;"></div>
+          <div class="date">SUNNY OS · ABRIL 2026</div>
+        </div>
+      </div>
+
+      <img src="../assets/logo-horizontal-branco.svg" class="logo" alt="Sunny">
+      <div class="slide-num">01 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 02: SECTION HEADER ─── -->
+  <section data-screen-label="02 Section">
+    <div class="slide-section">
+      <div class="amber-band"></div>
+      <div class="content">
+        <div class="section-label">O Problema</div>
+        <h2>70% dos leads<br>morrem antes<br>da <span class="grad-text">primeira ligação.</span></h2>
+        <div class="desc">O mercado solar brasileiro cresce 30% ao ano. Mas a operação comercial da maioria das integradoras ainda opera com planilha e WhatsApp pessoal.</div>
+      </div>
+      <img src="../assets/logo-horizontal-branco.svg" class="logo-br" alt="Sunny">
+      <div class="slide-num">02 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 03: BIG QUOTE ─── -->
+  <section data-screen-label="03 Statement">
+    <div class="slide-quote">
+      <!-- bg glow -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%, rgba(245,165,36,0.05) 0%, transparent 60%);pointer-events:none;"></div>
+
+      <div class="content">
+        <div style="position:relative;display:inline-block;">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            "Você vende o futuro<br>da energia.<br><span class="grad-text">Sua operação</span><br>precisa estar à altura."
+          </blockquote>
+        </div>
+        <div class="author">— SUNNY · SOLAR SALES INTELLIGENCE</div>
+      </div>
+
+      <img src="../assets/logo-horizontal-branco.svg" class="logo-br" alt="Sunny">
+      <div class="slide-num">03 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 04: METRICS / KPIs ─── -->
+  <section data-screen-label="04 Metrics">
+    <div class="slide-metrics">
+      <div class="content">
+        <div class="header">
+          <div class="tagline-mark">Resultados comprovados</div>
+          <h3>Integradores que usam Sunny em 90 dias</h3>
+        </div>
+        <div class="kpis">
+          <div class="kpi-card featured">
+            <div class="kpi-label">Tempo de Resposta</div>
+            <div class="kpi-value grad-text">8<span style="font-size:36px;font-weight:500;">min</span></div>
+            <div class="kpi-delta">↓ 91% <span class="kpi-sub">vs média do setor (96h)</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Leads Respondidos</div>
+            <div class="kpi-value" style="color:#FAFAFA;">100<span style="font-size:36px;font-weight:500;">%</span></div>
+            <div class="kpi-delta">24/7 <span class="kpi-sub">sem intervenção humana</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Taxa de Conversão</div>
+            <div class="kpi-value" style="color:#22C55E;">+34<span style="font-size:36px;font-weight:500;">%</span></div>
+            <div class="kpi-delta">↑ vs CRM genérico <span class="kpi-sub">mesmo período</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Custo vs SDR Humano</div>
+            <div class="kpi-value" style="color:#38BDF8;">-82<span style="font-size:36px;font-weight:500;">%</span></div>
+            <div class="kpi-delta">Economia <span class="kpi-sub">R$ 3-5K/mês/SDR</span></div>
+          </div>
+        </div>
+      </div>
+      <img src="../assets/logo-horizontal-branco.svg" class="logo" alt="Sunny">
+      <div class="slide-num">04 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 05: COMPARISON ─── -->
+  <section data-screen-label="05 Comparison">
+    <div class="slide-comparison">
+      <div class="content">
+        <div class="tagline-mark">Diferencial competitivo</div>
+        <h3>Sunny vs. CRM tradicional</h3>
+        <div class="compare-grid">
+          <div class="compare-col">
+            <div class="compare-col-title" style="color:var(--muted);">CRM Genérico / SDR Humano</div>
+            <div class="compare-row"><div class="compare-icon icon-no">✕</div>Resposta ao lead em 48h+ (média setorial)</div>
+            <div class="compare-row"><div class="compare-icon icon-no">✕</div>Qualificação manual — depende do vendedor</div>
+            <div class="compare-row"><div class="compare-icon icon-no">✕</div>Zero especialização no ciclo solar</div>
+            <div class="compare-row"><div class="compare-icon icon-no">✕</div>SDR custa R$ 3-5K/mês + turnover alto</div>
+            <div class="compare-row"><div class="compare-icon icon-no">✕</div>Funciona apenas em horário comercial</div>
+          </div>
+          <div class="compare-col sunny">
+            <div class="compare-col-title grad-text">Sunny SDR Agent</div>
+            <div class="compare-row"><div class="compare-icon icon-yes">+</div>Resposta em menos de 15 minutos, 24/7</div>
+            <div class="compare-row"><div class="compare-icon icon-yes">+</div>Qualificação automática com contexto solar</div>
+            <div class="compare-row"><div class="compare-icon icon-yes">+</div>CRM especializado: kWp, GD, BNDES, concessionária</div>
+            <div class="compare-row"><div class="compare-icon icon-yes">+</div>Fração do custo humano, escala ilimitada</div>
+            <div class="compare-row"><div class="compare-icon icon-yes">+</div>Agenda reuniões enquanto você dorme</div>
+          </div>
+        </div>
+      </div>
+      <img src="../assets/logo-horizontal-branco.svg" class="logo" alt="Sunny">
+      <div class="slide-num">05 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 06: CONTENT + VISUAL ─── -->
+  <section data-screen-label="06 Product">
+    <div class="slide-content">
+      <div class="left">
+        <div class="tagline-mark">Torre de Comando</div>
+        <h3>Pipeline solar<br>com clareza total.</h3>
+        <p>Dashboard de guerra comercial — não uma planilha bonita. Cada métrica responde uma pergunta real de vendas em tempo real.</p>
+        <div class="bullet-list">
+          <div class="bullet-item"><div class="bullet-dot"></div>Pipeline Kanban especializado em energia solar</div>
+          <div class="bullet-item"><div class="bullet-dot"></div>SDR Agent monitora e age em cada lead</div>
+          <div class="bullet-item"><div class="bullet-dot"></div>Alerta crítico quando pipeline perde temperatura</div>
+          <div class="bullet-item"><div class="bullet-dot"></div>Overdrive — acompanhe performance em tempo real</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-inner">
+          <!-- Mini pipeline visualization -->
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#FAFAFA;margin-bottom:32px;letter-spacing:-0.01em;">Pipeline Solar · Hoje</div>
+          <div class="mini-pipeline">
+            <div class="mini-stage">
+              <div class="mini-stage-label">Novos</div>
+              <div class="mini-bar-wrap"><div class="mini-bar" style="width:100%;background:#38BDF8;opacity:0.7;"></div></div>
+              <div class="mini-val" style="color:#38BDF8;">54</div>
+            </div>
+            <div class="mini-stage">
+              <div class="mini-stage-label">Qualificados</div>
+              <div class="mini-bar-wrap"><div class="mini-bar" style="width:70%;background:#F5A524;"></div></div>
+              <div class="mini-val" style="color:#F5A524;">38</div>
+            </div>
+            <div class="mini-stage">
+              <div class="mini-stage-label">Proposta</div>
+              <div class="mini-bar-wrap"><div class="mini-bar" style="width:39%;background:#8B5CF6;"></div></div>
+              <div class="mini-val" style="color:#8B5CF6;">21</div>
+            </div>
+            <div class="mini-stage">
+              <div class="mini-stage-label">Negociação</div>
+              <div class="mini-bar-wrap"><div class="mini-bar" style="width:22%;background:#E8740C;"></div></div>
+              <div class="mini-val" style="color:#E8740C;">12</div>
+            </div>
+            <div class="mini-stage">
+              <div class="mini-stage-label">Fechados</div>
+              <div class="mini-bar-wrap"><div class="mini-bar" style="width:15%;background:#22C55E;"></div></div>
+              <div class="mini-val" style="color:#22C55E;">8</div>
+            </div>
+          </div>
+          <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(63,63,70,0.3);display:flex;gap:32px;">
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#71717A;margin-bottom:6px;">Em aberto</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#F5A524;">R$ 3,9M</div>
+            </div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#71717A;margin-bottom:6px;">Taxa de conversão</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#22C55E;">34%</div>
+            </div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#71717A;margin-bottom:6px;">Resp. média</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#38BDF8;">8min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="../assets/logo-horizontal-branco.svg" class="logo" alt="Sunny">
+      <div class="slide-num">06 / 07</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 07: CLOSING / CTA ─── -->
+  <section data-screen-label="07 Closing">
+    <div class="slide-closing">
+      <!-- Grid lines decoration -->
+      <svg class="bg-lines" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 L 0 0 0 80" fill="none" stroke="#F5A524" stroke-width="0.5"/></pattern></defs>
+        <rect width="1920" height="1080" fill="url(#grid)"/>
+      </svg>
+      <!-- Glow -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(245,165,36,0.06) 0%, transparent 60%);pointer-events:none;"></div>
+
+      <div class="content">
+        <img src="../assets/logo-vertical-colorido.svg" class="big-logo" alt="Sunny">
+        <h2>Amanheceu.<br><span class="grad-text">Vendeu.</span></h2>
+        <div class="cta">Ativar SDR Agent →</div>
+        <div class="contact">sunny.com.br · contato@sunny.com.br</div>
+      </div>
+      <div class="slide-num">07 / 07</div>
+    </div>
+  </section>
+
+</deck-stage>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--sunny-command-black); font-family: var(--sunny-font-ui); }
+  .section { margin-bottom: 20px; }
+  .label { font-size: 11px; font-weight: 600; color: var(--sunny-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+</style>
+</head><body>
+<div class="section">
+  <div class="label">Primary Buttons</div>
+  <div class="row">
+    <button class="btn btn-primary btn-sm">Ativar Agent</button>
+    <button class="btn btn-primary">Ver Dashboard</button>
+    <button class="btn btn-primary btn-lg">Começar Agora</button>
+    <button class="btn btn-primary" disabled style="opacity:0.4;cursor:not-allowed;">Desativado</button>
+  </div>
+</div>
+<div class="section">
+  <div class="label">Secondary & Ghost</div>
+  <div class="row">
+    <button class="btn btn-secondary btn-sm">Exportar</button>
+    <button class="btn btn-secondary">Ver Pipeline</button>
+    <button class="btn btn-ghost">Saiba mais</button>
+    <button class="btn btn-danger btn-sm">Excluir Lead</button>
+  </div>
+</div>
+<div class="section">
+  <div class="label">Badges</div>
+  <div class="row">
+    <span class="badge badge-solar">☀️ Overdrive</span>
+    <span class="badge badge-success">Lead Vivo</span>
+    <span class="badge badge-error">⚠️ Eclipse</span>
+    <span class="badge badge-warning">Esfriando</span>
+    <span class="badge badge-info">SDR Agent</span>
+    <span class="badge badge-violet">Enterprise</span>
+  </div>
+</div>
+</body></html>

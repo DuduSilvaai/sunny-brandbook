@@ -1,4 +1,4 @@
-﻿import './style.css';
+import './style.css';
 
 // === SVG ICON LIBRARY (replaces all emojis) ===
 const IC = {
@@ -2752,6 +2752,239 @@ const pages = {
       <div style="margin-top:var(--space-8);background:linear-gradient(135deg,rgba(245,165,36,0.08) 0%,rgba(245,165,36,0.02) 100%);border:2px solid rgba(245,165,36,0.3);border-radius:20px;padding:var(--space-8)">
         <div style="font-size:10px;letter-spacing:2px;color:var(--solar-flare);margin-bottom:var(--space-4);font-weight:700">NARRATIVA DE VENDA — O PITCH DO SUNNY AWARDS</div>
         <p style="font-size:clamp(15px,1.8vw,20px);color:var(--clean-white);line-height:1.8;margin:0;font-weight:500">"Seus vendedores vão parar de reclamar de lead ruim e focar apenas em fechar — guiados por uma IA que aplica as táticas do Alex Hormozi personalizadas para cada lead, registra cada resultado, aprende com cada objeção e coloca todo mundo num ranking que eles próprios querem liderar. Você não precisa cobrar. Você não precisa motivar. <span style="color:var(--solar-flare)">O sistema faz isso — e ainda mede quem usa o processo e quem ignora.</span>"</p>
+      </div>
+    </div>
+  `,
+
+  'investor-qa': () => `
+    <div class="page-hero" style="position:relative; overflow:hidden; padding-top:100px; padding-bottom:60px;">
+      <div class="section-number" style="font-size:140px; color:rgba(52,211,153,0.07); position:absolute; top:10px; right:5%;">Q&A</div>
+      <span class="section-label" style="color:#34D399">INVESTOR & CLIENT Q&A</span>
+      <h2 class="section-title" style="font-size:56px;">Perguntas que <span style="color:#34D399">Fecham Negócio</span></h2>
+      <p class="section-subtitle" style="font-size:20px; max-width:700px;">As respostas que todo investidor, parceiro ou cliente precisa ouvir antes de dizer "sim". Inspiradas no framework do Alex Hormozi — diretas, sem enrolação, e com provas.</p>
+    </div>
+
+    <!-- ELEVATOR PITCH -->
+    <div class="section reveal">
+      <span class="section-label" style="color:#34D399">01 · ELEVATOR PITCH</span>
+      <h2 class="section-title" style="font-size:28px">O que é a Sunny em uma frase?</h2>
+      <div style="background:linear-gradient(135deg, rgba(52,211,153,0.08), rgba(52,211,153,0.02)); border:2px solid rgba(52,211,153,0.3); border-radius:20px; padding:var(--space-8); margin-top:var(--space-4);">
+        <p style="font-size:clamp(20px,2.5vw,32px); color:var(--foreground); font-weight:700; line-height:1.3; margin:0; font-family:var(--font-brand); letter-spacing:-0.02em;">
+          "A Sunny é a <span style="color:var(--solar-flare)">inteligência artificial comercial</span> que responde, qualifica e agenda reuniões para integradoras solares em menos de 15 minutos — <span style="color:#34D399">24 horas por dia, sem contratar SDR</span>."
+        </p>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Q&A CARDS -->
+    <div class="section reveal">
+      <span class="section-label" style="color:#34D399">02 · PERGUNTAS-CHAVE</span>
+      <h2 class="section-title" style="font-size:28px">As 10 perguntas que um investidor faria</h2>
+
+      <div style="display:flex; flex-direction:column; gap:var(--space-6); margin-top:var(--space-6);">
+
+        <!-- Q1 -->
+        <div class="brand-card" style="border-left:3px solid var(--solar-flare);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,165,36,0.15);display:flex;align-items:center;justify-content:center;color:var(--solar-flare);font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">1</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:var(--solar-flare);">Qual problema vocês resolvem?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            Segundo a <strong style="color:var(--foreground)">Harvard Business Review</strong>, leads não respondidos nos primeiros 5 minutos têm uma queda de 80% na chance de qualificação. Ainda assim, o tempo médio de resposta B2B é de 42 horas. A Sunny elimina essa "morte comercial" com uma IA que responde em menos de 15 minutos, 24/7, qualifica e agenda reuniões.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="brand-card" style="border-left:3px solid #34D399;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;color:#34D399;font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">2</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:#34D399;">Qual é o mercado endereçável (TAM)?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            O Brasil tem <strong style="color:var(--foreground)">+40.000 empresas de energia solar ativas</strong> (dados ABSOLAR). Cada integradora gasta entre R$3.500 e R$15.000/mês com SDRs humanos. Nosso TAM é de <strong style="color:var(--solar-flare)">R$4,8 bilhões/ano</strong> só em substituição e otimização de mão-de-obra comercial inicial.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="brand-card" style="border-left:3px solid var(--horizon-blue);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(56,189,248,0.15);display:flex;align-items:center;justify-content:center;color:var(--horizon-blue);font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">3</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:var(--horizon-blue);">Por que a Sunny e não um concorrente?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            Três diferenciais que nenhum concorrente tem:<br>
+            <strong style="color:var(--solar-flare)">1.</strong> IA treinada exclusivamente para o nicho solar brasileiro (objeções, sazonalidade, linguagem do setor).<br>
+            <strong style="color:var(--solar-flare)">2.</strong> Dossiê pré-call com estratégia Hormozi personalizada por lead.<br>
+            <strong style="color:var(--solar-flare)">3.</strong> Data Moat proprietário que aprende com cada interação — quanto mais usa, mais preciso fica. Churn = perder inteligência acumulada.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="brand-card" style="border-left:3px solid #A78BFA;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(167,139,250,0.15);display:flex;align-items:center;justify-content:center;color:#A78BFA;font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">4</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:#A78BFA;">Qual é o modelo de receita?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">SaaS recorrente mensal:</strong><br>
+            • <strong style="color:var(--solar-flare)">Plano Sol:</strong> R$1.997/mês — IA SDR completa + dossiê + qualificação + agendamento<br>
+            • <strong style="color:var(--warm-yellow)">Plano Amanhecer:</strong> R$997/mês — resposta automatizada + qualificação básica<br>
+            • <strong style="color:#34D399">Revenue per seat:</strong> expansível por closer/filial. Quanto mais o time cresce, mais licenças vendem.
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="brand-card" style="border-left:3px solid var(--solar-flare);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,165,36,0.15);display:flex;align-items:center;justify-content:center;color:var(--solar-flare);font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">5</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:var(--solar-flare);">Qual o ROI para o cliente?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">O ROI é obscenamente claro:</strong><br>
+            Um SDR humano pleno custa, em média, R$3.500 a R$5.500/mês no Brasil (fixo + comissão). A Sunny custa a partir de R$997/mês e responde leads 24/7. O resultado:<br>
+            • <strong style="color:var(--solar-flare)">-45% no CAC</strong> (Custo de Aquisição de Cliente)<br>
+            • <strong style="color:#34D399">21x mais chance</strong> de qualificar leads nos primeiros 5 minutos<br>
+            • <strong style="color:var(--horizon-blue)">120h/mês</strong> salvas em triagem manual<br>
+            • <strong style="color:var(--foreground)">Payback em menos de 30 dias</strong>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="brand-card" style="border-left:3px solid #34D399;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;color:#34D399;font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">6</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:#34D399;">Como vocês garantem que funciona?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">Garantia Resultado 60 Dias:</strong> se o cliente não tiver pelo menos 21× mais conversão nos primeiros 60 dias, devolvemos 100% do investimento. Sem letras miúdas. Chamamos de <em style="color:var(--solar-flare)">"Nenhum lead morre. Ou você não paga."</em>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="brand-card" style="border-left:3px solid var(--horizon-blue);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(56,189,248,0.15);display:flex;align-items:center;justify-content:center;color:var(--horizon-blue);font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">7</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:var(--horizon-blue);">Qual é o fosso competitivo (moat)?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">Três fossos que se auto-aprofundam:</strong><br>
+            <strong style="color:var(--solar-flare)">Data Moat:</strong> cada conversa, objeção e resultado alimenta a IA. Concorrente precisaria de milhares de conversas para replicar.<br>
+            <strong style="color:var(--horizon-blue)">IKEA Effect:</strong> vendedor que investe feedback sente que o sistema é "dele". Trocar = perder tudo que construiu.<br>
+            <strong style="color:#A78BFA">Nicho Lock-in:</strong> vocabulário, sazonalidade e objeções do mercado solar são únicos. Generalistas não conseguem competir.
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="brand-card" style="border-left:3px solid #A78BFA;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(167,139,250,0.15);display:flex;align-items:center;justify-content:center;color:#A78BFA;font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">8</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:#A78BFA;">A IA substitui o vendedor?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">Não. Ela amplifica o vendedor.</strong> A Sunny faz o trabalho de SDR (responder, qualificar, agendar) para que o closer humano foque no que só humano faz: <em>fechar</em>. O vendedor recebe um dossiê completo antes de cada call — com o perfil do lead, objeções previstas e a estratégia Hormozi ideal. É como dar um exoesqueleto para o vendedor.
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="brand-card" style="border-left:3px solid var(--solar-flare);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,165,36,0.15);display:flex;align-items:center;justify-content:center;color:var(--solar-flare);font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">9</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:var(--solar-flare);">Qual é a visão de 3 anos?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">Ser a torre de comando soberana de toda integradora solar do Brasil até 2028.</strong><br>
+            • <strong>Fase 1 (2026):</strong> IA SDR — resposta + qualificação + agendamento<br>
+            • <strong>Fase 2 (2027):</strong> IA Closer Assistant — dossiê + coaching em tempo real durante calls<br>
+            • <strong>Fase 3 (2028):</strong> Sunny OS — plataforma completa de inteligência comercial solar (CRM + IA + analytics + gamificação)
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="brand-card" style="border-left:3px solid #34D399;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;color:#34D399;font-family:var(--font-brand);font-weight:700;font-size:16px;flex-shrink:0;">10</div>
+            <div class="brand-card-title" style="margin-bottom:0;color:#34D399;">Por que agora?</div>
+          </div>
+          <div class="brand-card-text" style="line-height:1.8;">
+            <strong style="color:var(--foreground)">Convergência perfeita de três ondas:</strong><br>
+            <strong style="color:var(--solar-flare)">1.</strong> O mercado solar brasileiro cresce 30% ao ano — e as integradoras não têm infraestrutura comercial para acompanhar.<br>
+            <strong style="color:var(--solar-flare)">2.</strong> LLMs atingiram maturidade suficiente para conversas comerciais convincentes e personalizadas.<br>
+            <strong style="color:var(--solar-flare)">3.</strong> O custo de SDR humano está subindo enquanto o custo de IA está caindo. A janela de oportunidade é <em style="color:#34D399">agora</em>.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- HORMOZI VALUE EQUATION -->
+    <div class="section reveal">
+      <span class="section-label" style="color:#34D399">03 · HORMOZI VALUE EQUATION</span>
+      <h2 class="section-title" style="font-size:28px">Value Equation Score: 38/40</h2>
+      <p class="section-subtitle" style="margin-bottom:var(--space-6)">O framework que mede o quão irresistível é a oferta. Quanto maior o Dream Outcome e a Percepção de Probabilidade, e menores o Tempo e o Esforço — mais a oferta se torna um "sim" inevitável.</p>
+
+      <div class="bento-grid stagger-children">
+        <div class="glass-panel bento-span-2" style="padding:var(--space-6); border-top:3px solid var(--solar-flare);">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--solar-flare);letter-spacing:0.15em;margin-bottom:var(--space-2)">DREAM OUTCOME</div>
+          <div style="font-family:var(--font-brand);font-size:48px;font-weight:700;color:var(--foreground);margin-bottom:var(--space-2)">10<span style="font-size:20px;color:var(--muted)">/10</span></div>
+          <div class="brand-card-text">"Nenhum lead morre ao sol" — toda oportunidade vira reunião. Time comercial focado em fechar, não em caçar.</div>
+        </div>
+        <div class="glass-panel bento-span-2" style="padding:var(--space-6); border-top:3px solid #34D399;">
+          <div style="font-family:var(--font-mono);font-size:11px;color:#34D399;letter-spacing:0.15em;margin-bottom:var(--space-2)">PERCEIVED LIKELIHOOD</div>
+          <div style="font-family:var(--font-brand);font-size:48px;font-weight:700;color:var(--foreground);margin-bottom:var(--space-2)">10<span style="font-size:20px;color:var(--muted)">/10</span></div>
+          <div class="brand-card-text">Garantia de 60 dias com resultados mensuráveis. Dashboard em tempo real. Sem risco para o cliente.</div>
+        </div>
+        <div class="glass-panel bento-span-2" style="padding:var(--space-6); border-top:3px solid var(--horizon-blue);">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--horizon-blue);letter-spacing:0.15em;margin-bottom:var(--space-2)">TIME DELAY</div>
+          <div style="font-family:var(--font-brand);font-size:48px;font-weight:700;color:var(--foreground);margin-bottom:var(--space-2)">9<span style="font-size:20px;color:var(--muted)">/10</span></div>
+          <div class="brand-card-text">Setup em 30 minutos. Primeiros resultados em 24h. Sem integração complexa, sem espera.</div>
+        </div>
+        <div class="glass-panel bento-span-2" style="padding:var(--space-6); border-top:3px solid #A78BFA;">
+          <div style="font-family:var(--font-mono);font-size:11px;color:#A78BFA;letter-spacing:0.15em;margin-bottom:var(--space-2)">EFFORT & SACRIFICE</div>
+          <div style="font-family:var(--font-brand);font-size:48px;font-weight:700;color:var(--foreground);margin-bottom:var(--space-2)">9<span style="font-size:20px;color:var(--muted)">/10</span></div>
+          <div class="brand-card-text">Zero esforço operacional. A IA opera sozinha. O closer recebe o dossiê pronto. Plug & Play real.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ONE-LINER ARSENAL -->
+    <div class="section reveal">
+      <span class="section-label" style="color:#34D399">04 · ARSENAL DE ONE-LINERS</span>
+      <h2 class="section-title" style="font-size:28px">Respostas rápidas para cada objeção</h2>
+      <p class="section-subtitle" style="margin-bottom:var(--space-6)">Frases prontas para o pitch presencial, call com investidor, ou mensagem de WhatsApp.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:var(--space-4);">
+        ${[
+          ['"É caro"', '"Um SDR humano pleno custa R$5k/mês e trabalha 8h. A Sunny custa a partir de R$997 e trabalha 24/7. Faça a conta."', 'var(--solar-flare)', 'rgba(245,165,36,0.08)'],
+          ['"Já tenho SDR"', '"Perfeito. Quantos leads ele perde por noite, fim de semana e feriado? A Sunny pega esses. Seu SDR fica melhor, não substituído."', '#34D399', 'rgba(52,211,153,0.08)'],
+          ['"IA não é pessoal"', '"A Sunny sabe o nome, cidade, tamanho do telhado e objeção mais provável do lead ANTES da primeira mensagem. Mais pessoal que 90% dos humanos."', 'var(--horizon-blue)', 'rgba(56,189,248,0.08)'],
+          ['"Como sei que funciona?"', '"Garantia Resultado 60 Dias. Se não funcionar, devolvemos. Zero risco. Se funcionar, você tem um SDR de R$2k que nunca dorme."', '#A78BFA', 'rgba(167,139,250,0.08)'],
+          ['"Preciso pensar"', '"Enquanto você pensa, seus leads estão sendo respondidos pelo concorrente. Cada hora sem resposta, o lead esfria 10%. Setup leva 30 minutos."', 'var(--solar-flare)', 'rgba(245,165,36,0.08)'],
+          ['"É só mais um chatbot"', '"Chatbot responde FAQ. A Sunny qualifica, cria dossiê com estratégia Hormozi e agenda na agenda do closer. É um SDR com QI de 180."', '#34D399', 'rgba(52,211,153,0.08)'],
+        ].map(([objection, response, color, bg]) => `
+          <div style="background:${bg}; border:1px solid ${color}33; border-radius:14px; padding:var(--space-5);">
+            <div style="font-family:var(--font-brand); font-size:14px; font-weight:700; color:${color}; margin-bottom:var(--space-2);">${objection}</div>
+            <div style="font-size:13px; color:var(--light); line-height:1.7;">${response}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CLOSING STATEMENT -->
+    <div class="section reveal">
+      <div style="background:linear-gradient(135deg,rgba(52,211,153,0.08) 0%,rgba(245,165,36,0.05) 100%);border:2px solid rgba(52,211,153,0.3);border-radius:20px;padding:var(--space-8);text-align:center;">
+        <div style="font-size:10px;letter-spacing:2px;color:#34D399;margin-bottom:var(--space-4);font-weight:700">O PITCH FINAL</div>
+        <p style="font-size:clamp(18px,2.5vw,28px);color:var(--clean-white);line-height:1.5;margin:0;font-weight:700;font-family:var(--font-brand);letter-spacing:-0.02em;max-width:800px;margin:0 auto;">
+          "Integradora solar que contrata a Sunny não perde mais lead. <span style="color:var(--solar-flare)">Ponto.</span><br>
+          O time foca em fechar. A IA foca em alimentar o pipeline.<br>
+          <span style="color:#34D399">Amanheceu, vendeu.</span>"
+        </p>
       </div>
     </div>
   `,
