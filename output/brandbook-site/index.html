@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
+  <!-- Restore saved theme before first paint to avoid flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('sunny-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
   <!-- Top Ticker -->
@@ -20,7 +27,7 @@
       <span>AI-POWERED SOLAR SALES INTELLIGENCE ◆</span>
       <span>GRAND SLAM OFFER ATIVO ◆</span>
       <span>AMANHECEU, VENDEU ◆</span>
-      <span>GARANTIA COLHEITA 60 DIAS ◆</span>
+      <span>GARANTIA RESULTADO 60 DIAS ◆</span>
       <span>STACK R$20.400/MÊS ◆</span>
       <span>PLANO SOL: R$1.997/MÊS ◆</span>
       <span>VALUE EQUATION SCORE: 38/40 ◆</span>
@@ -39,16 +46,8 @@
   <header class="topnav" id="topnav">
     <div class="topnav-inner">
       <div class="topnav-logo" id="logo-home">
-        <svg viewBox="0 0 100 100" class="topnav-logo-svg" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="topgrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FACC15"/><stop offset="100%" stop-color="#FF8C00"/>
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="45" fill="var(--surface)"/>
-          <path d="M 60 25 L 35 52 L 52 52 L 40 75 L 65 48 L 48 48 Z" fill="url(#topgrad)"/>
-        </svg>
-        <span class="topnav-logo-text">Sunny</span>
+        <img src="/logos/logo-horizontal-branco.svg" class="topnav-logo-img logo-dark" alt="Sunny" />
+        <img src="/logos/logo-horizontal-preto.svg" class="topnav-logo-img logo-light" alt="Sunny" />
         <span class="topnav-version">V2.0</span>
       </div>
       <nav class="topnav-links" id="nav-links">
@@ -100,13 +99,31 @@
           </div>
         </div>
         <div class="nav-group">
-          <button class="nav-dropdown-btn" data-group="oferta" style="color:var(--solar-flare)">💰 Oferta <span class="nav-arrow">▾</span></button>
+          <button class="nav-dropdown-btn" data-group="oferta" style="color:var(--solar-flare)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Oferta <span class="nav-arrow">▾</span>
+          </button>
           <div class="nav-dropdown" data-dropdown="oferta">
             <a href="#ofertas" class="nav-link" data-page="ofertas" style="color:var(--solar-flare);font-weight:600">Grand Slam Offer</a>
-            <a href="#sunny-awards" class="nav-link" data-page="sunny-awards" style="color:#FACC15;font-weight:600">🏆 Sunny Awards</a>
+            <a href="#sunny-awards" class="nav-link" data-page="sunny-awards" style="color:var(--warm-yellow);font-weight:600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z"/><path d="M5 20h14"/></svg>
+              Sunny Awards
+            </a>
           </div>
         </div>
       </nav>
+      <!-- Theme Switcher -->
+      <div class="theme-switcher" id="theme-switcher">
+        <button class="theme-btn" data-theme="dark" title="Tema Escuro" aria-label="Tema Escuro">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="theme-btn" data-theme="light" title="Tema Claro" aria-label="Tema Claro">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="theme-btn" data-theme="midnight" title="Tema Midnight" aria-label="Tema Midnight">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </button>
+      </div>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>

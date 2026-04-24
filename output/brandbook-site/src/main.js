@@ -1,4 +1,4 @@
-import './style.css';
+﻿import './style.css';
 
 // === SVG ICON LIBRARY (replaces all emojis) ===
 const IC = {
@@ -19,7 +19,22 @@ const IC = {
   alert: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></svg>`,
   bolt: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
   check: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`,
+  star: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  book: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+  shield: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  pin: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V17z"/></svg>`,
+  card: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>`,
+  robot: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>`,
+  rocket: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`,
+  bell: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`,
+  refresh: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>`,
+  cap: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
 };
+
+const scaleIcon = (svg, size) => svg
+  .replace(/width="\d+"/, `width="${size}"`)
+  .replace(/height="\d+"/, `height="${size}"`);
+
 
 // ============================================================
 // SUNNY BRANDBOOK — SPA Engine v3 · IMMERSIVE EDITION
@@ -31,11 +46,7 @@ const IC = {
 const loadingScreen = document.createElement('div');
 loadingScreen.className = 'loading-screen';
 loadingScreen.innerHTML = `
-  <svg viewBox="0 0 100 100" class="loading-logo" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FACC15"/><stop offset="100%" stop-color="#E8740C"/></linearGradient></defs>
-    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#lg)" stroke-width="2" stroke-dasharray="6 6"/>
-    <path d="M 60 25 L 35 52 L 52 52 L 40 75 L 65 48 L 48 48 Z" fill="url(#lg)"/>
-  </svg>
+  <img src="/logos/sunny-icon-160x160px.svg" class="loading-logo" alt="Sunny" />
   <div class="loading-bar"><div class="loading-bar-fill"></div></div>
   <div class="loading-text">Carregando Brandbook</div>
 `;
@@ -73,6 +84,21 @@ const logoHome = document.getElementById('logo-home');
 const navLinks = document.querySelectorAll('.nav-link');
 const dropdownBtns = document.querySelectorAll('.nav-dropdown-btn');
 const topnav = document.getElementById('topnav');
+
+// === THEME SWITCHER ===
+(function() {
+  const saved = localStorage.getItem('sunny-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === saved);
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.theme;
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('sunny-theme', t);
+      document.querySelectorAll('.theme-btn').forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+})();
 
 // === DROPDOWN NAVIGATION ===
 dropdownBtns.forEach(btn => {
@@ -328,11 +354,8 @@ logoHome.addEventListener('click', () => {
 function renderFooter() {
   return `
     <footer class="site-footer">
-      <svg viewBox="0 0 100 100" class="footer-logo" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="fgrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FACC15"/><stop offset="100%" stop-color="#FF6B00"/></linearGradient></defs>
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#fgrad)" stroke-width="2" stroke-dasharray="6 6"/>
-        <path d="M 60 25 L 35 52 L 52 52 L 40 75 L 65 48 L 48 48 Z" fill="url(#fgrad)"/>
-      </svg>
+      <img src="/logos/logo-horizontal-branco.svg" class="footer-logo logo-dark" alt="Sunny" style="height:36px;width:auto;opacity:0.8" />
+      <img src="/logos/logo-horizontal-preto.svg" class="footer-logo logo-light" alt="Sunny" style="height:36px;width:auto;opacity:0.7" />
       <div class="footer-tagline">Nenhum lead morre ao sol.</div>
       <div class="footer-divider"></div>
       <div class="footer-meta">
@@ -364,19 +387,9 @@ const pages = {
     <div class="hero-container mesh-bg" style="display:flex; flex-direction:column; justify-content:center; padding-top:120px;">
       <div style="max-width:1200px; width:100%; margin:0 auto; display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-8); align-items:center;">
         <div class="hero-text-block staggered-reveal" style="text-align:left;">
-          <div class="hero-logo-wrapper" style="width:100px; height:100px; margin-bottom:var(--space-4);">
-            <svg viewBox="0 0 100 100" class="hero-logo-svg" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="herograd" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FACC15"/><stop offset="50%" stop-color="#F5A524"/><stop offset="100%" stop-color="#E8740C"/>
-                </linearGradient>
-              </defs>
-              <circle cx="50" cy="50" r="45" fill="none" stroke="url(#herograd)" stroke-width="2" stroke-dasharray="6 6">
-                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="30s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="50" cy="50" r="35" fill="rgba(245,165,36,0.05)" stroke="url(#herograd)" stroke-width="1"/>
-              <path d="M 60 25 L 35 52 L 52 52 L 40 75 L 65 48 L 48 48 Z" fill="url(#herograd)"/>
-            </svg>
+          <div class="hero-logo-wrapper" style="margin-bottom:var(--space-4);">
+            <img src="/logos/logo-horizontal-branco.svg" class="hero-logo-svg logo-dark" alt="Sunny" style="height:48px;width:auto;" />
+            <img src="/logos/logo-horizontal-preto.svg" class="hero-logo-svg logo-light" alt="Sunny" style="height:48px;width:auto;" />
           </div>
           <h1 class="hero-title" style="font-size:72px; line-height:1; margin-bottom:var(--space-4);">Nenhum lead <br><span style="background:var(--gradient-solar);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">morre ao sol.</span></h1>
           <p class="hero-tagline" style="font-size:20px; color:var(--light); font-weight:400; max-width:480px;">A inteligência artificial comercial que converte todas as oportunidades de contato em reuniões qualificadas, alavancando integradores solares.</p>
@@ -388,13 +401,8 @@ const pages = {
         </div>
         
         <div class="hero-visual-block reveal-right" style="position:relative;">
-          <div class="glass-panel" style="height:500px; display:flex; align-items:center; justify-content:center; text-align:center;">
-             <!-- PLACEHOLDER_IMAGE: Dashboard em perspectiva dark mode com glow laranja -->
-             <div class="media-placeholder" style="width:100%; height:100%; background:transparent; border:none;">
-                <div style="font-size:48px; margin-bottom:16px;">🖥️</div>
-                <div style="color:var(--foreground); font-weight:600; font-size:18px;">[ MOCKUP PLACEHOLDER ]</div>
-                <div style="color:var(--light); font-size:13px; max-width:240px; margin-top:8px;">Imagem de <strong>Alta Resolução</strong> do Dashboard da Sunny operando leads em deep dark mode, com glowing solar nos gráficos.</div>
-             </div>
+          <div class="glass-panel" style="height:500px; overflow:hidden; padding:0;">
+            <img src="/images/photo-dashboard-ceo.png" alt="Sunny Dashboard — Torre de Comando" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:var(--radius-lg);" />
           </div>
         </div>
       </div>
@@ -419,8 +427,8 @@ const pages = {
              <div class="brand-card-title" style="font-size:32px;">Identity System</div>
              <div class="brand-card-text">Nossas fundações visuais — cores, tipografia, e motion — projetadas para a dualidade entre luz radiante e o espaço escuro do comando (Dark mode + Neon glow).</div>
            </div>
-           <div class="media-placeholder" style="height:220px; margin-top:var(--space-4); border-radius:var(--radius-md); background:rgba(0,0,0,0.5); border-color:#555;">
-              <span>[ PLACEHOLDER ]<br>Preview do Design System e Gráficos Translucentes</span>
+           <div style="height:220px; margin-top:var(--space-4); border-radius:var(--radius-md); overflow:hidden;">
+             <img src="/images/photo-sdr-phone.png" alt="SDR Agent em ação" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
            </div>
         </div>
         
@@ -430,12 +438,12 @@ const pages = {
         </div>
 
         <div class="glass-panel bento-span-1" style="padding:var(--space-6); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; background:linear-gradient(135deg, rgba(245,165,36,0.1), transparent);">
-           <div style="font-size:36px; margin-bottom:8px;">🔥</div>
+           <div style="color:var(--solar-flare);margin-bottom:8px">${IC.flame}</div>
            <div class="brand-card-title" style="font-size:16px;">Voz Autoridade</div>
         </div>
 
         <div class="glass-panel bento-span-1" style="padding:var(--space-6); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;">
-           <div style="font-size:36px; margin-bottom:8px;">⚡</div>
+           <div style="color:var(--solar-flare);margin-bottom:8px">${IC.bolt}</div>
            <div class="brand-card-title" style="font-size:16px;">Ação Instantânea</div>
         </div>
       </div>
@@ -444,8 +452,7 @@ const pages = {
 
   proposito: () => `
     <div class="page-hero" style="position:relative; overflow:hidden; padding-top:120px; padding-bottom:80px;">
-      <!-- PLACEHOLDER_HEADER_IMAGE -->
-      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(9,9,11,0.2), var(--command-black)), url('/api/placeholder/1920/1080') center/cover; opacity:0.15; z-index:-1;"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(9,9,11,0.4), var(--command-black)), url('/images/photo-aerial-solar.png') center/cover; z-index:-1;"></div>
       
       <div class="section-number" style="font-size:120px; color:rgba(245,165,36,0.1); position:absolute; top:20px; right:5%;">00</div>
       <span class="section-label">00 · BRAND PURPOSE</span>
@@ -464,10 +471,8 @@ const pages = {
       <span class="section-label">BRAND DNA</span>
       <div class="bento-grid stagger-children" style="margin-top:var(--space-6)">
         <div class="glass-panel bento-span-2 bento-row-2" style="padding:0; display:flex; flex-direction:column; overflow:hidden;">
-          <div class="media-placeholder" style="flex:1; border:none; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.4);">
-             <span style="font-size:40px; margin-bottom:8px;">☀️</span>
-             <span style="color:var(--foreground); font-weight:600;">[ MOCKUP: Alvorada Solar ]</span>
-             <span style="color:var(--light); font-size:12px; margin-top:8px;">Imagem premium de painéis solares recebendo o primeiro sol do dia.</span>
+          <div style="flex:1; border:none; border-bottom:1px solid var(--border); overflow:hidden; min-height:200px;">
+            <img src="/images/photo-aerial-solar.png" alt="Visão aérea — energia solar" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
           </div>
           <div style="padding:var(--space-6);">
             <div class="voice-model-title" style="font-size:24px; color:var(--solar-flare); margin-bottom:var(--space-2);">Missão</div>
@@ -480,10 +485,8 @@ const pages = {
             <div class="voice-model-title" style="font-size:24px; color:var(--solar-flare); margin-bottom:var(--space-2);">Visão</div>
             <div class="voice-model-desc" style="font-size:16px;">Ser a torre de comando soberana (AIOX) de toda integradora solar no Brasil até 2028.</div>
           </div>
-          <div class="media-placeholder" style="flex:1; border:none; border-top:1px solid var(--border); background:rgba(0,0,0,0.4);">
-             <span style="font-size:40px; margin-bottom:8px;">🛰️</span>
-             <span style="color:var(--foreground); font-weight:600;">[ MOCKUP: Satélite / Torre Comando ]</span>
-             <span style="color:var(--light); font-size:12px; margin-top:8px;">Imagem macro de tecnologia satelital / comando.</span>
+          <div style="flex:1; border:none; border-top:1px solid var(--border); overflow:hidden; min-height:200px;">
+            <img src="/images/photo-war-room.png" alt="Torre de Comando — War Room Sunny" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
           </div>
         </div>
       </div>
@@ -532,10 +535,8 @@ const pages = {
               </div>`).join('')}
             </div>
           </div>
-          <div class="media-placeholder" style="height:180px; border:none; border-top:1px solid var(--border); background:rgba(0,0,0,0.5);">
-            <span style="font-size:32px; margin-bottom:8px;">🎨</span>
-            <span style="color:var(--foreground); font-weight:600;">[ MOCKUP: UI Dashboard Dark ]</span>
-            <span style="color:var(--light); font-size:11px; margin-top:4px;">Preview de interface Sunny em dark mode com glow solar nos gráficos.</span>
+          <div style="height:180px; border-top:1px solid var(--border); overflow:hidden;">
+            <img src="/images/photo-speed-light.png" alt="Velocidade — IA comercial" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
           </div>
         </div>
 
@@ -569,14 +570,14 @@ const pages = {
       <h3 class="section-title" style="font-size:28px">O que NOS INSPIRA</h3>
       <div class="bento-grid stagger-children" style="margin-top:var(--space-6)">
         ${[
-          ['Porsche Design','Dark premium com tipografia confiante e materiais nobres','🏎️'],
-          ['Bloomberg Terminal','High-density data visualization em dark UI imersiva','📊'],
-          ['Apple Pro','Detalhes obsessivos, material premium, minimalismo funcional','🍎'],
-          ['Stripe Dashboard','Clareza de dados com gradients sofisticados e micro-animações','💳']
-        ].map(([title,desc,emoji]) => `
+          ['Porsche Design','Dark premium com tipografia confiante e materiais nobres', IC.target],
+          ['Bloomberg Terminal','High-density data visualization em dark UI imersiva', IC.chart],
+          ['Apple Pro','Detalhes obsessivos, material premium, minimalismo funcional', IC.bulb],
+          ['Stripe Dashboard','Clareza de dados com gradients sofisticados e micro-animações', IC.card]
+        ].map(([title,desc,icon]) => `
         <div class="glass-panel bento-span-1" style="padding:0; overflow:hidden; display:flex; flex-direction:column;">
-          <div class="media-placeholder" style="height:120px; border:none; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.4);">
-            <span style="font-size:36px;">${emoji}</span>
+          <div style="height:120px; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; color:var(--solar-flare);">
+            <span style="opacity:0.7">${scaleIcon(icon,40)}</span>
           </div>
           <div style="padding:var(--space-4);">
             <div class="brand-card-title" style="font-size:15px;">${title}</div>
@@ -734,7 +735,7 @@ const pages = {
       <span class="section-label">SECONDARY</span>
       <div class="swatch-grid stagger-children" style="margin-top:var(--space-4)">
         ${swatch('Horizon Blue','#38BDF8','56, 189, 248','Info, links, dados')}
-        ${swatch('Eclipse Violet','#8B5CF6','139, 92, 246','Premium, enterprise')}
+        ${swatch('Premium Violet','#8B5CF6','139, 92, 246','Premium, enterprise')}
       </div>
     </div>
     <div class="section reveal">
@@ -751,8 +752,8 @@ const pages = {
     <div class="section reveal">
       <span class="section-label">SEMANTIC</span>
       <div class="swatch-grid stagger-children" style="margin-top:var(--space-4)">
-        ${swatch('Harvest Green','#22C55E','34, 197, 94','Sucesso')}
-        ${swatch('Eclipse Red','#EF4444','239, 68, 68','Erros')}
+        ${swatch('Success Green','#22C55E','34, 197, 94','Sucesso')}
+        ${swatch('Alert Red','#EF4444','239, 68, 68','Erros')}
         ${swatch('Flare Warning','#EAB308','234, 179, 8','Avisos')}
         ${swatch('Horizon Info','#38BDF8','56, 189, 248','Info')}
       </div>
@@ -787,76 +788,117 @@ const pages = {
       <p class="section-subtitle">O logomark Sunny combina o sol estilizado com raios pontiagudos e a letra S integrada no centro — representando energia solar, inteligência e velocidade.</p>
     </div>
     <div class="section reveal">
-      <span class="section-label">NEW: VECTOR LOGO EXPLORATIONS</span>
-      <p class="section-subtitle" style="margin-bottom:var(--space-6)">Conforme solicitado, geramos novas opções puramente vetoriais (SVG) focadas em minimalismo, impacto digital e simetria solar.</p>
-      
+      <span class="section-label">LOGO HORIZONTAL</span>
+      <p class="section-subtitle" style="margin-bottom:var(--space-6)">Versão primária para headers, assinaturas digitais e materiais impressos em formato paisagem.</p>
       <div class="grid-3 stagger-children">
-        <div class="brand-card" style="text-align:center">
-          <svg viewBox="0 0 100 100" class="logo-variant-svg" style="margin-bottom:var(--space-4)" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="vgrid1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FACC15"/><stop offset="100%" stop-color="#E8740C"/></linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#vgrid1)" stroke-width="2" stroke-dasharray="6 6">
-              <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="30s" repeatCount="indefinite"/>
-            </circle>
-            <path d="M 60 25 L 35 52 L 52 52 L 40 75 L 65 48 L 48 48 Z" fill="url(#vgrid1)"/>
-          </svg>
-          <div class="brand-card-title">01 · O Raio Solar</div>
-          <div class="brand-card-text">O S central formando um relâmpago contínuo. Nosso logo primário para o Hero. Velocidade pura.</div>
+        <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-horizontal-colorido.svg" alt="Logo Horizontal Colorida" style="height:44px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Colorido · Fundo escuro</div>
         </div>
-        
-        <div class="brand-card" style="text-align:center">
-          <svg viewBox="0 0 100 100" class="logo-variant-svg" style="margin-bottom:var(--space-4)" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="vgrid2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F5A524"/><stop offset="100%" stop-color="#DC2626"/></linearGradient>
-            </defs>
-            <rect x="20" y="20" width="60" height="60" rx="16" fill="var(--surface)" stroke="url(#vgrid2)" stroke-width="2"/>
-            <path d="M 60 35 L 45 35 C 38 35, 38 45, 45 45 L 55 45 C 62 45, 62 55, 55 55 L 40 55" fill="none" stroke="url(#vgrid2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="65" cy="65" r="5" fill="#FACC15">
-              <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
-          <div class="brand-card-title">02 · The App Block</div>
-          <div class="brand-card-text">Container quadrado com cantos arredondados, um S geométrico e um "ponto de ignição" solar.</div>
+        <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-horizontal-branco.svg" alt="Logo Horizontal Branca" style="height:44px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Branco · Fundo escuro</div>
         </div>
-
-        <div class="brand-card" style="text-align:center">
-          <svg viewBox="0 0 100 100" class="logo-variant-svg" style="margin-bottom:var(--space-4)" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="vgrid3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FACC15"/><stop offset="100%" stop-color="#F5A524"/></linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="35" fill="#18181B" stroke="url(#vgrid3)" stroke-width="1"/>
-            <path d="M 65 30 C 45 10, 25 35, 50 50 C 75 65, 55 90, 35 70" fill="none" stroke="url(#vgrid3)" stroke-width="10" stroke-linecap="round"/>
-          </svg>
-          <div class="brand-card-title">03 · A Onda Solar</div>
-          <div class="brand-card-text">O S moldado por uma onda de energia contínua. Transmite um tom mais fluido e magnânimo.</div>
+        <div class="brand-card" style="text-align:center; background:#F4F4F5; border-color:rgba(0,0,0,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-horizontal-preto.svg" alt="Logo Horizontal Preta" style="height:44px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:#52525B">Preto · Fundo claro</div>
         </div>
       </div>
     </div>
     <div class="section reveal">
-      <span class="section-label">LOGO CONSTRUCTION (PAST EXPLORATION)</span>
-      <img src="/images/logo-construction.png" alt="Logo Construction Guide" class="logo-showcase-img" style="margin-top:var(--space-4)" />
+      <span class="section-label">LOGO VERTICAL</span>
+      <p class="section-subtitle" style="margin-bottom:var(--space-6)">Para posters, redes sociais, displays verticais e espaços quadrados.</p>
+      <div class="grid-3 stagger-children">
+        <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-vertical-colorido.svg" alt="Logo Vertical Colorida" style="height:100px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Colorido · Fundo escuro</div>
+        </div>
+        <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-vertical-branco.svg" alt="Logo Vertical Branca" style="height:100px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Branco · Fundo escuro</div>
+        </div>
+        <div class="brand-card" style="text-align:center; background:#F4F4F5; border-color:rgba(0,0,0,0.08); padding:var(--space-8)">
+          <img src="/logos/logo-vertical-preto.svg" alt="Logo Vertical Preta" style="height:100px;width:auto;max-width:100%;margin:0 auto var(--space-4) auto;display:block;" />
+          <div style="font-family:var(--font-mono);font-size:11px;color:#52525B">Preto · Fundo claro</div>
+        </div>
+      </div>
     </div>
     <div class="section reveal">
-      <span class="section-label">LOGO VARIATIONS — CORES</span>
-      <p class="section-subtitle" style="margin-bottom:var(--space-4)">Variações em laranja, amarelo, branco e preto para todos os contextos de aplicação.</p>
-      <img src="/images/logo-variations.png" alt="Logo Color Variations" class="logo-showcase-img" />
+      <span class="section-label">ÍCONE & WORDMARK</span>
+      <div class="grid-2 stagger-children" style="margin-top:var(--space-4)">
+        <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-8)">
+          <div style="display:flex;align-items:flex-end;justify-content:center;gap:var(--space-6);flex-wrap:wrap;margin-bottom:var(--space-4)">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+              <img src="/logos/sunny-icon-160x160px.svg" alt="Ícone 32px" style="height:32px;width:auto;" />
+              <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted)">32px</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+              <img src="/logos/sunny-icon-250x250px.svg" alt="Ícone 56px" style="height:56px;width:auto;" />
+              <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted)">56px</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+              <img src="/logos/sunny-icon-500x500px.svg" alt="Ícone 96px" style="height:96px;width:auto;" />
+              <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted)">96px</span>
+            </div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Ícone isolado — três tamanhos</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-5)">
+            <img src="/logos/logo-tipografia-colorido.svg" alt="Wordmark Colorido" style="height:28px;width:auto;max-width:100%;margin:0 auto 10px auto;display:block;" />
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Wordmark colorido</div>
+          </div>
+          <div class="brand-card" style="text-align:center; background:#09090B; border-color:rgba(255,255,255,0.08); padding:var(--space-5)">
+            <img src="/logos/logo-tipografia-branco.svg" alt="Wordmark Branco" style="height:28px;width:auto;max-width:100%;margin:0 auto 10px auto;display:block;" />
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Wordmark branco</div>
+          </div>
+          <div class="brand-card" style="text-align:center; background:#F4F4F5; border-color:rgba(0,0,0,0.08); padding:var(--space-5)">
+            <img src="/logos/logo-tipografia-preto.svg" alt="Wordmark Preto" style="height:28px;width:auto;max-width:100%;margin:0 auto 10px auto;display:block;" />
+            <div style="font-family:var(--font-mono);font-size:11px;color:#52525B">Wordmark preto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section reveal">
+      <span class="section-label">SISTEMA COMPLETO — TODAS AS VARIAÇÕES</span>
+      <img src="/images/logo-variacoes.png" alt="Sistema Completo de Logos Sunny" class="logo-showcase-img" style="margin-top:var(--space-4)" />
     </div>
     <div class="section reveal">
       <span class="section-label">LOGO SEMIOTICS</span>
       <div class="grid-3 stagger-children" style="margin-top:var(--space-4)">
-        <div class="brand-card"><div class="brand-card-title">☀️ Sol Estilizado</div><div class="brand-card-text">Raios triangulares representam energia que irradia. O sol nunca se apaga — assim como o SDR Agent.</div></div>
-        <div class="brand-card"><div class="brand-card-title">S Central</div><div class="brand-card-text">Sunny, Solar, Speed, Sales — a letra âncora que conecta nome e símbolo.</div></div>
-        <div class="brand-card"><div class="brand-card-title">⚡ Raios</div><div class="brand-card-text">Velocidade de resposta, IA, eletricidade e poder. Formato pontiagudo = precisão.</div></div>
+        <div class="brand-card">
+          <div class="brand-card-title"><span style="color:var(--solar-flare)">${IC.sun}</span> Núcleo Solar</div>
+          <div class="brand-card-text">O ponto central representa a origem de toda inteligência. De onde parte cada ação, cada resposta, cada vitória. O sol nunca se apaga — assim como o SDR Agent.</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-card-title">${IC.bolt} Órbitas de Energia</div>
+          <div class="brand-card-text">Os arcos orbitais ao redor do núcleo simbolizam trajetórias calculadas — como a IA que rastreia cada lead em sua órbita, sem deixar nenhum escapar.</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-card-title"><span style="color:var(--solar-flare)">${IC.flame}</span> Raios Expansivos</div>
+          <div class="brand-card-text">Os raios que se estendem para fora representam alcance, velocidade e onipresença da marca — de São Paulo a Times Square, em todos os touchpoints.</div>
+        </div>
       </div>
     </div>
     <div class="section reveal">
       <span class="section-label">CORES DO LOGO</span>
       <div class="grid-4 stagger-children" style="margin-top:var(--space-4)">
-        <div class="brand-card" style="text-align:center;border-top:3px solid #F5A524"><div class="brand-card-title" style="color:#F5A524">Solar Flare</div><div class="brand-card-text">Logo primário<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#F5A524</code></div></div>
-        <div class="brand-card" style="text-align:center;border-top:3px solid #E8740C"><div class="brand-card-title" style="color:#E8740C">Dawn Amber</div><div class="brand-card-text">Variação quente<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#E8740C</code></div></div>
-        <div class="brand-card" style="text-align:center;border-top:3px solid #FAFAFA"><div class="brand-card-title">Clean White</div><div class="brand-card-text">Fundo escuro<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#FAFAFA</code></div></div>
-        <div class="brand-card" style="text-align:center;border-top:3px solid #71717A"><div class="brand-card-title" style="color:#71717A">Command Black</div><div class="brand-card-text">Fundo claro/solar<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#09090B</code></div></div>
+        <div class="brand-card" style="text-align:center;border-top:3px solid #F5A524">
+          <div class="brand-card-title" style="color:#F5A524">Solar Flare</div>
+          <div class="brand-card-text">Versão principal<br>Fundos escuros<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#F5A524</code></div>
+        </div>
+        <div class="brand-card" style="text-align:center;border-top:3px solid #E8740C">
+          <div class="brand-card-title" style="color:#E8740C">Dawn Amber</div>
+          <div class="brand-card-text">Variação gradiente<br>Contextos quentes<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#E8740C</code></div>
+        </div>
+        <div class="brand-card" style="text-align:center;border-top:3px solid rgba(250,250,250,0.6);background:#09090B">
+          <div class="brand-card-title" style="color:#FAFAFA">Clean White</div>
+          <div class="brand-card-text" style="color:rgba(250,250,250,0.5)">Para fundos escuros<br>Máximo contraste<br><code style="font-family:var(--font-mono);color:var(--horizon-blue)">#FAFAFA</code></div>
+        </div>
+        <div class="brand-card" style="text-align:center;border-top:3px solid #09090B;background:#F4F4F5">
+          <div class="brand-card-title" style="color:#09090B">Command Black</div>
+          <div class="brand-card-text" style="color:#52525B">Para fundos claros<br>Versão impressa<br><code style="font-family:var(--font-mono);color:#38BDF8">#09090B</code></div>
+        </div>
       </div>
     </div>
     <div class="section reveal">
@@ -914,7 +956,7 @@ const pages = {
         </div>
         <div class="glass-panel bento-span-1" style="padding:var(--space-6); background:linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02));">
           <div class="brand-card-title" style="margin-bottom:var(--space-3);">Custo da Inação</div>
-          <div class="brand-card-text">Um integrador médio joga no lixo <strong style="color:var(--eclipse-red)">R$ 35.000 mensais</strong> em oportunidades perdidas por falta de follow-up rápido.</div>
+          <div class="brand-card-text">Um integrador médio joga no lixo <strong style="color:var(--alert-red)">R$ 35.000 mensais</strong> em oportunidades perdidas por falta de follow-up rápido.</div>
         </div>
         <div class="glass-panel bento-span-2" style="padding:var(--space-6); border-top:2px solid var(--success); background:linear-gradient(135deg, rgba(34,197,94,0.06), rgba(34,197,94,0.01));">
           <div class="brand-card-title" style="margin-bottom:var(--space-3);">Retorno (ROI) Sunny</div>
@@ -926,7 +968,7 @@ const pages = {
       <span class="section-label">BRAND PROMISE CHAIN</span>
       <div class="ladder" style="margin-top:var(--space-4)">
         <div class="ladder-step"><div class="ladder-level" style="color:var(--horizon-blue)">FUNCIONAL</div><div class="ladder-content">"Seu lead é respondido em 15 minutos, 24/7."</div></div>
-        <div class="ladder-step"><div class="ladder-level" style="color:var(--eclipse-violet)">EMOCIONAL</div><div class="ladder-content">"Você nunca mais perde uma venda por falta de follow-up."</div></div>
+        <div class="ladder-step"><div class="ladder-level" style="color:var(--premium-violet)">EMOCIONAL</div><div class="ladder-content">"Você nunca mais perde uma venda por falta de follow-up."</div></div>
         <div class="ladder-step"><div class="ladder-level" style="color:var(--dawn-amber)">IDENTITÁRIO</div><div class="ladder-content">"Você é o integrador que opera com inteligência de guerra."</div></div>
         <div class="ladder-step"><div class="ladder-level" style="color:var(--solar-flare)">TRANSFORMACIONAL</div><div class="ladder-content">"Sua empresa comercial está à altura do futuro que você vende."</div></div>
       </div>
@@ -1037,7 +1079,7 @@ const pages = {
     </div>
     <div class="section reveal">
       <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-        ${[['The Ruler','60','var(--solar-flare)','Controle, ordem, comando. "Torre de Comando"'],['The Magician','25','var(--eclipse-violet)','Transformar. Leads mortos → Reuniões'],['The Caregiver','15','var(--horizon-blue)','"Nenhum lead morre" = cuidado']].map(([name,pct,color,desc]) => `
+        ${[['The Ruler','60','var(--solar-flare)','Controle, ordem, comando. "Torre de Comando"'],['The Magician','25','var(--premium-violet)','Transformar. Leads mortos → Reuniões'],['The Caregiver','15','var(--horizon-blue)','"Nenhum lead morre" = cuidado']].map(([name,pct,color,desc]) => `
         <div class="archetype-bar">
           <span class="archetype-label">${name}</span>
           <div class="archetype-track"><div class="archetype-fill" data-width="${pct}%" style="width:0;background:${color}"></div></div>
@@ -1088,7 +1130,7 @@ const pages = {
           <div class="timeline-item-text">3 passos simples: <strong>① Conecte seus canais</strong> → <strong>② O Agent qualifica em < 15min</strong> → <strong>③ Você só vende.</strong></div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-item-title" style="color:var(--eclipse-violet)">5. CALLS TO ACTION</div>
+          <div class="timeline-item-title" style="color:var(--premium-violet)">5. CALLS TO ACTION</div>
           <div class="timeline-item-text"><strong>Direto:</strong> "Agende sua demo gratuita"<br><strong>Transicional:</strong> "Veja quanto está perdendo" (calculadora ROI)</div>
         </div>
         <div class="timeline-item">
@@ -1117,7 +1159,7 @@ const pages = {
       <div class="journey-cards stagger-children">
         <div class="journey-card"><div class="journey-icon">${IC.moon}</div><div class="journey-act">ATO 1 — O PROBLEMA</div><div class="journey-title">Desperdício</div><div class="journey-text">"Você investe R$10K e atrai 200 leads a R$50 cada. Mas 140 morrem sem resposta, e seu CAC evapora silenciosamente."</div></div>
         <div class="journey-card" style="border-color:var(--solar-flare)"><div class="journey-icon">${IC.sun}</div><div class="journey-act">ATO 2 — A TRANSFORMAÇÃO</div><div class="journey-title">Ação Rápida</div><div class="journey-text">"O SDR Agent entra em ação em menos de 15 minutos, 24/7. Economize 120 horas/mês da sua equipe, qualificando apenas os quentes."</div></div>
-        <div class="journey-card" style="border-color:var(--success)"><div class="journey-icon">${IC.sunrise}</div><div class="journey-act">ATO 3 — O NOVO MUNDO</div><div class="journey-title">Colheita Garantida</div><div class="journey-text">"Seu CAC cai 45%. A operação aumenta a receita R$35K a cada mês, e sua equipe foca unicamente em vender, não em garimpar contatos frios."</div></div>
+        <div class="journey-card" style="border-color:var(--success)"><div class="journey-icon">${IC.sunrise}</div><div class="journey-act">ATO 3 — O NOVO MUNDO</div><div class="journey-title">Resultado Garantido</div><div class="journey-text">"Seu CAC cai 45%. A operação aumenta a receita R$35K a cada mês, e sua equipe foca unicamente em vender, não em garimpar contatos frios."</div></div>
       </div>
     </div>
     <div class="section reveal">
@@ -1134,7 +1176,7 @@ const pages = {
     <div class="section reveal">
       <span class="section-label">POWER WORDS</span>
       <div class="grid-3 stagger-children" style="margin-top:var(--space-4)">
-        ${['Amanhecer','Raio','Colheita','Clareza Solar','Magnânimo','Torre de Comando','Guerra Comercial','Lead Vivo','Insolação','Eclipse'].map(w => `<div class="word-card word-power">${IC.bolt} ${w}</div>`).join('')}
+        ${['Amanhecer','Raio','Resultado','Clareza Solar','Magnânimo','Torre de Comando','Guerra Comercial','Lead Vivo','Ignição','Ponto Crítico'].map(w => `<div class="word-card word-power">${IC.bolt} ${w}</div>`).join('')}
       </div>
     </div>
     <div class="section reveal">
@@ -1162,7 +1204,7 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>Termo Sunny</th><th>Significado</th><th>Contexto</th></tr></thead>
         <tbody>
-          ${[['Torre de Comando','Dashboard principal com visão soberana do pipeline','UI, onboarding, sales'],['Lead Vivo','Lead que recebeu resposta em < 15min','Badge, relatórios'],['Colheita','Venda convertida via pipeline Sunny','Celebração, reporting'],['Insolação','Período de alta performance comercial ( > 130%)','Gamificação, alertas'],['Eclipse','Alerta de lead sem resposta por > 24h','Notificações, email'],['Dawn Report','Relatório matinal automático do Agent','Feature, email'],['Solar Flare','Accent visual e momento de impacto','Design, UI'],['Amanhecer','Início do ciclo de ativação (onboarding)','Customer journey'],['Integrador do Futuro','Persona aspiracional do cliente','Comunidade, branding'],['Guerra Comercial','O campo de batalha diário contra a inação','Manifesto, conteúdo']].map(([t,m,c]) => `<tr><td><strong style="color:var(--solar-flare)">${t}</strong></td><td>${m}</td><td><span class="tag">${c}</span></td></tr>`).join('')}
+          ${[['Torre de Comando','Dashboard principal com visão soberana do pipeline','UI, onboarding, sales'],['Lead Vivo','Lead que recebeu resposta em < 15min','Badge, relatórios'],['Resultado','Venda convertida via pipeline Sunny','Celebração, reporting'],['Ignição','Período de alta performance comercial ( > 130%)','Gamificação, alertas'],['Ponto Crítico','Alerta de lead sem resposta por > 24h','Notificações, email'],['Dawn Report','Relatório matinal automático do Agent','Feature, email'],['Solar Flare','Accent visual e momento de impacto','Design, UI'],['Amanhecer','Início do ciclo de ativação (onboarding)','Customer journey'],['Integrador do Futuro','Persona aspiracional do cliente','Comunidade, branding'],['Guerra Comercial','O campo de batalha diário contra a inação','Manifesto, conteúdo']].map(([t,m,c]) => `<tr><td><strong style="color:var(--solar-flare)">${t}</strong></td><td>${m}</td><td><span class="tag">${c}</span></td></tr>`).join('')}
         </tbody>
       </table>
     </div>
@@ -1171,7 +1213,7 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>${IC.xmark} Nunca diga</th><th>${IC.check} Diga</th><th>Por quê</th></tr></thead>
         <tbody>
-          ${[['Dashboard','Torre de Comando','Posiciona como centro de poder'],['Automação','Inteligência','Automação é commodity. Inteligência é premium.'],['Chatbot','SDR Agent','Chatbot é reativo. Agent é proativo e autônomo.'],['Ferramenta','Sistema de Inteligência','Ferramentas são descartáveis.'],['Cliente','Integrador','Especificidade cria pertencimento.'],['Usuário','Commander','Elevação. O integrador comanda.'],['Resultado','Colheita','Metáfora solar. Resultados são colhidos.'],['Problema','Eclipse','O inimigo tem nome poético.'],['Fácil','Claro','Fácil diminui valor. Clareza agrega.'],['Barato','Acessível','Sunny não é cheap. É investimento com ROI.']].map(([no,yes,why]) => `<tr><td><span style="color:var(--error)">${no}</span></td><td><strong style="color:var(--solar-flare)">${yes}</strong></td><td>${why}</td></tr>`).join('')}
+          ${[['Dashboard','Torre de Comando','Posiciona como centro de poder'],['Automação','Inteligência','Automação é commodity. Inteligência é premium.'],['Chatbot','SDR Agent','Chatbot é reativo. Agent é proativo e autônomo.'],['Ferramenta','Sistema de Inteligência','Ferramentas são descartáveis.'],['Cliente','Integrador','Especificidade cria pertencimento.'],['Usuário','Commander','Elevação. O integrador comanda.'],['Resultado','Resultado','Metáfora solar. Resultados são colhidos.'],['Problema','Ponto Crítico','O inimigo tem nome poético.'],['Fácil','Claro','Fácil diminui valor. Clareza agrega.'],['Barato','Acessível','Sunny não é cheap. É investimento com ROI.']].map(([no,yes,why]) => `<tr><td><span style="color:var(--error)">${no}</span></td><td><strong style="color:var(--solar-flare)">${yes}</strong></td><td>${why}</td></tr>`).join('')}
         </tbody>
       </table>
     </div>
@@ -1220,7 +1262,7 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>Contexto</th><th>Tom</th><th>Exemplo</th></tr></thead>
         <tbody>
-          ${[['Website/Hero','Imperativo + magnânimo','"Nenhum lead morre ao sol."'],['Onboarding','Guia paciente','"Em 3 passos, sua torre de comando estará operando."'],['Dashboard','Preciso, data-driven','"3 reuniões agendadas ontem. 12 leads em qualificação."'],['Email de alerta','Urgente, direto','"⚠️ Eclipse: 8 leads sem resposta há 48h. Ação necessária."'],['Social media','Provocativo + insight','"Enquanto você lê isso, 5 leads esfriaram na caixa de alguém."'],['Celebração','Energético + tribal','"☀️ COLHEITA! R$85K convertidos via Agent esta semana."'],['Suporte','Empático + resolutivo','"Entendemos. Vamos resolver juntos em < 2h."'],['Pitch/investior','Dados + visão','"Mercado de R$56B com <5% de penetração SaaS. Sunny captura o fluxo."']].map(([ctx,tom,ex]) => `<tr><td><strong>${ctx}</strong></td><td>${tom}</td><td><em>${ex}</em></td></tr>`).join('')}
+          ${[['Website/Hero','Imperativo + magnânimo','"Nenhum lead morre ao sol."'],['Onboarding','Guia paciente','"Em 3 passos, sua torre de comando estará operando."'],['Dashboard','Preciso, data-driven','"3 reuniões agendadas ontem. 12 leads em qualificação."'],['Email de alerta','Urgente, direto','"${IC.alert} Ponto Crítico: 8 leads sem resposta há 48h. Ação necessária."'],['Social media','Provocativo + insight','"Enquanto você lê isso, 5 leads esfriaram na caixa de alguém."'],['Celebração','Energético + tribal','"RESULTADO! R$85K convertidos via Agent esta semana."'],['Suporte','Empático + resolutivo','"Entendemos. Vamos resolver juntos em < 2h."'],['Pitch/investior','Dados + visão','"Mercado de R$56B com <5% de penetração SaaS. Sunny captura o fluxo."']].map(([ctx,tom,ex]) => `<tr><td><strong>${ctx}</strong></td><td>${tom}</td><td><em>${ex}</em></td></tr>`).join('')}
         </tbody>
       </table>
     </div>
@@ -1287,7 +1329,7 @@ const pages = {
       <div class="ladder">
         <div class="ladder-step"><div class="ladder-level" style="color:var(--solar-flare)">4. IDENTITY</div><div class="ladder-content">"Eu sou o integrador que não perde nenhuma venda."</div></div>
         <div class="ladder-step"><div class="ladder-level" style="color:var(--dawn-amber)">3. VALUES</div><div class="ladder-content">Nenhum lead morre · Velocidade magnânima · Inteligência amplificada</div></div>
-        <div class="ladder-step"><div class="ladder-level" style="color:var(--eclipse-violet)">2. BENEFITS</div><div class="ladder-content">Leads respondidos em < 15min 24/7 · Reuniões agendadas · Pipeline real-time</div></div>
+        <div class="ladder-step"><div class="ladder-level" style="color:var(--premium-violet)">2. BENEFITS</div><div class="ladder-content">Leads respondidos em < 15min 24/7 · Reuniões agendadas · Pipeline real-time</div></div>
         <div class="ladder-step"><div class="ladder-level" style="color:var(--horizon-blue)">1. FEATURES</div><div class="ladder-content">SDR Agent IA · CRM solar · Qualificação automática · Agendamento inteligente</div></div>
       </div>
     </div>
@@ -1320,8 +1362,8 @@ const pages = {
     <div class="section reveal">
       <span class="section-label">TAGLINES</span>
       <div class="grid-2 stagger-children" style="margin-top:var(--space-4)">
-        <div class="value-card" style="border-top-color:var(--success)"><div class="value-num">⭐ PRINCIPAL</div><div class="value-name">"Nenhum lead morre ao sol."</div><div class="value-def">Jogo com o nome, referencia o inimigo, contém a promessa.</div></div>
-        <div class="value-card"><div class="value-num">⭐ CAMPANHA</div><div class="value-name">"Amanheceu, vendeu."</div><div class="value-def">Poderoso, curto, memorável.</div></div>
+        <div class="value-card" style="border-top-color:var(--success)"><div class="value-num">${IC.star} PRINCIPAL</div><div class="value-name">"Nenhum lead morre ao sol."</div><div class="value-def">Jogo com o nome, referencia o inimigo, contém a promessa.</div></div>
+        <div class="value-card"><div class="value-num">${IC.star} CAMPANHA</div><div class="value-name">"Amanheceu, vendeu."</div><div class="value-def">Poderoso, curto, memorável.</div></div>
       </div>
     </div>
   `,
@@ -1331,40 +1373,210 @@ const pages = {
       <div class="section-number" style="font-size:140px; color:rgba(245,165,36,0.07); position:absolute; top:10px; right:5%;">11</div>
       <span class="section-label">11 · SHOWCASE</span>
       <h2 class="section-title" style="font-size:56px;">Brand Applications</h2>
-      <p class="section-subtitle">Integração com painéis imersivos Seedance e aplicações de identidade visual em múltiplos touchpoints.</p>
+      <p class="section-subtitle">A marca Sunny aplicada ao mundo real — de Times Square a McLarens, de produtos premium a identidade digital.</p>
     </div>
     <style>@keyframes skeletonLoading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }</style>
     <div class="section reveal">
-      <span class="section-label">GENERATIVE LOGO (BETA)</span>
+      <span class="section-label">MARCA OFICIAL</span>
       <div class="glass-panel" style="margin-top:var(--space-4); text-align:center; padding:var(--space-12);">
-         <svg class="hero-logo-svg logo-variant-svg" viewBox="0 0 100 100" style="width:120px;height:120px;margin:0 auto;display:block;">
-           <circle cx="50" cy="50" r="45" fill="none" stroke="var(--solar-flare)" stroke-width="2" />
-           <circle cx="50" cy="50" r="25" fill="var(--solar-flare)" />
-         </svg>
-         <p style="margin-top:16px;font-family:var(--font-mono);font-size:12px;color:var(--muted)">Sagi Haviv Method Optimized SVG</p>
+         <img src="/logos/logo-vertical-colorido.svg" alt="Sunny — Logo Vertical Colorida" class="logo-dark" style="height:120px;width:auto;margin:0 auto;display:block;" />
+         <img src="/logos/logo-vertical-preto.svg" alt="Sunny — Logo Vertical Preta" class="logo-light" style="height:120px;width:auto;margin:0 auto;display:block;" />
+         <p style="margin-top:16px;font-family:var(--font-mono);font-size:12px;color:var(--muted)">Logo Vertical · Versão principal do sistema</p>
       </div>
     </div>
 
+    <!-- ATO 1: APLICAÇÕES DIGITAIS (tech-first) -->
     <div class="section reveal">
-      <span class="section-label">SEEDANCE AI · MOCKUP GALLERY</span>
-      <div class="bento-grid stagger-children" style="margin-top:var(--space-6)">
-        ${[
-          ['COLOR SYSTEM','bento-span-2','/videos/colors.mp4'],
-          ['ACTIVATION','bento-span-2','/videos/activation.mp4'],
-          ['OVERVIEW','bento-span-4','/videos/colors.mp4'],
-          ['MULTI-TOUCHPOINT','bento-span-2','/videos/typography.mp4'],
-          ['DIGITAL SUITE','bento-span-2','/videos/tokens.mp4'],
-          ['PRINT ASSETS','bento-span-2','/videos/mockups.mp4'],
-          ['WEARABLES','bento-span-2','/videos/activation.mp4'],
-          ['PRODUCT VIEW','bento-span-4','/videos/dashboard.mp4']
-        ].map(([label, span, src]) => `
-        <div class="glass-panel ${span}" style="padding:0; overflow:hidden;">
-          <div style="position:relative;width:100%;aspect-ratio:${span === 'bento-span-4' ? '21/9' : '16/9'};background:var(--surface-hover);">
-            <div class="skeleton-loader" style="position:absolute;inset:0;background:linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);background-size:200% 100%;animation:skeletonLoading 1.5s infinite;"></div>
-            <video data-autoplay-scroll loop muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.8;"><source src="${src}" type="video/mp4" /></video>
-            <div style="position:absolute;bottom:12px;left:12px;font-family:var(--font-mono);font-size:9px;padding:4px 10px;background:rgba(0,0,0,0.85);color:var(--solar-flare);border-radius:4px;border:1px solid rgba(245,165,36,0.3);backdrop-filter:blur(8px);">SCENE: ${label}</div>
+      <div style="max-width:720px; margin-bottom:var(--space-8)">
+        <span class="section-label" style="display:block;margin-bottom:var(--space-3)">APLICAÇÕES DIGITAIS</span>
+        <p style="font-family:var(--font-brand);font-size:clamp(22px,3vw,38px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground);margin:0 0 var(--space-4) 0">
+          A marca Sunny não vive<br>num manual.
+          <span style="color:var(--solar-flare)"> Ela opera.</span>
+        </p>
+        <p style="font-size:15px;color:var(--text-secondary);line-height:1.75;margin:0">
+          Em dashboards que processam leads às 3h da manhã. Em pipelines que nunca param. Em relatórios que chegam antes do café. Em animações de identidade construídas para durar. Aqui, marca e inteligência são a mesma coisa.
+        </p>
+      </div>
+
+      <div class="bento-grid stagger-children">
+
+        <div class="glass-panel bento-span-3 bento-row-2" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/SDRAgentDemo.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,0.92))">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:var(--solar-flare);margin-bottom:5px">SDR AGENT · 24/7</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.72);line-height:1.45">O agente de vendas que nunca dorme. Qualifica, responde e agenda — sem intervenção humana.</div>
           </div>
-        </div>`).join('')}
+        </div>
+
+        <div class="glass-panel bento-span-1" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/DataWarRoom.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">DATA WAR ROOM</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Inteligência em tempo real</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-1" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/PipelineAnimation.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">PIPELINE</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Leads em movimento constante</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-2" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/DawnReportAnimation.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">DAWN REPORT</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Relatório automático ao amanhecer</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-2" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/LeadMortoVivo.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">LEAD MORTO → VIVO</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Reativação automática de oportunidades perdidas</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-2" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/LogoColorTransitions.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">LOGO IN MOTION</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Identidade que respira e se adapta</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-2" style="padding:0;overflow:hidden;position:relative;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.9">
+            <source src="/videos/BusinessCardReveal.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.88))">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;color:var(--solar-flare)">BUSINESS CARD REVEAL</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px">Primeira impressão com autoridade máxima</div>
+          </div>
+        </div>
+
+        <div class="glass-panel bento-span-4" style="padding:0;overflow:hidden;position:relative;min-height:220px;">
+          <video data-autoplay-scroll loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.85">
+            <source src="/videos/BrandFilmFinale.mp4" type="video/mp4" />
+          </video>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 28px;background:linear-gradient(transparent 30%,rgba(0,0,0,0.92))">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;color:var(--solar-flare);margin-bottom:6px">BRAND FILM · FINALE</div>
+            <div style="font-family:var(--font-brand);font-size:clamp(16px,2.5vw,26px);font-weight:700;color:#fff;line-height:1.2">A identidade completa. Em movimento.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ATO 2: DIVIDER NARRATIVO -->
+    <div class="section reveal">
+      <div style="text-align:center;padding:var(--space-8) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:var(--space-4)">BRAND INTELLIGENCE</div>
+        <p style="font-family:var(--font-brand);font-size:clamp(22px,4vw,44px);font-weight:700;line-height:1.2;color:var(--foreground);margin:0">
+          "Tecnologia sem marca é um produto.<br>
+          <span style="color:var(--solar-flare)">Com ela — é um movimento."</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ATO 3: A MARCA NO MUNDO — 18 HISTÓRIAS -->
+    <style>
+      .story-block { display:flex; align-items:center; gap:clamp(32px,5vw,80px); padding:clamp(48px,6vw,80px) 0; border-bottom:1px solid var(--border); }
+      .story-block.reverse { flex-direction:row-reverse; }
+      .story-img-wrap { flex:0 0 58%; border-radius:20px; overflow:hidden; position:relative; }
+      .story-img-wrap img { width:100%; display:block; aspect-ratio:4/3; object-fit:cover; transition:transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+      .story-img-wrap:hover img { transform:scale(1.04); }
+      .story-text { flex:1; min-width:0; }
+      .story-num { font-family:var(--font-mono); font-size:11px; color:var(--muted); letter-spacing:0.1em; margin-bottom:10px; }
+      .story-tag { display:inline-block; font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.1em; color:var(--solar-flare); border:1px solid rgba(245,165,36,0.3); border-radius:4px; padding:3px 10px; margin-bottom:20px; }
+      .story-headline { font-family:var(--font-brand); font-size:clamp(20px,2.8vw,32px); font-weight:700; line-height:1.15; letter-spacing:-0.02em; color:var(--foreground); margin:0 0 16px 0; }
+      .story-body { font-size:15px; color:var(--text-secondary); line-height:1.75; margin:0 0 24px 0; }
+      .story-metric { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:11px; color:var(--muted); padding:8px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; }
+      .story-metric::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--solar-flare); flex-shrink:0; }
+      .story-block-finale { padding:clamp(48px,6vw,80px) 0 0; }
+      .story-block-finale .story-img-wrap { flex:0 0 100%; border-radius:20px; }
+      .story-block-finale .story-img-wrap img { aspect-ratio:21/9; }
+      @media(max-width:768px){
+        .story-block, .story-block.reverse { flex-direction:column; gap:24px; padding:40px 0; }
+        .story-img-wrap { flex:0 0 auto; width:100%; }
+        .story-headline { font-size:22px; }
+      }
+    </style>
+
+    <div class="section">
+      <div style="max-width:620px;margin-bottom:clamp(40px,6vw,72px)">
+        <span class="section-label" style="display:block;margin-bottom:var(--space-3)">A MARCA NO MUNDO</span>
+        <p style="font-family:var(--font-brand);font-size:clamp(22px,3vw,36px);font-weight:700;line-height:1.2;color:var(--foreground);margin:0 0 var(--space-4) 0">
+          Da tela ao asfalto.<br>Do relatório ao troféu.
+        </p>
+        <p style="font-size:15px;color:var(--text-secondary);line-height:1.75;margin:0">
+          Cada superfície é uma oportunidade de reafirmar quem a Sunny é. Abaixo, 18 aplicações — 18 histórias da mesma marca.
+        </p>
+      </div>
+
+      ${[
+        { src:'/images/mockups/mockup-mclaren.png', n:'01', tag:'LUXURY AUTO', h:'Velocidade não é um recurso. É uma cultura.', p:'O SDR Agent que responde em menos de 15 minutos tem o mesmo DNA de uma máquina que acelera de 0 a 100 em 2.8 segundos. Sunny foi construída para quem recusa o segundo lugar no pipeline de vendas.', m:'< 15min · Tempo de resposta' },
+        { src:'/images/mockups/mockup-porsche.png', n:'02', tag:'PRECISION ENGINEERING', h:'Engenharia de vendas. Engenharia de marca.', p:'Cada lead na plataforma recebe o mesmo tratamento que um cliente Porsche: atendimento imediato, personalizado, sem falha técnica. Precisão não é um diferencial — é o padrão mínimo aceito.', m:'100% dos leads atendidos' },
+        { src:'/images/mockups/mockup-times-square.png', n:'03', tag:'GLOBAL PRESENCE', h:'Quando você chega aqui, o mercado já te viu.', p:'A marca que domina o digital conquista o mundo analógico. Times Square não é um destino — é a prova de que uma identidade forte brilha em qualquer superfície, de qualquer tamanho, em qualquer cidade.', m:'New York · Times Square' },
+        { src:'/images/mockups/mockup-estadio.png', n:'04', tag:'COMMUNITY', h:'80 mil testemunhas de uma marca que venceu.', p:'Estádios são onde tribos se formam. A Sunny foi construída para integradoras que não têm clientes — têm torcida. Quando o time vence, a marca está presente. Quando a marca está presente, o time vence.', m:'80.000 · Capacidade do estádio' },
+        { src:'/images/mockups/mockup-trofeu.png', n:'05', tag:'ACHIEVEMENT', h:'O prêmio de quem não deixou nenhum lead morrer.', p:'Cada integrador que fecha o mês com zero leads perdidos recebe mais do que receita — recebe a prova concreta de que operou com inteligência. Troféus não são decoração. São evidência documentada de excelência.', m:'0 leads perdidos · Meta Sunny' },
+        { src:'/images/mockups/mockup-cristiano.png', n:'06', tag:'EXCELLENCE', h:'Só marcas de campeões ficam nos ombros de campeões.', p:'Quando um atleta de nível global carrega sua identidade, você prova que a marca tem força suficiente para existir onde a excelência mora. Sunny não segue padrões do mercado — ela os redefine.', m:'21× mais conversão' },
+        { src:'/images/mockups/mockup-jaqueta.png', n:'07', tag:'TEAM IDENTITY', h:'A equipe que veste a marca, vive a marca.', p:'Quando seu time chega numa reunião com a identidade Sunny, a primeira impressão já foi vendida antes da primeira palavra ser dita. Cultura começa por dentro e aparece por fora — em cada detalhe.', m:'Brand Cohesion · Interno → Externo' },
+        { src:'/images/mockups/mockup-bone.png', n:'08', tag:'MILESTONE AWARD', h:'100 reuniões fechadas. Este é o prêmio.', p:'Na Sunny, resultados importam e são celebrados com a mesma seriedade com que são cobrados. O boné premium é concedido apenas para quem atinge 100 reuniões qualificadas — um símbolo visível entre os que operam no topo.', m:'100 reuniões · Marco de excelência' },
+        { src:'/images/mockups/mockup-tenis.png', n:'09', tag:'LIFESTYLE', h:'Da pista ao pitch, a marca não sai dos pés.', p:'Performance e lifestyle andam juntos. O profissional Sunny carrega a identidade até nos detalhes do cotidiano — porque marcas fortes não vivem apenas em apresentações e contratos. Elas vivem.', m:'Everyday Premium · 24h/dia' },
+        { src:'/images/mockups/mockup-celular.png', n:'10', tag:'DIGITAL CORE', h:'Onde o lead chega, a Sunny já respondeu.', p:'O produto Sunny vive no celular. Em menos de 15 minutos do primeiro contato, o lead recebe resposta personalizada, qualificada — pelo dispositivo mais pessoal que ele possui. O canal mais íntimo com a melhor tecnologia.', m:'< 15min · First Response' },
+        { src:'/images/mockups/mockup-fone.png', n:'11', tag:'ALWAYS ON', h:'Enquanto você descansa, o SDR fechou 3 leads.', p:'A inteligência Sunny opera em background. Silenciosa, eficiente, constante — como um fone que entrega o som perfeito sem que você precise pensar em nada. A melhor tecnologia é aquela que desaparece.', m:'24/7 · Operação contínua' },
+        { src:'/images/mockups/mockup-relogio.png', n:'12', tag:'TIME IS MONEY', h:'O tempo é o único recurso que não se recompra.', p:'Cada segundo que um lead espera é uma janela fechada. O mercado solar brasileiro cresce 30% ao ano — e a inação tem um custo mensurável, calculável, inaceitável para quem opera com inteligência.', m:'30% crescimento YoY · Solar BR' },
+        { src:'/images/mockups/mockup-lata.png', n:'13', tag:'ENERGY', h:'Potência concentrada em formato portátil.', p:'Assim como uma lata condensa energia pura em formato que cabe na palma da mão, a Sunny condensa anos de melhores práticas de vendas num sistema que qualquer integrador pode operar com maestria e consistência.', m:'Grand Slam Offer · Garantia 60 dias' },
+        { src:'/images/mockups/mockup-copo.png', n:'14', tag:'MORNING RITUAL', h:'Antes do café esfriar, o pipeline já está em movimento.', p:'O SDR Agent qualifica os leads da madrugada enquanto você dorme. Quando você acorda e pega o copo, o relatório já chegou. A Sunny transforma o ritual da manhã — não apenas a rotina de vendas.', m:'Dawn Report · 06:00h' },
+        { src:'/images/mockups/mockup-business-card.png', n:'15', tag:'FIRST IMPRESSION', h:'Sua primeira impressão nunca tem segunda chance.', p:'O cartão de visita Sunny é mais que papel premium. É a síntese física de uma identidade construída para comunicar autoridade antes da primeira palavra ser dita. Cada detalhe foi escolhido com intenção.', m:'Dark Premium · Acabamento especial' },
+        { src:'/images/mockups/mockup-futebol.png', n:'16', tag:'CULTURE', h:'Onde a torcida está, a marca precisa estar.', p:'Integradoras vendem para famílias. Famílias vibram com futebol aos domingos. A Sunny entende que marca forte não é um logotipo numa apresentação — é presença cultural em todos os momentos que importam para o seu cliente.', m:'Conexão cultural · Futebol brasileiro' },
+        { src:'/images/mockups/mockup-serie.png', n:'17', tag:'CONTENT AUTHORITY', h:'A marca com conteúdo tem audiência. Audiência vira cliente.', p:'A Série Sunny transforma conhecimento técnico em autoridade pública. A melhor venda é aquela que acontece antes de você precisar vender — quando o cliente já te considera a referência máxima do setor.', m:'Série Sunny · Content-led Growth' }
+      ].map((s, i) => `
+        <div class="reveal story-block ${i % 2 !== 0 ? 'reverse' : ''}">
+          <div class="story-img-wrap">
+            <img src="${s.src}" alt="${s.tag}" loading="lazy" />
+          </div>
+          <div class="story-text">
+            <div class="story-num">${s.n}</div>
+            <div class="story-tag">${s.tag}</div>
+            <h3 class="story-headline">${s.h}</h3>
+            <p class="story-body">${s.p}</p>
+            <div class="story-metric">${s.m}</div>
+          </div>
+        </div>
+      `).join('')}
+
+      <!-- Finale: Brand Sunny — full width, closing -->
+      <div class="reveal story-block-finale">
+        <div style="text-align:center;margin-bottom:40px">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:12px">18 · THE WHOLE PICTURE</div>
+          <h3 style="font-family:var(--font-brand);font-size:clamp(24px,4vw,48px);font-weight:700;line-height:1.15;color:var(--foreground);margin:0 0 16px 0">
+            Este é o ponto de chegada.<br>
+            <span style="color:var(--solar-flare)">O início da dominância.</span>
+          </h3>
+          <p style="font-size:16px;color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.75">
+            Quando identidade visual, inteligência artificial e presença cultural se unem — você não tem mais uma marca. Você tem um movimento. E movimentos não precisam de permissão para entrar.
+          </p>
+        </div>
+        <div class="story-img-wrap" style="width:100%">
+          <img src="/images/mockups/mockup-sunny.png" alt="Sunny Brand — The Whole Picture" loading="lazy" />
+        </div>
       </div>
     </div>
 
@@ -1373,14 +1585,14 @@ const pages = {
       <h3 class="section-title" style="font-size:28px;">Elementos de Pertencimento</h3>
       <div class="bento-grid stagger-children" style="margin-top:var(--space-6)">
         ${[
-          ['Lead Vivo Badge','Selo: "0 leads mortos este mês"','Dashboard','🏆'],
-          ['Insolação Report','Relatório: "Sua equipe: 135%"','Email','📊'],
-          ['Sunny Cap','Boné premium com logomark','100 reuniões','🧢'],
-          ['Command Card','Business card dark premium','Eventos','💳'],
-          ['Solar Circle Pin','Pin dourado membros premium','Exclusivo','📌']
-        ].map(([n,d,c,emoji]) => `
+          ['Lead Vivo Badge','Selo: "0 leads mortos este mês"','Dashboard',IC.crown],
+          ['Ignição Report','Relatório: "Sua equipe: 135%"','Email',IC.chart],
+          ['Sunny Cap','Boné premium com logomark','100 reuniões',IC.cap],
+          ['Command Card','Business card dark premium','Eventos',IC.card],
+          ['Solar Circle Pin','Pin dourado membros premium','Exclusivo',IC.pin]
+        ].map(([n,d,c,icon]) => `
         <div class="glass-panel bento-span-1" style="padding:var(--space-4); display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px;">
-          <span style="font-size:32px;">${emoji}</span>
+          <span style="color:var(--solar-flare)">${scaleIcon(icon, 32)}</span>
           <div class="brand-card-title" style="font-size:14px; margin-bottom:0;">${n}</div>
           <div class="brand-card-text" style="font-size:11px;">${d}</div>
           <div class="tag" style="margin-top:4px;">${c}</div>
@@ -1417,12 +1629,12 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>Comparativo</th><th>Status Quo</th><th>Com Sunny</th></tr></thead>
         <tbody>
-          <tr><td><strong>Custo SDR Humano</strong></td><td style="color:var(--eclipse-red)">R$3-5K/mês + CLT</td><td style="color:var(--success)">Fração do custo, 24/7</td></tr>
-          <tr><td><strong>Tempo de Resposta</strong></td><td style="color:var(--eclipse-red)">48h+ (média do setor)</td><td style="color:var(--success)">< 15 minutos</td></tr>
-          <tr><td><strong>Taxa de Follow-up</strong></td><td style="color:var(--eclipse-red)">30% dos leads (inação)</td><td style="color:var(--success)">100% dos leads atendidos</td></tr>
-          <tr><td><strong>Conversão de Leads</strong></td><td style="color:var(--eclipse-red)">Baseline manual</td><td style="color:var(--success)">21x mais (resposta < 15min)*</td></tr>
-          <tr><td><strong>Escalabilidade</strong></td><td style="color:var(--eclipse-red)">Limitado por headcount</td><td style="color:var(--success)">Ilimitada via IA</td></tr>
-          <tr><td><strong>Turnover de SDR</strong></td><td style="color:var(--eclipse-red)">Alto (~3 meses avg)</td><td style="color:var(--success)">Zero — IA não sai</td></tr>
+          <tr><td><strong>Custo SDR Humano</strong></td><td style="color:var(--alert-red)">R$3-5K/mês + CLT</td><td style="color:var(--success)">Fração do custo, 24/7</td></tr>
+          <tr><td><strong>Tempo de Resposta</strong></td><td style="color:var(--alert-red)">48h+ (média do setor)</td><td style="color:var(--success)">< 15 minutos</td></tr>
+          <tr><td><strong>Taxa de Follow-up</strong></td><td style="color:var(--alert-red)">30% dos leads (inação)</td><td style="color:var(--success)">100% dos leads atendidos</td></tr>
+          <tr><td><strong>Conversão de Leads</strong></td><td style="color:var(--alert-red)">Baseline manual</td><td style="color:var(--success)">21x mais (resposta < 15min)*</td></tr>
+          <tr><td><strong>Escalabilidade</strong></td><td style="color:var(--alert-red)">Limitado por headcount</td><td style="color:var(--success)">Ilimitada via IA</td></tr>
+          <tr><td><strong>Turnover de SDR</strong></td><td style="color:var(--alert-red)">Alto (~3 meses avg)</td><td style="color:var(--success)">Zero — IA não sai</td></tr>
         </tbody>
       </table>
       <div class="brand-card" style="margin-top:var(--space-4);border-left:3px solid var(--solar-flare)">
@@ -1454,14 +1666,14 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>Fase</th><th>Touchpoint</th><th>Sunny Experience</th></tr></thead>
         <tbody>
-          ${[['Discovery','Google Ads / Social','"Nenhum lead morre ao sol."'],['Website','Landing Page','Hero dark, Solar CTA, case study'],['Demo','Agendamento','Agente liga em < 5 min'],['Trial','Onboarding','Setup SDR Agent < 30 min'],['Activation','1º resultado','"🎉 Primeiro lead qualificado"'],['Engagement','Dashboard','Torre de Comando: pipeline, conversion'],['Revenue','1ª venda','"☀️ COLHEITA! R$85K via IA"'],['Loyalty','Comunidade','Sunny Circle: badges, grupo'],['Advocacy','Indicação','Solar Referral: 1 mês free'],['Expansion','Upsell','Sunny Enterprise: multi-unit']].map(([f,t,e]) => `<tr><td><strong>${f}</strong></td><td>${t}</td><td>${e}</td></tr>`).join('')}
+          ${[['Discovery','Google Ads / Social','"Nenhum lead morre ao sol."'],['Website','Landing Page','Hero dark, Solar CTA, case study'],['Demo','Agendamento','Agente liga em < 5 min'],['Trial','Onboarding','Setup SDR Agent < 30 min'],['Activation','1º resultado','"Primeiro lead qualificado"'],['Engagement','Dashboard','Torre de Comando: pipeline, conversion'],['Revenue','1ª venda','"RESULTADO! R$85K via IA"'],['Loyalty','Comunidade','Sunny Circle: badges, grupo'],['Advocacy','Indicação','Solar Referral: 1 mês free'],['Expansion','Upsell','Sunny Enterprise: multi-unit']].map(([f,t,e]) => `<tr><td><strong>${f}</strong></td><td>${t}</td><td>${e}</td></tr>`).join('')}
         </tbody>
       </table>
     </div>
     <div class="section reveal">
       <span class="section-label">TRIBAL RITUALS</span>
       <div class="grid-auto stagger-children" style="margin-top:var(--space-4)">
-        ${[['Dawn Report','Diário 8h','"Bom dia, Commander. 3 reuniões ontem."'],['Harvest Friday','Semanal','Celebração + ranking integradores.'],['Solar Summit','Trimestral','Cases, roadmap, networking.'],['Eclipse Alert','Event-driven','"⚠️ 8 leads sem resposta há 48h."'],['Insolação Award','Mensal','Melhor conversão do mês.']].map(([n,f,d]) => `<div class="brand-card"><div class="brand-card-title">${n}</div><div class="tag" style="margin-bottom:8px">${f}</div><div class="brand-card-text">${d}</div></div>`).join('')}
+        ${[['Dawn Report','Diário 8h','"Bom dia, Commander. 3 reuniões ontem."'],['Victory Friday','Semanal','Celebração + ranking integradores.'],['Solar Summit','Trimestral','Cases, roadmap, networking.'],['Alerta Crítico','Event-driven','"${IC.alert} 8 leads sem resposta há 48h."'],['Ignição Award','Mensal','Melhor conversão do mês.']].map(([n,f,d]) => `<div class="brand-card"><div class="brand-card-title">${n}</div><div class="tag" style="margin-bottom:8px">${f}</div><div class="brand-card-text">${d}</div></div>`).join('')}
       </div>
     </div>
   `,
@@ -1475,7 +1687,7 @@ const pages = {
       <table class="token-table" style="margin-top:var(--space-4)">
         <thead><tr><th>Estratégia</th><th>Identidade</th><th>Status</th></tr></thead>
         <tbody>
-          ${[['Ruler Magnânimo','Dark premium + solar gold','✅ Ruler = escuridão + poder'],['DNA: "Nenhum lead morre"','Semantic Eclipse Red','✅ Vocabulário visual conectado'],['Inimigo: Inação','Motion: sol nascendo','✅ Oposição visual à estagnação'],['Tipografia: Space Grotesk','Tech + denso + premium','✅ Geométrica com personalidade'],['Solar Sales Intelligence','Accent Solar Flare, not blue','✅ Diferenciação visual']].map(([s,i,a]) => `<tr><td>${s}</td><td>${i}</td><td><span class="check-pass">${a}</span></td></tr>`).join('')}
+          ${[['Ruler Magnânimo','Dark premium + solar gold','✅ Ruler = escuridão + poder'],['DNA: "Nenhum lead morre"','Semantic Alert Red','✅ Vocabulário visual conectado'],['Inimigo: Inação','Motion: sol nascendo','✅ Oposição visual à estagnação'],['Tipografia: Space Grotesk','Tech + denso + premium','✅ Geométrica com personalidade'],['Solar Sales Intelligence','Accent Solar Flare, not blue','✅ Diferenciação visual']].map(([s,i,a]) => `<tr><td>${s}</td><td>${i}</td><td><span class="check-pass">${a}</span></td></tr>`).join('')}
         </tbody>
       </table>
     </div>
@@ -1557,7 +1769,7 @@ const pages = {
         </div>
         <div class="brand-card" style="text-align:center;padding:48px 24px">
           <button class="btn ui-btn-destructive" style="margin-bottom:var(--space-2)">Destructive</button>
-          <div class="brand-card-text">Ações perigosas em vermelho (Eclipse Red).</div>
+          <div class="brand-card-text">Ações perigosas em vermelho (Alert Red).</div>
         </div>
       </div>
     </div>
@@ -1667,7 +1879,7 @@ const pages = {
       <div class="hero-stat-row">
         <div class="hero-stat"><div class="hero-stat-value">EXCLUSIVO</div><div class="hero-stat-label">Dossiê Hormozi (0 concorrentes)</div></div>
         <div class="hero-stat"><div class="hero-stat-value">R$1.497</div><div class="hero-stat-label">Plano Sol (avatar ideal)</div></div>
-        <div class="hero-stat"><div class="hero-stat-value">45 dias</div><div class="hero-stat-label">Garantia Primeira Colheita</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">45 dias</div><div class="hero-stat-label">Garantia Primeiro Resultado</div></div>
         <div class="hero-stat"><div class="hero-stat-value">38/40</div><div class="hero-stat-label">Value Equation Score</div></div>
       </div>
       <div class="hero-scroll-cue"><span>EXPLORE</span><span>↓</span></div>
@@ -1696,12 +1908,12 @@ const pages = {
         <table class="token-table">
           <thead><tr><th>A Sunny É</th><th>A Sunny NÃO É</th></tr></thead>
           <tbody>
-            <tr><td style="color:var(--success);font-weight:600">Ecossistema comercial completo (CRM + SDR + CS + Gamificação)</td><td style="color:var(--eclipse-red)">Bot de atendimento</td></tr>
-            <tr><td style="color:var(--success);font-weight:600">Sistema de preparação e fechamento de venda por lead</td><td style="color:var(--eclipse-red)">Automação de respostas genéricas</td></tr>
-            <tr><td style="color:var(--success);font-weight:600">Operação que funciona sem o CEO no centro de cada venda</td><td style="color:var(--eclipse-red)">Ferramenta que o CEO precisa operar</td></tr>
-            <tr><td style="color:var(--success);font-weight:600">Time motivado por competição e resultado mensurado</td><td style="color:var(--eclipse-red)">Dependência de talento ou humor individual</td></tr>
-            <tr><td style="color:var(--success);font-weight:600">Recuperação automática de vendas perdidas e paradas</td><td style="color:var(--eclipse-red)">CRM que só organiza o que já entrou</td></tr>
-            <tr><td style="color:var(--success);font-weight:600">CS que transforma cliente em fonte ativa de indicações</td><td style="color:var(--eclipse-red)">Pós-venda manual, eventual ou inexistente</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">Ecossistema comercial completo (CRM + SDR + CS + Gamificação)</td><td style="color:var(--alert-red)">Bot de atendimento</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">Sistema de preparação e fechamento de venda por lead</td><td style="color:var(--alert-red)">Automação de respostas genéricas</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">Operação que funciona sem o CEO no centro de cada venda</td><td style="color:var(--alert-red)">Ferramenta que o CEO precisa operar</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">Time motivado por competição e resultado mensurado</td><td style="color:var(--alert-red)">Dependência de talento ou humor individual</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">Recuperação automática de vendas perdidas e paradas</td><td style="color:var(--alert-red)">CRM que só organiza o que já entrou</td></tr>
+            <tr><td style="color:var(--success);font-weight:600">CS que transforma cliente em fonte ativa de indicações</td><td style="color:var(--alert-red)">Pós-venda manual, eventual ou inexistente</td></tr>
           </tbody>
         </table>
       </div>
@@ -1735,15 +1947,15 @@ const pages = {
             <td style="font-size:20px;font-weight:700;color:var(--solar-flare)">01</td>
             <td><strong>Lead sem resposta</strong></td>
             <td>Lead chega fora do horário. Ninguém responde. Ele fecha com o concorrente que respondeu primeiro.</td>
-            <td style="color:var(--eclipse-red)">70% dos leads morrem assim — R$21K+/mês*</td>
+            <td style="color:var(--alert-red)">70% dos leads morrem assim — R$21K+/mês*</td>
             <td style="color:var(--success)">Atendimento 24/7 em &lt;15min — madrugada, domingo, feriado</td>
-            <td style="color:var(--text-tertiary);font-size:12px">⚠️ Concorrentes têm bots simples</td>
+            <td style="color:var(--text-tertiary);font-size:12px">${IC.alert} Concorrentes têm bots simples</td>
           </tr>
           <tr>
             <td style="font-size:20px;font-weight:700;color:var(--solar-flare)">02</td>
             <td><strong>Call sem roteiro</strong></td>
             <td>Vendedor improvisa. Não antecipa objeções. Perde lead quente por despreparo na conversa.</td>
-            <td style="color:var(--eclipse-red)">Conversão baixa — vendedor culpa o lead</td>
+            <td style="color:var(--alert-red)">Conversão baixa — vendedor culpa o lead</td>
             <td style="color:var(--success)">Dossiê Hormozi: roteiro C.L.O.S.E.R. personalizado + objeções previstas + score 0–10</td>
             <td><span style="background:rgba(245,165,36,0.15);color:var(--solar-flare);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px">✅ EXCLUSIVO</span></td>
           </tr>
@@ -1751,7 +1963,7 @@ const pages = {
             <td style="font-size:20px;font-weight:700;color:var(--solar-flare)">03</td>
             <td><strong>Prospect esquecido</strong></td>
             <td>Lead disse "deixa pra depois" e sumiu. Ninguém fez follow-up. A venda que estava no caminho morreu.</td>
-            <td style="color:var(--eclipse-red)">Pipeline estagnado, oportunidades que evaporam</td>
+            <td style="color:var(--alert-red)">Pipeline estagnado, oportunidades que evaporam</td>
             <td style="color:var(--success)">Follow-up automático de recuperação — retoma a conversa no momento certo, com contexto completo</td>
             <td><span style="background:rgba(245,165,36,0.15);color:var(--solar-flare);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px">✅ Nenhum CRM faz</span></td>
           </tr>
@@ -1759,7 +1971,7 @@ const pages = {
             <td style="font-size:20px;font-weight:700;color:var(--solar-flare)">04</td>
             <td><strong>Cliente abandonado</strong></td>
             <td>Fechou o contrato. Nunca mais teve contato. Zero onboarding, zero CS. Não indica ninguém.</td>
-            <td style="color:var(--eclipse-red)">LTV mínimo, indicações zeradas, churn silencioso</td>
+            <td style="color:var(--alert-red)">LTV mínimo, indicações zeradas, churn silencioso</td>
             <td style="color:var(--success)">CS por IA: acompanhamento pós-venda, onboarding contínuo e geração ativa de indicações</td>
             <td><span style="background:rgba(245,165,36,0.15);color:var(--solar-flare);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px">✅ Nenhum CRM solar</span></td>
           </tr>
@@ -1777,7 +1989,7 @@ const pages = {
         <div style="display:flex;align-items:flex-start;gap:var(--space-6);flex-wrap:wrap">
           <div style="flex:1;min-width:280px">
             <span style="background:var(--solar-flare);color:#09090B;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:var(--space-4)">EXCLUSIVO — 0 CONCORRENTES</span>
-            <h2 style="font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--clean-white);margin-bottom:var(--space-3);line-height:1.2">🤖 Dossiê Hormozi</h2>
+            <h2 style="font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--clean-white);margin-bottom:var(--space-3);line-height:1.2">${IC.robot} Dossiê Hormozi</h2>
             <p style="font-size:17px;color:var(--text-secondary);line-height:1.6;margin-bottom:var(--space-4)">Antes de cada call com um lead qualificado, o sistema gera automaticamente um <strong style="color:var(--clean-white)">dossiê estratégico personalizado</strong>: roteiro C.L.O.S.E.R. baseado na conversa real do lead, objeções previstas com contraargumentos prontos, score de confiança (0–10) e "Matemática da Dor" — o cálculo de quanto o lead perde por não instalar solar.</p>
             <p style="font-size:15px;color:var(--solar-flare);font-weight:600">Resultado: vendedores menos experientes fecham como consultores de 10 anos.</p>
           </div>
@@ -1800,7 +2012,7 @@ const pages = {
         <div style="margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid rgba(245,165,36,0.2)">
           <div style="font-size:12px;color:var(--text-tertiary);margin-bottom:8px">BENCHMARKS — O QUE OS CONCORRENTES OFERECEM "DURANTE A VENDA"</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            ${['Aster: apenas CRM','Azume: só proposta PDF','Groner: pipeline manual','SolarZ: pós-venda técnico','Solaryum: sem IA','Sunbase: mercado EUA','Suns Brasil: planilha glorificada'].map(c => `<span class="tag" style="color:var(--eclipse-red);border-color:rgba(220,38,38,0.3);background:rgba(220,38,38,0.08)">${IC.xmark} ${c}</span>`).join('')}
+            ${['Aster: apenas CRM','Azume: só proposta PDF','Groner: pipeline manual','SolarZ: pós-venda técnico','Solaryum: sem IA','Sunbase: mercado EUA','Suns Brasil: planilha glorificada'].map(c => `<span class="tag" style="color:var(--alert-red);border-color:rgba(220,38,38,0.3);background:rgba(220,38,38,0.08)">${IC.xmark} ${c}</span>`).join('')}
           </div>
         </div>
       </div>
@@ -1813,18 +2025,18 @@ const pages = {
         <div style="display:flex;align-items:flex-start;gap:var(--space-6);flex-wrap:wrap">
           <div style="flex:1;min-width:280px">
             <span style="background:var(--horizon-blue);color:#09090B;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:var(--space-4)">PILAR EX — EXPERIÊNCIA DO VENDEDOR</span>
-            <h2 style="font-size:clamp(24px,3.5vw,40px);font-weight:700;color:var(--clean-white);margin-bottom:var(--space-3);line-height:1.2">🏆 Competição que fecha venda</h2>
+            <h2 style="font-size:clamp(24px,3.5vw,40px);font-weight:700;color:var(--clean-white);margin-bottom:var(--space-3);line-height:1.2">${IC.crown} Competição que fecha venda</h2>
             <p style="font-size:16px;color:var(--text-secondary);line-height:1.6;margin-bottom:var(--space-4)">O vendedor que usa o Dossiê Hormozi fecha mais. O sistema registra isso — e coloca o ranking na tela de todo mundo. Badges, streaks e conquistas criam uma competição saudável que faz o time querer fechar mais sem o CEO precisar cobrar ou motivar manualmente.</p>
             <p style="font-size:14px;color:var(--horizon-blue);font-weight:600">CEO para de ser o motivador do próprio time. O sistema faz isso — e ainda mede quem usa o processo e quem ignora.</p>
           </div>
           <div style="min-width:240px;display:flex;flex-direction:column;gap:12px">
             ${[
-              ['🏆 Top Closer','Maior taxa de conversão do mês — visível para todo o time'],
-              ['📚 Dossiê Master','Usou o dossiê em +80% das calls — resultado comprovado em dados'],
-              ['🔥 Streak','3+ vendas consecutivas — momento de confiança capturado pelo sistema'],
-              ['⭐ Nota 10','Aderência ao roteiro ≥ 9/10 — vendedor que segue o processo fecha mais'],
-              ['📊 Ranking público','Performance de todos visível — pressão positiva natural, sem o CEO cobrar'],
-              ['🔔 Push do Dossiê','WhatsApp: "Dossiê pronto para Carlos F." — cria hábito e urgência de uso'],
+              [' Top Closer','Maior taxa de conversão do mês — visível para todo o time'],
+              [' Dossiê Master','Usou o dossiê em +80% das calls — resultado comprovado em dados'],
+              [' Streak','3+ vendas consecutivas — momento de confiança capturado pelo sistema'],
+              [' Nota 10','Aderência ao roteiro ≥ 9/10 — vendedor que segue o processo fecha mais'],
+              [' Ranking público','Performance de todos visível — pressão positiva natural, sem o CEO cobrar'],
+              [' Push do Dossiê','WhatsApp: "Dossiê pronto para Carlos F." — cria hábito e urgência de uso'],
             ].map(([t, d]) => `
               <div style="display:flex;gap:10px;align-items:flex-start">
                 <span style="color:var(--horizon-blue);flex-shrink:0;margin-top:2px">${IC.check}</span>
@@ -1834,7 +2046,7 @@ const pages = {
           </div>
         </div>
         <div style="margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid rgba(56,189,248,0.2)">
-          <div style="font-size:13px;color:var(--text-secondary);line-height:1.6">💡 <strong style="color:var(--clean-white)">Efeito colateral para o CEO:</strong> pode contratar vendedores menos experientes — o sistema entrega a estratégia e a motivação. O time júnior fecha como sênior porque o processo é melhor do que o talento individual.</div>
+          <div style="font-size:13px;color:var(--text-secondary);line-height:1.6">${IC.bulb} <strong style="color:var(--clean-white)">Efeito colateral para o CEO:</strong> pode contratar vendedores menos experientes — o sistema entrega a estratégia e a motivação. O time júnior fecha como sênior porque o processo é melhor do que o talento individual.</div>
         </div>
       </div>
     </div>
@@ -1846,7 +2058,7 @@ const pages = {
       <div class="grid-2 stagger-children" style="margin-top:var(--space-6)">
         <div style="background:rgba(245,165,36,0.04);border:1.5px solid rgba(245,165,36,0.25);border-radius:16px;padding:var(--space-6)">
           <div style="font-size:10px;letter-spacing:2px;color:var(--solar-flare);margin-bottom:12px;font-weight:700">MOMENTO 04 — DEPOIS DA VENDA</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--clean-white);margin-bottom:12px">🛡️ CS por IA — LNS Sub-Agent</h3>
+          <h3 style="font-size:22px;font-weight:700;color:var(--clean-white);margin-bottom:12px">${IC.shield} CS por IA — LNS Sub-Agent</h3>
           <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">O cliente que fechou não pode desaparecer no silêncio. O LNS Sub-Agent assume o pós-venda: check-ins proativos, resolução de dúvidas, onboarding do sistema de energia e pedido ativo de indicações no momento certo. O cliente sente que tem um CS dedicado. Você não contratou ninguém para isso.</p>
           <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
             ${[
@@ -1863,7 +2075,7 @@ const pages = {
         </div>
         <div style="background:rgba(56,189,248,0.04);border:1.5px solid rgba(56,189,248,0.2);border-radius:16px;padding:var(--space-6)">
           <div style="font-size:10px;letter-spacing:2px;color:var(--horizon-blue);margin-bottom:12px;font-weight:700">MOMENTO 03 — O PROSPECT ESQUECIDO</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--clean-white);margin-bottom:12px">🔄 Follow-up de Recuperação</h3>
+          <h3 style="font-size:22px;font-weight:700;color:var(--clean-white);margin-bottom:12px">${IC.refresh} Follow-up de Recuperação</h3>
           <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">Prospect disse "deixa pra depois"? Na operação manual, ele morre — o vendedor esquece, o pipeline apodrece. Na Sunny, o sistema detecta estagnação e retoma a conversa automaticamente no momento certo, com contexto completo do que foi discutido e um novo ângulo calibrado pela história do lead.</p>
           <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
             ${[
@@ -1893,7 +2105,7 @@ const pages = {
         </div>
         <div class="brand-card" style="border-top:3px solid var(--success)">
           <div class="brand-card-title">${IC.target} Probabilidade Percebida — <span style="color:var(--success)">Score: 9/10</span></div>
-          <div class="brand-card-text">21× mais conversão em &lt;15min (InsideSales.com). Garantia "Primeira Colheita": 10 reuniões em 45 dias ou devolução. Demo ao vivo com o lead real do integrador. Dossiê Hormozi gerado ao vivo. Prova antes de pagar.</div>
+          <div class="brand-card-text">21× mais conversão em &lt;15min (InsideSales.com). Garantia "Primeiro Resultado": 10 reuniões em 45 dias ou devolução. Demo ao vivo com o lead real do integrador. Dossiê Hormozi gerado ao vivo. Prova antes de pagar.</div>
         </div>
         <div class="brand-card" style="border-top:3px solid var(--horizon-blue)">
           <div class="brand-card-title">${IC.bolt} Time Delay — <span style="color:var(--horizon-blue)">Score: 9/10</span></div>
@@ -1917,14 +2129,14 @@ const pages = {
       <p class="section-subtitle">Dossiê Hormozi no topo — o único item que nenhum concorrente entrega. O integrador compara o preço com o valor percebido do stack, não com o concorrente.</p>
       <div style="margin-top:var(--space-6)">
         ${[
-          ['🤖','Dossiê Hormozi por Lead','Roteiro C.L.O.S.E.R. personalizado, objeções previstas, score de fechamento e PDF entregue via WhatsApp antes de cada call.','R$150/lead','EXCLUSIVO: consultor de vendas cobra R$300–500/lead para fazer isso manualmente. Concorrentes não oferecem.','var(--solar-flare)','EXCLUSIVO'],
-          ['☀️','Sunny Agent (SDR IA 24/7)','Responde, qualifica e agenda via WhatsApp, 24h/7d. Substitui 1 SDR completo. Nunca falta, nunca esquece.','R$3.500/mês','SDR humano júnior: R$2.500–3.500/mês, só funciona 8h/dia, sem final de semana','rgba(245,165,36,0.4)',null],
-          ['🛡️','LNS Sub-Agent (CS por IA)','Acompanha clientes pós-venda, faz follow-up, onboarding contínuo e retenção proativa. Sem equipe de CS.','R$1.200/mês','CS humano: R$2.000–4.000/mês. Ou: cliente abandonado e churn silencioso','rgba(245,165,36,0.4)',null],
-          ['🎯','Sunny Pipeline (CRM Solar)','CRM com campos, estágios e métricas desenhados para o ciclo solar. Nenhum campo genérico.','R$1.200/mês','HubSpot customizado: R$2.500/mês + 6 meses de setup + consultor','rgba(245,165,36,0.4)',null],
-          ['📊','Sunny Command (Dashboard)','Torre de Comando: pipeline ao vivo, conversion rate, response time, Insolação meter. Não é planilha.','R$800/mês','Power BI customizado: R$1.200/mês mínimo','rgba(245,165,36,0.4)',null],
-          ['🏆','Sunny Circle (Comunidade)','Grupo exclusivo de integradores: cases reais, benchmarks, roadmap antecipado, networking.','R$500/mês','Mastermind de negócios solar: R$800–2.000/mês','rgba(245,165,36,0.4)',null],
-          ['📈','Weekly Harvest Report','Relatório automático toda semana: leads, reuniões, conversão IA vs. humano, Insolação do time.','R$400/mês','BI solar externo: R$600/mês','rgba(245,165,36,0.4)',null],
-          ['🚀','Onboarding White-Glove','Setup completo em &lt;30min: nome da IA, persona, regras do negócio, WhatsApp integrado.','R$2.000','Consultoria de implementação: R$5.000–10.000','rgba(245,165,36,0.4)',null],
+          [IC.robot,'Dossiê Hormozi por Lead','Roteiro C.L.O.S.E.R. personalizado, objeções previstas, score de fechamento e PDF entregue via WhatsApp antes de cada call.','R$150/lead','EXCLUSIVO: consultor de vendas cobra R$300–500/lead para fazer isso manualmente. Concorrentes não oferecem.','var(--solar-flare)','EXCLUSIVO'],
+          [IC.sun,'Sunny Agent (SDR IA 24/7)','Responde, qualifica e agenda via WhatsApp, 24h/7d. Substitui 1 SDR completo. Nunca falta, nunca esquece.','R$3.500/mês','SDR humano júnior: R$2.500–3.500/mês, só funciona 8h/dia, sem final de semana','rgba(245,165,36,0.4)',null],
+          [IC.shield,'LNS Sub-Agent (CS por IA)','Acompanha clientes pós-venda, faz follow-up, onboarding contínuo e retenção proativa. Sem equipe de CS.','R$1.200/mês','CS humano: R$2.000–4.000/mês. Ou: cliente abandonado e churn silencioso','rgba(245,165,36,0.4)',null],
+          [IC.target,'Sunny Pipeline (CRM Solar)','CRM com campos, estágios e métricas desenhados para o ciclo solar. Nenhum campo genérico.','R$1.200/mês','HubSpot customizado: R$2.500/mês + 6 meses de setup + consultor','rgba(245,165,36,0.4)',null],
+          [IC.chart,'Sunny Command (Dashboard)','Torre de Comando: pipeline ao vivo, conversion rate, response time, Ignição meter. Não é planilha.','R$800/mês','Power BI customizado: R$1.200/mês mínimo','rgba(245,165,36,0.4)',null],
+          [IC.crown,'Sunny Circle (Comunidade)','Grupo exclusivo de integradores: cases reais, benchmarks, roadmap antecipado, networking.','R$500/mês','Mastermind de negócios solar: R$800–2.000/mês','rgba(245,165,36,0.4)',null],
+          [IC.chart,'Weekly Victory Report','Relatório automático toda semana: leads, reuniões, conversão IA vs. humano, Ignição do time.','R$400/mês','BI solar externo: R$600/mês','rgba(245,165,36,0.4)',null],
+          [IC.rocket,'Onboarding White-Glove','Setup completo em &lt;30min: nome da IA, persona, regras do negócio, WhatsApp integrado.','R$2.000','Consultoria de implementação: R$5.000–10.000','rgba(245,165,36,0.4)',null],
         ].map(([ico, name, desc, val, anchor, borderColor, badge]) => `
           <div class="brand-card" style="display:flex;gap:16px;align-items:flex-start;margin-bottom:12px;border-left:3px solid ${borderColor};transition:border-color 0.2s" onmouseenter="this.style.borderLeftColor='var(--solar-flare)'" onmouseleave="this.style.borderLeftColor='${borderColor}'">
             <span style="font-size:28px;flex-shrink:0">${ico}</span>
@@ -1959,7 +2171,7 @@ const pages = {
         <div class="brand-card" style="padding:var(--space-6);display:flex;flex-direction:column;gap:12px">
           <div>
             <div style="font-size:11px;letter-spacing:2px;color:var(--text-tertiary);margin-bottom:8px">PLANO</div>
-            <div style="font-size:28px;font-weight:700;color:var(--clean-white)">⚡ Raio</div>
+            <div style="font-size:22px;font-weight:700;color:var(--clean-white);display:flex;align-items:center;gap:8px">${IC.bolt} Raio</div>
             <div style="font-size:13px;color:var(--text-secondary);margin-top:4px">1–2 vendedores · Integratora iniciando automação</div>
           </div>
           <div style="border-top:1px solid var(--border-subtle);padding-top:12px">
@@ -1978,7 +2190,7 @@ const pages = {
           <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--solar-flare);color:#09090B;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 16px;border-radius:100px">AVATAR PRINCIPAL</div>
           <div>
             <div style="font-size:11px;letter-spacing:2px;color:var(--text-tertiary);margin-bottom:8px">PLANO</div>
-            <div style="font-size:28px;font-weight:700;color:var(--solar-flare)">☀️ Sol</div>
+            <div style="font-size:22px;font-weight:700;color:var(--solar-flare);display:flex;align-items:center;gap:8px">${IC.sun} Sol</div>
             <div style="font-size:13px;color:var(--text-secondary);margin-top:4px">3–5 vendedores · Integratora no avatar principal</div>
           </div>
           <div style="border-top:1px solid var(--border-subtle);padding-top:12px">
@@ -1989,12 +2201,12 @@ const pages = {
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
             ${[
               'Tudo do Raio +',
-              '🤖 Dossiê Hormozi (EXCLUSIVO)',
-              '🛡️ CS por IA (LNS Sub-Agent)',
+              ' Dossiê Hormozi (EXCLUSIVO)',
+              ' CS por IA (LNS Sub-Agent)',
               'Leads ilimitados/mês',
               'Gamificação + Ranking closers',
               'Sunny Circle (comunidade)',
-              'Weekly Harvest Report',
+              'Weekly Victory Report',
               'Dashboard Command completo',
               'Suporte prioritário',
             ].map((i, idx) => `<li style="font-size:13px;color:${idx > 0 && idx < 3 ? 'var(--solar-flare)' : 'var(--text-secondary)'};display:flex;gap:8px;align-items:center;font-weight:${idx > 0 && idx < 3 ? '600' : '400'}"><span style="color:var(--solar-flare)">${IC.check}</span>${i}</li>`).join('')}
@@ -2004,7 +2216,7 @@ const pages = {
         <div class="brand-card" style="padding:var(--space-6);display:flex;flex-direction:column;gap:12px;border:1px solid rgba(167,139,250,0.4)">
           <div>
             <div style="font-size:11px;letter-spacing:2px;color:var(--text-tertiary);margin-bottom:8px">PLANO</div>
-            <div style="font-size:28px;font-weight:700;color:#A78BFA">👑 Commander</div>
+            <div style="font-size:22px;font-weight:700;color:#A78BFA;display:flex;align-items:center;gap:8px">${IC.crown} Commander</div>
             <div style="font-size:13px;color:var(--text-secondary);margin-top:4px">5+ vendedores · Revendas · White-label</div>
           </div>
           <div style="border-top:1px solid var(--border-subtle);padding-top:12px">
@@ -2026,24 +2238,24 @@ const pages = {
           <tbody>
             <tr>
               <td><strong>SDR júnior (1x)</strong></td>
-              <td style="color:var(--eclipse-red)">R$2.500–3.500/mês</td>
-              <td style="color:var(--eclipse-red)">❌ Só ANTES · Sem roteiro · Sem CS</td>
-              <td style="color:var(--eclipse-red)">Sai em 3 meses, leva o pipeline</td>
+              <td style="color:var(--alert-red)">R$2.500–3.500/mês</td>
+              <td style="color:var(--alert-red)">❌ Só ANTES · Sem roteiro · Sem CS</td>
+              <td style="color:var(--alert-red)">Sai em 3 meses, leva o pipeline</td>
             </tr>
             <tr>
               <td><strong>CRM solar (Aster/Azume)</strong></td>
               <td style="color:var(--text-tertiary)">R$400–800/mês</td>
-              <td style="color:var(--eclipse-red)">❌ Só organiza · Não atende · Sem dossiê</td>
+              <td style="color:var(--alert-red)">❌ Só organiza · Não atende · Sem dossiê</td>
               <td style="color:var(--text-tertiary)">Planilha mais bonita. Leads ainda morrem.</td>
             </tr>
             <tr>
               <td><strong>Status quo (WhatsApp + planilha)</strong></td>
-              <td style="color:var(--eclipse-red)">R$0 + R$21K invisíveis/mês</td>
-              <td style="color:var(--eclipse-red)">❌ Nunca · Improvisa · Zero CS</td>
-              <td style="color:var(--eclipse-red)">70% dos leads morrem. Nenhum vendedor fecha bem.</td>
+              <td style="color:var(--alert-red)">R$0 + R$21K invisíveis/mês</td>
+              <td style="color:var(--alert-red)">❌ Nunca · Improvisa · Zero CS</td>
+              <td style="color:var(--alert-red)">70% dos leads morrem. Nenhum vendedor fecha bem.</td>
             </tr>
             <tr>
-              <td><strong style="color:var(--solar-flare)">☀️ Sunny Sol</strong></td>
+              <td><strong style="color:var(--solar-flare);display:flex;align-items:center;gap:6px">${IC.sun} Sunny Sol</strong></td>
               <td style="color:var(--success)">R$1.497/mês</td>
               <td style="color:var(--success)">✅ ANTES + DURANTE + DEPOIS</td>
               <td style="color:var(--success)">Leads respondidos, vendedores roteirizados, CS por IA</td>
@@ -2053,12 +2265,12 @@ const pages = {
       </div>
     </div>
 
-    <!-- GARANTIA PRIMEIRA COLHEITA -->
+    <!-- Garantia Primeiro Resultado -->
     <div class="section reveal">
       <span class="section-label">GRAND SLAM GUARANTEE — CALIBRADA PARA INTEGRADORAS PEQUENAS</span>
-      <h2 class="section-title" style="font-size:32px">Garantia Primeira Colheita</h2>
+      <h2 class="section-title" style="font-size:32px">Garantia Primeiro Resultado</h2>
       <div style="background:rgba(245,165,36,0.06);border:2px solid rgba(245,165,36,0.3);border-radius:16px;padding:var(--space-8);margin-top:var(--space-6);text-align:center">
-        <div style="font-size:48px;margin-bottom:16px">☀️</div>
+        <div style="color:var(--solar-flare);margin-bottom:16px">${scaleIcon(IC.sun, 48)}</div>
         <h3 style="font-size:28px;font-weight:700;color:var(--clean-white);margin-bottom:16px">45 Dias · 10 Reuniões + 1 Dossiê</h3>
         <p style="font-size:18px;color:var(--text-secondary);max-width:680px;margin:0 auto 24px;line-height:1.6">Se em <strong style="color:var(--solar-flare)">45 dias</strong> você não tiver pelo menos <strong style="color:var(--solar-flare)">10 reuniões qualificadas</strong> agendadas pela IA e <strong style="color:var(--solar-flare)">1 Dossiê Hormozi</strong> gerado antes de uma call, devolvemos <strong style="color:var(--solar-flare)">100%</strong> de tudo que pagou.</p>
         <p style="font-size:14px;color:var(--text-tertiary);max-width:520px;margin:0 auto 24px">Threshold calibrado para integradoras com ~50–150 leads/mês. Se você tem leads chegando e WhatsApp ativo, a Sunny entrega. A garantia é confiante, não temerária.</p>
@@ -2090,7 +2302,7 @@ const pages = {
           ['Escalar antes de validar','Sem tráfego pago antes de conversão ≥ 20% no pitch presencial. Valide a oferta com warm outreach primeiro.'],
           ['Demo de feature','Demo não mostra "funcionalidades". Mostra 1 resultado: lead entra → IA responde → dossiê gerado → reunião agendada. 3 minutos máximo.'],
           ['Churn > 5%','Nunca escalar aquisição com churn acima de 5%. Integradoras pequenas indicam muito quando satisfeitas. Cuide do LTV primeiro.'],
-        ].map(([t, d]) => `<div class="brand-card" style="border-left:3px solid var(--eclipse-red)"><div class="brand-card-title" style="color:var(--eclipse-red)">${IC.xmark} ${t}</div><div class="brand-card-text">${d}</div></div>`).join('')}
+        ].map(([t, d]) => `<div class="brand-card" style="border-left:3px solid var(--alert-red)"><div class="brand-card-title" style="color:var(--alert-red)">${IC.xmark} ${t}</div><div class="brand-card-text">${d}</div></div>`).join('')}
       </div>
     </div>
 
@@ -2179,9 +2391,9 @@ const pages = {
       <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:450px;height:450px;border:1px solid rgba(245,165,36,.04);border-radius:50%;pointer-events:none"></div>
 
       <!-- FLOATING TROPHIES -->
-      <div style="position:absolute;top:15%;right:8%;font-size:80px;animation:awards-float 5s ease-in-out infinite;opacity:.15;pointer-events:none">🏆</div>
-      <div style="position:absolute;top:60%;right:15%;font-size:50px;animation:awards-float 7s ease-in-out 1s infinite;opacity:.1;pointer-events:none">⭐</div>
-      <div style="position:absolute;top:25%;left:5%;font-size:40px;animation:awards-float 6s ease-in-out 2s infinite;opacity:.1;pointer-events:none">🔥</div>
+      <div style="position:absolute;top:15%;right:8%;animation:awards-float 5s ease-in-out infinite;opacity:.15;pointer-events:none;color:var(--solar-flare)">${scaleIcon(IC.crown, 80)}</div>
+      <div style="position:absolute;top:60%;right:15%;animation:awards-float 7s ease-in-out 1s infinite;opacity:.1;pointer-events:none;color:var(--warm-yellow)">${scaleIcon(IC.star, 50)}</div>
+      <div style="position:absolute;top:25%;left:5%;animation:awards-float 6s ease-in-out 2s infinite;opacity:.1;pointer-events:none;color:var(--solar-flare)">${scaleIcon(IC.flame, 40)}</div>
 
       <div style="position:relative;z-index:2;max-width:900px">
         <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(245,165,36,.1);border:1px solid rgba(245,165,36,.35);border-radius:100px;padding:6px 18px;margin-bottom:var(--space-6)">
@@ -2224,9 +2436,9 @@ const pages = {
 
       <div class="grid-3 stagger-children" style="margin-top:var(--space-6)">
         ${[
-          ['😶','Alerta silenciado','O alerta de dossiê pronto estava desativado. O vendedor não sabe que tem um roteiro completo esperando — e entra na call no improviso.','rgba(220,38,38,.65)','rgba(220,38,38,.08)'],
-          ['📉','CEO no escuro','Sem painel de performance do time, o CEO não sabe quem usa o processo e quem ignora. Zero dados para cobrança, treino ou promoção.','rgba(220,38,38,.65)','rgba(220,38,38,.06)'],
-          ['🔇','Loop quebrado','Sem feedback do vendedor, a IA não aprende. Sem aprendizado, o próximo dossiê é genérico. O sistema para de melhorar sozinho.','rgba(220,38,38,.65)','rgba(220,38,38,.05)'],
+          [IC.ban,'Alerta silenciado','O alerta de dossiê pronto estava desativado. O vendedor não sabe que tem um roteiro completo esperando — e entra na call no improviso.','rgba(220,38,38,.65)','rgba(220,38,38,.08)'],
+          [IC.chart,'CEO no escuro','Sem painel de performance do time, o CEO não sabe quem usa o processo e quem ignora. Zero dados para cobrança, treino ou promoção.','rgba(220,38,38,.65)','rgba(220,38,38,.06)'],
+          [IC.xmark,'Loop quebrado','Sem feedback do vendedor, a IA não aprende. Sem aprendizado, o próximo dossiê é genérico. O sistema para de melhorar sozinho.','rgba(220,38,38,.65)','rgba(220,38,38,.05)'],
         ].map(([ic,t,d,bc,bg]) => `
           <div style="background:${bg};border:1.5px solid ${bc};border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 0 30px ${bc.replace('.65','.2')}'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
             <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,${bc},transparent)"></div>
@@ -2248,18 +2460,18 @@ const pages = {
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--space-5)">
         ${[
           {
-            num:'01', name:'GATILHO', emoji:'🔴', q:'"O que leva o vendedor ao sistema?"',
+            num:'01', name:'GATILHO', emoji:"<span style='display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(220,38,38,.7)'></span>", q:'"O que leva o vendedor ao sistema?"',
             color:'rgba(220,38,38,1)', colorMid:'rgba(220,38,38,.4)', colorBg:'rgba(220,38,38,.08)',
             items:[
-              ['Externo','🔥 Push WhatsApp: "Dossiê pronto para <b style=\'color:#fca5a5\'>Carlos F.</b> — Score <b style=\'color:#fca5a5\'>8/10</b>"'],
-              ['Externo','📊 Badge <span style=\'background:rgba(220,38,38,.25);color:#fca5a5;padding:1px 7px;border-radius:4px;font-weight:700\'>1 dossiê pendente</span> na sidebar do CRM'],
-              ['Interno','😟 Ansiedade de improvisar — medo de perder a comissão por despreparo'],
-              ['Interno','☀️ Rotina matinal: abre CRM antes do café (~3 semanas de uso)'],
+              ['Externo','\ Push WhatsApp: "Dossiê pronto para <b style=\'color:#fca5a5\'>Carlos F.</b> — Score <b style=\'color:#fca5a5\'>8/10</b>"'],
+              ['Externo','\ Badge <span style=\'background:rgba(220,38,38,.25);color:#fca5a5;padding:1px 7px;border-radius:4px;font-weight:700\'>1 dossiê pendente</span> na sidebar do CRM'],
+              ['Interno','\ Ansiedade de improvisar — medo de perder a comissão por despreparo'],
+              ['Interno','\ Rotina matinal: abre CRM antes do café (~3 semanas de uso)'],
             ],
             footer:'Meta: migrar de gatilho externo → interno em ~3 semanas.',
           },
           {
-            num:'02', name:'AÇÃO', emoji:'🟢', q:'"Qual é o comportamento mais simples antes da recompensa?"',
+            num:'02', name:'AÇÃO', emoji:"<span style='display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(34,197,94,.7)'></span>", q:'"Qual é o comportamento mais simples antes da recompensa?"',
             color:'rgba(34,197,94,1)', colorMid:'rgba(34,197,94,.4)', colorBg:'rgba(34,197,94,.07)',
             items:[
               ['Fricção zero','Push → 1 clique → dossiê expandido. Sem navegação extra.'],
@@ -2269,17 +2481,17 @@ const pages = {
             footer:'Quanto menor a fricção, mais rápido o hábito se instala.',
           },
           {
-            num:'03', name:'RECOMPENSA', emoji:'🟡', q:'"A recompensa satisfaz, mas deixa querendo mais?"',
+            num:'03', name:'RECOMPENSA', emoji:"<span style='display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(234,179,8,.7)'></span>", q:'"A recompensa satisfaz, mas deixa querendo mais?"',
             color:'rgba(234,179,8,1)', colorMid:'rgba(234,179,8,.4)', colorBg:'rgba(234,179,8,.08)',
             items:[
-              ['Da Tribo','🏆 Ranking: "Você subiu para 2º lugar este mês" — status público'],
-              ['Da Caça','🧠 Insight inesperado do Hormozi — objeção que a IA detectou e ele não esperava'],
-              ['Do Ego','⭐ Score de aderência: "Sua última call teve 9/10" — progresso pessoal'],
+              ['Da Tribo','\ Ranking: "Você subiu para 2º lugar este mês" — status público'],
+              ['Da Caça','\ Insight inesperado do Hormozi — objeção que a IA detectou e ele não esperava'],
+              ['Do Ego',' Score de aderência: "Sua última call teve 9/10" — progresso pessoal'],
             ],
             footer:'Variabilidade = slot machine effect. Cada dossiê revela algo novo. Isso cria o vício.',
           },
           {
-            num:'04', name:'INVESTIMENTO', emoji:'🔵', q:'"Que trabalho aumenta a probabilidade de retorno?"',
+            num:'04', name:'INVESTIMENTO', emoji:"<span style='display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(56,189,248,.7)'></span>", q:'"Que trabalho aumenta a probabilidade de retorno?"',
             color:'rgba(56,189,248,1)', colorMid:'rgba(56,189,248,.4)', colorBg:'rgba(56,189,248,.07)',
             items:[
               ['Registro','Won / Lost / Follow-up + motivo da perda'],
@@ -2318,13 +2530,13 @@ const pages = {
         <div style="font-size:11px;letter-spacing:3px;color:var(--muted);margin-bottom:var(--space-4);font-weight:600">O CICLO INFINITO</div>
         <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
           ${[
-            ['🔴 Gatilho','rgba(220,38,38,.7)','rgba(220,38,38,.12)'],
+            [`<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(220,38,38,.7);margin-right:6px"></span>Gatilho`,'rgba(220,38,38,.7)','rgba(220,38,38,.12)'],
             ['→','var(--muted)','transparent'],
-            ['🟢 Ação','rgba(34,197,94,.7)','rgba(34,197,94,.1)'],
+            [`<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(34,197,94,.7);margin-right:6px"></span>Ação`,'rgba(34,197,94,.7)','rgba(34,197,94,.1)'],
             ['→','var(--muted)','transparent'],
-            ['🟡 Recompensa','rgba(234,179,8,.7)','rgba(234,179,8,.1)'],
+            [`<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(234,179,8,.7);margin-right:6px"></span>Recompensa`,'rgba(234,179,8,.7)','rgba(234,179,8,.1)'],
             ['→','var(--muted)','transparent'],
-            ['🔵 Investimento','rgba(56,189,248,.7)','rgba(56,189,248,.1)'],
+            [`<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(56,189,248,.7);margin-right:6px"></span>Investimento`,'rgba(56,189,248,.7)','rgba(56,189,248,.1)'],
           ].map(([label, c, bg]) => label === '→'
             ? `<span style="color:${c};font-size:18px;font-weight:300">→</span>`
             : `<span style="background:${bg};color:${c};border:1px solid ${c.replace('.7','.3')};padding:8px 18px;border-radius:100px;font-weight:700;font-size:13px;box-shadow:0 0 12px ${bg.replace('.1','.15').replace('.12','.15')}">${label}</span>`
@@ -2344,24 +2556,24 @@ const pages = {
 
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-5)">
         ${[
-          { icon:'🏆', name:'Top Closer',       color:'#F5A524', glow:'rgba(245,165,36,.5)',  bg:'rgba(245,165,36,.07)', border:'rgba(245,165,36,.35)', tier:'OURO',    desc:'Maior taxa de conversão do mês',        criteria:'Conversão #1 no período mensal', impact:'Posição de prestígio máximo — visível para todo o time.', freq:'Mensal' },
-          { icon:'📚', name:'Dossiê Master',     color:'#38BDF8', glow:'rgba(56,189,248,.5)',   bg:'rgba(56,189,248,.06)',  border:'rgba(56,189,248,.28)', tier:'PLATINA', desc:'Usou o dossiê em +80% das calls',       criteria:'Abertura do Dossiê Hormozi em ≥ 80% dos leads', impact:'Prova que o processo funciona. Quem usa dossiê fecha mais.', freq:'Contínuo' },
-          { icon:'🔥', name:'Streak',            color:'#EF4444', glow:'rgba(239,68,68,.5)',    bg:'rgba(239,68,68,.06)',   border:'rgba(239,68,68,.28)',  tier:'RARO',    desc:'3+ vendas consecutivas',               criteria:'3 fechamentos seguidos sem interrupção', impact:'Momento de confiança capturado. Time percebe quem está em chamas.', freq:'Event-driven' },
-          { icon:'⭐', name:'Nota 10',           color:'#A78BFA', glow:'rgba(167,139,250,.5)',  bg:'rgba(167,139,250,.06)', border:'rgba(167,139,250,.28)',tier:'ELITE',   desc:'Aderência ao roteiro ≥ 9/10',          criteria:'Score C.L.O.S.E.R. igual ou superior a 9/10', impact:'Valida que seguir o processo é melhor que improvisar.', freq:'Por call registrada' },
-          { icon:'☀️', name:'Insolação',         color:'#FACC15', glow:'rgba(250,204,21,.5)',   bg:'rgba(250,204,21,.06)',  border:'rgba(250,204,21,.25)', tier:'MENSAL',  desc:'Meta mensal atingida em 135%+',         criteria:'135%+ da meta de reuniões qualificadas', impact:'Reconhecimento público — post social "Integrador do mês".', freq:'Mensal' },
-          { icon:'💀', name:'Zero Morte',        color:'#34D399', glow:'rgba(52,211,153,.5)',   bg:'rgba(52,211,153,.06)',  border:'rgba(52,211,153,.25)', tier:'LENDÁRIO', desc:'0 leads sem resposta no mês',          criteria:'100% dos leads atribuídos com resposta', impact:'Incorpora o DNA da marca: "Nenhum lead morre ao sol."', freq:'Mensal' },
+          { icon: IC.crown,  name:'Top Closer',       color:'#F5A524', glow:'rgba(245,165,36,.5)',  bg:'rgba(245,165,36,.07)', border:'rgba(245,165,36,.35)', tier:'OURO',    desc:'Maior taxa de conversão do mês',        criteria:'Conversão #1 no período mensal', impact:'Posição de prestígio máximo — visível para todo o time.', freq:'Mensal' },
+          { icon: IC.book,   name:'Dossiê Master',   color:'#38BDF8', glow:'rgba(56,189,248,.5)',   bg:'rgba(56,189,248,.06)',  border:'rgba(56,189,248,.28)', tier:'PLATINA', desc:'Usou o dossiê em +80% das calls',       criteria:'Abertura do Dossiê Hormozi em ≥ 80% dos leads', impact:'Prova que o processo funciona. Quem usa dossiê fecha mais.', freq:'Contínuo' },
+          { icon: IC.flame,  name:'Streak',           color:'#EF4444', glow:'rgba(239,68,68,.5)',    bg:'rgba(239,68,68,.06)',   border:'rgba(239,68,68,.28)',  tier:'RARO',    desc:'3+ vendas consecutivas',               criteria:'3 fechamentos seguidos sem interrupção', impact:'Momento de confiança capturado. Time percebe quem está em chamas.', freq:'Event-driven' },
+          { icon: IC.star,   name:' Nota 10',          color:'#A78BFA', glow:'rgba(167,139,250,.5)',  bg:'rgba(167,139,250,.06)', border:'rgba(167,139,250,.28)',tier:'ELITE',   desc:'Aderência ao roteiro ≥ 9/10',          criteria:'Score C.L.O.S.E.R. igual ou superior a 9/10', impact:'Valida que seguir o processo é melhor que improvisar.', freq:'Por call registrada' },
+          { icon: IC.sun,    name:'Ignição',          color:'#FACC15', glow:'rgba(250,204,21,.5)',   bg:'rgba(250,204,21,.06)',  border:'rgba(250,204,21,.25)', tier:'MENSAL',  desc:'Meta mensal atingida em 135%+',         criteria:'135%+ da meta de reuniões qualificadas', impact:'Reconhecimento público — post social "Integrador do mês".', freq:'Mensal' },
+          { icon: IC.shield, name:'Zero Morte',       color:'#34D399', glow:'rgba(52,211,153,.5)',   bg:'rgba(52,211,153,.06)',  border:'rgba(52,211,153,.25)', tier:'LENDÁRIO', desc:'0 leads sem resposta no mês',          criteria:'100% dos leads atribuídos com resposta', impact:'Incorpora o DNA da marca: "Nenhum lead morre ao sol."', freq:'Mensal' },
         ].map((b, i) => `
           <div class="award-badge-card" style="background:${b.bg};border:1.5px solid ${b.border};box-shadow:0 4px 32px ${b.glow.replace('.5','.12')};animation:badge-appear .5s cubic-bezier(.34,1.56,.64,1) ${i * 0.08}s both" onmouseenter="this.style.boxShadow='0 0 60px ${b.glow.replace('.5','.3')},0 0 120px ${b.glow.replace('.5','.1')}'" onmouseleave="this.style.boxShadow='0 4px 32px ${b.glow.replace('.5','.12')}'">
             <!-- TOP GLOW LINE -->
             <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,${b.color},transparent);border-radius:3px 3px 0 0"></div>
             <!-- BIG ICON BG -->
-            <div style="position:absolute;top:-10px;right:-10px;font-size:100px;opacity:.06;pointer-events:none;line-height:1">${b.icon}</div>
+            <div style="position:absolute;top:-10px;right:-10px;opacity:.06;pointer-events:none;color:${b.color}">${scaleIcon(b.icon, 96)}</div>
 
             <!-- TIER BADGE -->
             <div style="position:absolute;top:16px;right:16px;background:${b.bg};border:1px solid ${b.border};color:${b.color};font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 10px;border-radius:100px;box-shadow:0 0 10px ${b.glow.replace('.5','.25')}">${b.tier}</div>
 
             <!-- ICON GLOWING -->
-            <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 0 16px ${b.glow.replace('.5','.8')});animation:awards-pulse ${3 + i * .4}s ease-in-out infinite">${b.icon}</div>
+            <div style="margin-bottom:16px;color:${b.color};filter:drop-shadow(0 0 16px ${b.glow.replace('.5','.8')});animation:awards-pulse ${3 + i * .4}s ease-in-out infinite">${scaleIcon(b.icon, 52)}</div>
 
             <div style="font-size:20px;font-weight:800;color:var(--foreground);margin-bottom:6px;letter-spacing:-.3px">${b.name}</div>
             <div style="font-size:13px;color:${b.color};font-weight:600;margin-bottom:16px">${b.desc}</div>
@@ -2408,16 +2620,16 @@ const pages = {
 
         <!-- Rows -->
         ${[
-          { pos:1, name:'Rafael M.', conv:'68%', dossie:'94%', score:'9.2', badges:['🏆','📚','🔥'], streak:true,  c:'#F5A524', glow:'rgba(245,165,36,.15)' },
-          { pos:2, name:'Camila S.', conv:'61%', dossie:'88%', score:'8.7', badges:['📚','⭐'],       streak:false, c:'#E8740C', glow:'transparent' },
-          { pos:3, name:'Lucas P.',  conv:'54%', dossie:'76%', score:'8.1', badges:['⭐'],            streak:false, c:'#A78BFA', glow:'transparent' },
+          { pos:1, name:'Rafael M.', conv:'68%', dossie:'94%', score:'9.2', badges:[IC.crown,IC.book,IC.flame], streak:true,  c:'#F5A524', glow:'rgba(245,165,36,.15)' },
+          { pos:2, name:'Camila S.', conv:'61%', dossie:'88%', score:'8.7', badges:[IC.book,IC.star],       streak:false, c:'#E8740C', glow:'transparent' },
+          { pos:3, name:'Lucas P.',  conv:'54%', dossie:'76%', score:'8.1', badges:[IC.star],            streak:false, c:'#A78BFA', glow:'transparent' },
           { pos:4, name:'Ana F.',    conv:'47%', dossie:'61%', score:'7.4', badges:[],               streak:false, c:'var(--muted)', glow:'transparent' },
         ].map(v => `
           <div style="padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.04);display:grid;grid-template-columns:40px 1fr 90px 90px 90px;gap:16px;align-items:center;background:${v.glow};transition:background .2s" onmouseenter="this.style.background='rgba(255,255,255,.025)'" onmouseleave="this.style.background='${v.glow}'">
             <div style="font-size:20px;font-weight:800;color:${v.c};text-shadow:0 0 12px ${v.c}">${v.pos}</div>
             <div>
-              <div style="font-size:14px;font-weight:600;color:var(--foreground)">${v.name}${v.streak ? ' <span style=\'filter:drop-shadow(0 0 4px #ef4444)\'>🔥</span>' : ''}</div>
-              <div style="display:flex;gap:5px;margin-top:5px">${v.badges.map(b => `<span style="font-size:16px;filter:drop-shadow(0 0 6px rgba(245,165,36,.6))">${b}</span>`).join('')}</div>
+              <div style="font-size:14px;font-weight:600;color:var(--foreground)">${v.name}${v.streak ? ` <span style="color:var(--alert-red);filter:drop-shadow(0 0 4px rgba(239,68,68,.8))">${scaleIcon(IC.flame,14)}</span>` : ''}</div>
+              <div style="display:flex;gap:5px;margin-top:5px">${v.badges.map(b => `<span style="filter:drop-shadow(0 0 6px rgba(245,165,36,.6))">${b}</span>`).join('')}</div>
             </div>
             <div style="text-align:right"><div style="font-size:15px;font-weight:800;color:${v.c};text-shadow:0 0 8px ${v.c}">${v.conv}</div><div style="font-size:10px;color:var(--muted)">conversão</div></div>
             <div style="text-align:right"><div style="font-size:15px;font-weight:700;color:var(--foreground)">${v.dossie}</div><div style="font-size:10px;color:var(--muted)">uso dossiê</div></div>
@@ -2427,7 +2639,7 @@ const pages = {
 
         <!-- Insight row -->
         <div style="padding:16px 28px;background:rgba(245,165,36,.04);border-top:1px solid rgba(245,165,36,.1)">
-          <span style="font-size:12px;color:var(--light)">💡 <strong style="color:var(--foreground)">Insight automático:</strong> Vendedores com uso de dossiê +80% têm conversão <strong style="color:var(--solar-flare)">21% maior</strong>. Dado gerado sem esforço do CEO.</span>
+          <span style="font-size:12px;color:var(--light);display:flex;align-items:center;gap:6px">${IC.bulb} <strong style="color:var(--foreground)">Insight automático:</strong> Vendedores com uso de dossiê +80% têm conversão <strong style="color:var(--solar-flare)">21% maior</strong>. Dado gerado sem esforço do CEO.</span>
         </div>
       </div>
 
@@ -2488,10 +2700,10 @@ const pages = {
         <!-- Impact Cards -->
         <div style="display:flex;flex-direction:column;gap:var(--space-4)">
           ${[
-            ['🔄','Feedback loop completo','Lead → IA SDR → Hormozi Agent → Closer → Resultado → IA aprende. Cada call torna o próximo dossiê mais preciso.','var(--solar-flare)','rgba(245,165,36,.08)','rgba(245,165,36,.25)'],
-            ['🧠','Data Moat proprietário','A memória da IA acumula padrões de objeções do nicho solar a cada call. Um ativo que nenhum concorrente tem — e que cresce sozinho.','var(--horizon-blue)','rgba(56,189,248,.07)','rgba(56,189,248,.25)'],
-            ['🪄','IKEA Effect','O vendedor que investiu feedback sente que o sistema é "dele". Cancelar = perder toda a inteligência acumulada. Churn vira abandono de si mesmo.','#A78BFA','rgba(167,139,250,.07)','rgba(167,139,250,.25)'],
-            ['💰','Impacto no Equity','CEO contrata vendedores menos experientes (mais baratos) — o sistema entrega a estratégia. Evidência de ROI que vende mais licenças.','#34D399','rgba(52,211,153,.07)','rgba(52,211,153,.25)'],
+            [IC.refresh,'Feedback loop completo','Lead → IA SDR → Hormozi Agent → Closer → Resultado → IA aprende. Cada call torna o próximo dossiê mais preciso.','var(--solar-flare)','rgba(245,165,36,.08)','rgba(245,165,36,.25)'],
+            [IC.bulb,'Data Moat proprietário','A memória da IA acumula padrões de objeções do nicho solar a cada call. Um ativo que nenhum concorrente tem — e que cresce sozinho.','var(--horizon-blue)','rgba(56,189,248,.07)','rgba(56,189,248,.25)'],
+            [IC.bolt,'IKEA Effect','O vendedor que investiu feedback sente que o sistema é "dele". Cancelar = perder toda a inteligência acumulada. Churn vira abandono de si mesmo.','#A78BFA','rgba(167,139,250,.07)','rgba(167,139,250,.25)'],
+            [IC.money,'Impacto no Equity','CEO contrata vendedores menos experientes (mais baratos) — o sistema entrega a estratégia. Evidência de ROI que vende mais licenças.','#34D399','rgba(52,211,153,.07)','rgba(52,211,153,.25)'],
           ].map(([ic,t,d,c,bg,bd]) => `
             <div style="background:${bg};border:1px solid ${bd};border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;transition:transform .2s,box-shadow .2s" onmouseenter="this.style.transform='translateX(4px)';this.style.boxShadow='0 0 20px ${bg.replace('.07','.15').replace('.08','.15')}'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
               <div style="font-size:24px;flex-shrink:0;filter:drop-shadow(0 0 8px ${c.replace('var(--solar-flare)','rgba(245,165,36,.8)').replace('var(--horizon-blue)','rgba(56,189,248,.8)')})">${ic}</div>
